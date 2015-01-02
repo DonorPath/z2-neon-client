@@ -2,7 +2,7 @@
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9641AA6F-6BC9-4CCA-BBBA-2864DDEC0962}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -706,6 +706,7 @@
     <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.uploadProductImageResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Z2Systems.Neon.Client.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
