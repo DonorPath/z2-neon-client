@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.z2systems.com/schemas/donation/" xmlns:common="http://www.z2systems.com/schemas/common/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.z2systems.com/schemas/donation/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_common_v100.xsd" namespace="http://www.z2systems.com/schemas/common/" />
+  <xs:annotation>
+    <xs:appinfo>Neon Web Service, donation type definitions. Version 1.0.0</xs:appinfo>
+  </xs:annotation>
+  <xs:simpleType name="DonationStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pending" />
+      <xs:enumeration value="Succeed" />
+      <xs:enumeration value="Declined" />
+      <xs:enumeration value="Cancelled" />
+      <xs:enumeration value="Deferred" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RecurringDonationStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Inactive" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AnonymousType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="No" />
+      <xs:enumeration value="DonorNameAnonymous" />
+      <xs:enumeration value="DonationAmountAnonymous" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RecurringPeriodType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="YEAR" />
+      <xs:enumeration value="MONTH" />
+      <xs:enumeration value="DAY" />
+      <xs:enumeration value="LIFE" />
+      <xs:enumeration value="WEEKLY" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HonorMemoryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Honor" />
+      <xs:enumeration value="Memory" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Acknowledgee">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="email" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="address" type="common:Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HonorMemory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="hmType" type="tns:HonorMemoryType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AbstractDonation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:CreationLog">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="donationId" type="xs:long" />
+          <xs:element minOccurs="0" name="accountId" type="xs:long">
+            <xs:annotation>
+              <xs:documentation>donor id.
+                            </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="amount" type="xs:double" />
+          <xs:element minOccurs="0" name="purpose" type="common:IdNamePair" />
+          <xs:element minOccurs="0" name="campaign" type="common:IdNamePair" />
+          <xs:element minOccurs="0" name="fund" type="common:IdNamePair" />
+          <xs:element minOccurs="0" name="status" type="tns:DonationStatus" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RecurringDonation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractDonation">
+        <xs:sequence>
+          <xs:element name="recurringPeriod" type="xs:long" />
+          <xs:element name="recurringPeriodType" type="tns:RecurringPeriodType" />
+          <xs:element name="nextDate" type="xs:date" />
+          <xs:element minOccurs="0" name="endDate" type="xs:date" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RecurringDonorSearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="setupDateFrom" type="xs:date" />
+      <xs:element minOccurs="0" name="setupDateTo" type="xs:date" />
+      <xs:element minOccurs="0" name="nextRecurringDateFrom" type="xs:date" />
+      <xs:element minOccurs="0" name="nextRucurringDateTo" type="xs:date" />
+      <xs:element minOccurs="0" name="cardExpirationDateFrom" type="xs:date" />
+      <xs:element minOccurs="0" name="cardExpirationDateTo" type="xs:date" />
+      <xs:element minOccurs="0" name="status" type="tns:RecurringDonationStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RecurringDonor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="donorId" type="xs:long" />
+      <xs:element minOccurs="0" name="donorName" type="common:LongTextType" />
+      <xs:element minOccurs="0" name="amount" type="xs:double" />
+      <xs:element minOccurs="0" name="frequency" type="xs:string" />
+      <xs:element minOccurs="0" name="nextDate" type="xs:date" />
+      <xs:element minOccurs="0" name="endDate" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Donation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractDonation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="donorName" type="common:MediumTextType">
+            <xs:annotation>
+              <xs:documentation>specify the donor name in need.
+                            </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="date" type="xs:date" />
+          <xs:element minOccurs="0" name="acknowledgee" type="tns:Acknowledgee" />
+          <xs:element minOccurs="0" name="honorMemory" type="tns:HonorMemory" />
+          <xs:element minOccurs="0" name="customFieldDataList" type="common:CustomFieldDataList" />
+          <xs:element minOccurs="0" name="source" type="common:IdNamePair" />
+          <xs:element minOccurs="0" name="solicitation" type="common:IdNamePair" />
+          <xs:element minOccurs="0" name="sendAcknowledgeEmail" type="xs:boolean" />
+          <xs:element minOccurs="0" name="anonymousType" type="tns:AnonymousType">
+            <xs:annotation>
+              <xs:documentation>default to No
+                            </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DonationStats">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="totalAmountPaid" type="xs:double" />
+      <xs:element minOccurs="0" name="numberOfDonations" type="xs:long" />
+      <xs:element minOccurs="0" name="yearToDateAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="firstDonationDate" type="xs:date" />
+      <xs:element minOccurs="0" name="lastDonationDate" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RecurringDonorList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="recurringDonor" type="tns:RecurringDonor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SolicitationMethodList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="solicitation" type="common:IdNamePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FundList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="fund" type="common:IdNamePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CampaignList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="campaign" type="common:IdNamePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PurposeList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="purpose" type="common:IdNamePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListSolicitationMethodsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListSolicitationMethodsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="solicitationMethods" type="tns:SolicitationMethodList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListFundsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListFundsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="funds" type="tns:FundList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListCampaignsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListCampaignsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="campaigns" type="tns:CampaignList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListPurposesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListPurposesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="purposes" type="tns:PurposeList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateDonationRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="donation" type="tns:Donation" />
+          <xs:element name="payment" type="common:Payment" />
+          <xs:element minOccurs="0" name="sendAcknowledgeEmail" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateDonationResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="donationId" type="xs:long" />
+          <xs:element minOccurs="0" name="transaction" type="common:Transaction" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateRecurringDonationRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="recurringDonation" type="tns:RecurringDonation" />
+          <xs:element name="payment" type="common:Payment" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateRecurringDonationResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="recurringDonationId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreatePledgeRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="pledge" type="tns:Donation" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreatePledgeResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="pledgeId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreatePledgePaymentRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="pledgeId" type="xs:long" />
+          <xs:element name="payment" type="common:Payment" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreatePledgePaymentResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="donationId" type="xs:long" />
+          <xs:element minOccurs="0" name="balance" type="xs:double" />
+          <xs:element minOccurs="0" name="total" type="xs:double" />
+          <xs:element minOccurs="0" name="transaction" type="common:Transaction" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListDonationsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractSearchRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListDonationsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractSearchResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListRecurringDonorsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="donorSearch" type="tns:RecurringDonorSearchCriteria" />
+          <xs:element minOccurs="0" name="page" type="common:Page" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListRecurringDonorsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="recurringDonors" type="tns:RecurringDonorList" />
+          <xs:element minOccurs="0" name="page" type="common:Page" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveDonationStatsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveDonationStatsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="donationStats" type="tns:DonationStats" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveCampaignSummaryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="campaignId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveCampaignSummaryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="campaign" type="tns:Campaign" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Campaign">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="name" type="common:LongTextType" />
+      <xs:element minOccurs="0" name="code" type="common:ShortTextType" />
+      <xs:element minOccurs="0" name="startDate" type="xs:date" />
+      <xs:element minOccurs="0" name="endDate" type="xs:date" />
+      <xs:element minOccurs="0" name="fund" type="common:IdNamePair" />
+      <xs:element minOccurs="0" name="purpose" type="common:IdNamePair" />
+      <xs:element minOccurs="0" name="parentCampaign" type="common:IdNamePair" />
+      <xs:element minOccurs="0" name="pageContent" type="common:TextFieldType" />
+      <xs:element minOccurs="0" name="status" type="common:RecordStatus" />
+      <xs:element minOccurs="0" name="donationCount" type="xs:long" />
+      <xs:element minOccurs="0" name="donationAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="pledgeCount" type="xs:long" />
+      <xs:element minOccurs="0" name="pledgeAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="registrationCount" type="xs:long" />
+      <xs:element minOccurs="0" name="registrationAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="attendeeCount" type="xs:long" />
+      <xs:element minOccurs="0" name="grandTotal" type="xs:double" />
+      <xs:element minOccurs="0" name="campaignPageLink" type="common:ExtraLongTextType" />
+      <xs:element minOccurs="0" name="donationFormLink" type="common:ExtraLongTextType" />
+      <xs:element minOccurs="0" name="socialFundraising" type="tns:SocialFundraising" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SocialFundraising">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fundraisersCount" type="xs:long" />
+      <xs:element minOccurs="0" name="donationCount" type="xs:long" />
+      <xs:element minOccurs="0" name="donationAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="pledgeCount" type="xs:long" />
+      <xs:element minOccurs="0" name="pledgeAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="registrationCount" type="xs:long" />
+      <xs:element minOccurs="0" name="registrationAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="attendeeCount" type="xs:long" />
+      <xs:element minOccurs="0" name="grandTotal" type="xs:double" />
+      <xs:element minOccurs="0" name="createFundraiserLink" type="common:ExtraLongTextType" />
+      <xs:element minOccurs="0" name="campaignFundraiserList" type="common:ExtraLongTextType" />
+      <xs:element minOccurs="0" name="fundraisingPageContent" type="common:TextFieldType" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

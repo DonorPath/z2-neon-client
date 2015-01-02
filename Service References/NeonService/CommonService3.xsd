@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.z2systems.com/schemas/common/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.z2systems.com/schemas/common/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:appinfo>Neon Web Service, common type definitions. Version 1.0.0</xs:appinfo>
+  </xs:annotation>
+  <xs:simpleType name="ShortTextType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="32" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MediumTextType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="64" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="LongTextType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="255" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ExtraLongTextType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="500" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TextFieldType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="4000" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OperationResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESS" />
+      <xs:enumeration value="FAIL" />
+      <xs:enumeration value="PENDING" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RecordStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Inactive" />
+      <xs:enumeration value="Deleted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Component">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Account" />
+      <xs:enumeration value="Donation" />
+      <xs:enumeration value="Event" />
+      <xs:enumeration value="Attendee" />
+      <xs:enumeration value="Individual" />
+      <xs:enumeration value="Organization" />
+      <xs:enumeration value="Activity" />
+      <xs:enumeration value="Membership" />
+      <xs:enumeration value="Product" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FieldDataType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Checkbox" />
+      <xs:enumeration value="Dropdown" />
+      <xs:enumeration value="OneLineText" />
+      <xs:enumeration value="MultiLineText" />
+      <xs:enumeration value="Password" />
+      <xs:enumeration value="File" />
+      <xs:enumeration value="Radio" />
+      <xs:enumeration value="Account" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OperatorType">
+    <xs:annotation>
+      <xs:documentation>Search Operator types.
+            </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EQUAL" />
+      <xs:enumeration value="NOT_EQUAL" />
+      <xs:enumeration value="BLANK" />
+      <xs:enumeration value="NOT_BLANK" />
+      <xs:enumeration value="LESS_THAN" />
+      <xs:enumeration value="GREATER_THAN" />
+      <xs:enumeration value="LESS_AND_EQUAL" />
+      <xs:enumeration value="GREATER_AND_EQUAL" />
+      <xs:enumeration value="IN_RANGE" />
+      <xs:enumeration value="NOT_IN_RANGE" />
+      <xs:enumeration value="CONTAIN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="SortDirection">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ASC" />
+      <xs:enumeration value="DESC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TransactionStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pending" />
+      <xs:enumeration value="Processing" />
+      <xs:enumeration value="Succeed" />
+      <xs:enumeration value="Declined" />
+      <xs:enumeration value="Error" />
+      <xs:enumeration value="Scheduled" />
+      <xs:enumeration value="Cancelled" />
+      <xs:enumeration value="Deferred" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="BankAccountType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Saving" />
+      <xs:enumeration value="Checking" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="addressId" type="xs:long" />
+      <xs:element minOccurs="0" name="isPrimaryAddress" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isShippingAddress" type="xs:boolean" />
+      <xs:element minOccurs="0" name="shippingCompanyName" type="tns:LongTextType" />
+      <xs:element minOccurs="0" name="shippingDeliverTo" type="tns:LongTextType" />
+      <xs:element minOccurs="0" name="addressType" type="tns:IdNamePair" />
+      <xs:element minOccurs="0" name="addressLine1" type="tns:LongTextType" />
+      <xs:element minOccurs="0" name="addressLine2" type="tns:LongTextType" />
+      <xs:element minOccurs="0" name="addressLine3" type="tns:LongTextType" />
+      <xs:element minOccurs="0" name="addressLine4" type="tns:LongTextType" />
+      <xs:element minOccurs="0" name="city" type="tns:ShortTextType" />
+      <xs:element minOccurs="0" name="state" type="tns:CodeNamePair">
+        <xs:annotation>
+          <xs:documentation>used for US/Canada only.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="province" type="tns:ShortTextType">
+        <xs:annotation>
+          <xs:documentation>used for countries other than US/Canada.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="county" type="tns:ShortTextType" />
+      <xs:element minOccurs="0" name="country" type="tns:IdNamePair" />
+      <xs:element minOccurs="0" name="zipCode" type="tns:ShortTextType" />
+      <xs:element minOccurs="0" name="zipCodeSuffix" type="tns:ShortTextType" />
+      <xs:element minOccurs="0" name="startDate" type="xs:date" />
+      <xs:element minOccurs="0" name="endDate" type="xs:date" />
+      <xs:element minOccurs="0" name="confirmDelete" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Transaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionId" type="xs:long" />
+      <xs:element minOccurs="0" name="transactionStatus" type="tns:TransactionStatus" />
+      <xs:element name="payments" type="tns:PaymentList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Payment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="paymentId" type="xs:long" />
+      <xs:element name="amount" type="xs:double" />
+      <xs:element minOccurs="0" name="paymentStatus" type="tns:TransactionStatus" />
+      <xs:element minOccurs="0" name="note" type="tns:TextFieldType" />
+      <xs:element name="tenderType" type="tns:IdNamePair">
+        <xs:annotation>
+          <xs:documentation>Check, E-Check -&gt; CheckType; CreditCardOffine ,CreditCardOnline -&gt; CreditCard
+                        Type; orthers -&gt; Payment .
+                        Recurring Donation only accepts E-Check,CreditCardOnline.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="creditCardOnlinePayment" type="tns:CreditCardOnlinePayment" />
+      <xs:element minOccurs="0" name="creditCardOfflinePayment" type="tns:CreditCardOfflinePayment" />
+      <xs:element minOccurs="0" name="echeckPayment" type="tns:ECheckPayment" />
+      <xs:element minOccurs="0" name="checkPayment" type="tns:CheckPayment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ECheckPayment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="institution" type="tns:MediumTextType" />
+      <xs:element name="routingNumber" type="tns:MediumTextType" />
+      <xs:element name="accountNumber" type="tns:MediumTextType" />
+      <xs:element name="accountOwner" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="CheckNumber" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="accountType" type="tns:BankAccountType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CheckPayment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="institution" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="routingNumber" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="accountNumber" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="accountOwner" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="checkNumber" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="accountType" type="tns:BankAccountType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreditCardOnlinePayment">
+    <xs:sequence>
+      <xs:element name="cardNumber" type="tns:LongTextType" />
+      <xs:element name="expirationMonth" type="xs:long" />
+      <xs:element name="expirationYear" type="xs:long" />
+      <xs:element minOccurs="0" name="cardType" type="tns:CodeNamePair" />
+      <xs:element minOccurs="0" name="CVV2" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="cardHolder" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="billingAddressLine1" type="tns:LongTextType" />
+      <xs:element minOccurs="0" name="billingAddressLine2" type="tns:LongTextType" />
+      <xs:element minOccurs="0" name="city" type="tns:ShortTextType" />
+      <xs:element minOccurs="0" name="state" type="tns:CodeNamePair">
+        <xs:annotation>
+          <xs:documentation>used for US/Canada only.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="province" type="tns:ShortTextType">
+        <xs:annotation>
+          <xs:documentation>used for countries other than US/Canada.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="country" type="tns:IdNamePair" />
+      <xs:element minOccurs="0" name="zipCode" type="tns:ShortTextType" />
+      <xs:element minOccurs="0" name="zipCodeSuffix" type="tns:ShortTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreditCardOfflinePayment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cardNumber" type="tns:LongTextType" />
+      <xs:element name="expirationMonth" type="xs:long" />
+      <xs:element name="expirationYear" type="xs:long" />
+      <xs:element minOccurs="0" name="cardType" type="tns:CodeNamePair" />
+      <xs:element minOccurs="0" name="CVV2" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="cardHolder" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="billingAddressLine1" type="tns:LongTextType" />
+      <xs:element minOccurs="0" name="billingAddressLine2" type="tns:LongTextType" />
+      <xs:element minOccurs="0" name="city" type="tns:ShortTextType" />
+      <xs:element minOccurs="0" name="state" type="tns:CodeNamePair">
+        <xs:annotation>
+          <xs:documentation>used for US/Canada only.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="province" type="tns:ShortTextType">
+        <xs:annotation>
+          <xs:documentation>used for countries other than US/Canada.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="country" type="tns:IdNamePair" />
+      <xs:element minOccurs="0" name="zipCode" type="tns:ShortTextType" />
+      <xs:element minOccurs="0" name="zipCodeSuffix" type="tns:ShortTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Page">
+    <xs:annotation>
+      <xs:documentation>inpur fields: currentPage,pageSize,sortColumn,sortDirection.
+            </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="currentPage" type="xs:long" />
+      <xs:element minOccurs="0" name="pageSize" type="xs:long" />
+      <xs:element minOccurs="0" name="totalPage" type="xs:long" />
+      <xs:element minOccurs="0" name="totalResults" type="xs:long" />
+      <xs:element minOccurs="0" name="sortColumn" type="tns:MediumTextType">
+        <xs:annotation>
+          <xs:documentation>sortColumn doesnot support custom fields.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="sortDirection" type="tns:SortDirection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SearchObject">
+    <xs:sequence>
+      <xs:annotation>
+        <xs:documentation>1. system fields. key = field display name. value = field value. 2. custom fields: key
+                    = custom field id, value = custom field optionId or value
+                </xs:documentation>
+      </xs:annotation>
+      <xs:element name="key" type="tns:MediumTextType" />
+      <xs:element name="searchOperator" type="tns:OperatorType" />
+      <xs:element name="value" type="tns:MediumTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Error">
+    <xs:sequence>
+      <xs:element name="errorCode" type="tns:ShortTextType" />
+      <xs:element name="errorMessage" type="tns:TextFieldType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="APILogin">
+    <xs:sequence>
+      <xs:element name="apiKey" type="tns:LongTextType" />
+      <xs:element minOccurs="0" name="orgId" type="tns:MediumTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Login">
+    <xs:sequence>
+      <xs:element name="username" type="tns:MediumTextType" />
+      <xs:element name="password" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="orgId" type="tns:MediumTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AbstractRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="userSessionId" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="fromSource" type="tns:MediumTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AbstractResponse">
+    <xs:sequence>
+      <xs:element name="operationResult" type="tns:OperationResult" />
+      <xs:element minOccurs="0" name="responseMessage" type="tns:LongTextType" />
+      <xs:element name="responseDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="errors" type="tns:ErrorList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AbstractSearchRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="searches" type="tns:SearchList" />
+          <xs:element name="outputFields" type="tns:IdNamePairList" />
+          <xs:element minOccurs="0" name="page" type="tns:Page" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AbstractSearchResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="page" type="tns:Page" />
+          <xs:element minOccurs="0" name="searchResults" type="tns:NameValuePairsList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IdNameCodePair">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="name" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="code" type="tns:MediumTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IdNamePair">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="name" type="tns:LongTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CodeNamePair">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="code" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="name" type="tns:MediumTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NameValuePair">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="value" type="tns:LongTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreationLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="createdDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="createdBy" type="tns:ShortTextType" />
+      <xs:element minOccurs="0" name="lastModifiedDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="lastModifiedBy" type="tns:ShortTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomField">
+    <xs:sequence>
+      <xs:element name="fieldId" type="xs:long" />
+      <xs:element name="fieldName" type="tns:ExtraLongTextType" />
+      <xs:element minOccurs="0" name="code" type="tns:MediumTextType" />
+      <xs:element name="dataType" type="tns:FieldDataType" />
+      <xs:element name="component" type="tns:Component" />
+      <xs:element minOccurs="0" name="fieldOptions" type="tns:FieldOptionList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MonthlyStats">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="year" type="xs:long" />
+      <xs:element minOccurs="0" name="month" type="xs:long" />
+      <xs:element minOccurs="0" name="amount" type="xs:double" />
+      <xs:element minOccurs="0" name="count" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MembershipSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="membershipName" type="tns:LongTextType" />
+      <xs:element minOccurs="0" name="membershipTerm" type="tns:IdNamePair" />
+      <xs:element name="amount" type="xs:double" />
+      <xs:element name="termDuration" type="tns:MediumTextType" />
+      <xs:element name="enrollmentType" type="tns:MediumTextType" />
+      <xs:element name="enrollmentDate" type="xs:date" />
+      <xs:element minOccurs="0" name="startDate" type="xs:date" />
+      <xs:element minOccurs="0" name="endDate" type="xs:date" />
+      <xs:element minOccurs="0" name="status" type="tns:MediumTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomFieldData">
+    <xs:sequence>
+      <xs:element name="fieldId" type="tns:MediumTextType" />
+      <xs:element minOccurs="0" name="fieldValue" type="tns:TextFieldType" />
+      <xs:element minOccurs="0" name="fieldOptionId" type="tns:MediumTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomFieldSearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="search" type="tns:IdNamePair" />
+      <xs:element name="component" type="tns:Component" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ErrorList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="error" type="tns:Error" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NameValuePairList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="nameValuePair" type="tns:NameValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NameValuePairsList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="nameValuePairs" type="tns:NameValuePairList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SearchList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="search" type="tns:SearchObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IdNamePairList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="idNamePair" type="tns:IdNamePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FieldOptionList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="fieldOption" type="tns:IdNamePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FieldOptionIdList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="fieldOptionId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomFieldList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="customField" type="tns:CustomField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomFieldDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="customFieldData" type="tns:CustomFieldData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TenderList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tender" type="tns:IdNamePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreditCardTypeList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="creditCardType" type="tns:CodeNamePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="payment" type="tns:Payment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MonthlyStatsList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="monthlyStats" type="tns:MonthlyStats" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LoginRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="login" type="tns:APILogin" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LoginResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userSessionId" type="tns:MediumTextType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LogoutRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LogoutResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AuthenticateUserRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="username" type="tns:LongTextType" />
+          <xs:element name="password" type="tns:LongTextType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AuthenticateUserResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountId" type="xs:long" />
+          <xs:element minOccurs="0" name="isSystemUser" type="xs:boolean" />
+          <xs:element minOccurs="0" name="name" type="tns:LongTextType" />
+          <xs:element minOccurs="0" name="isMember" type="xs:boolean" />
+          <xs:element minOccurs="0" name="currentMembership" type="tns:MembershipSummary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListCustomFieldsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="searchCriteria" type="tns:CustomFieldSearchCriteria" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListCustomFieldsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="customFields" type="tns:CustomFieldList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListTendersRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListTendersResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="tenders" type="tns:TenderList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListCreditCardTypesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListCreditCardTypesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="creditCardTypes" type="tns:CreditCardTypeList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdatePaymentRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="payment" type="tns:Payment" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdatePaymentResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="paymentId" type="xs:long" />
+          <xs:element minOccurs="0" name="transaction" type="tns:Transaction" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveCurrentSystemUserRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveCurrentSystemUserResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="systemUserId" type="xs:long" />
+          <xs:element minOccurs="0" name="firstName" type="tns:LongTextType" />
+          <xs:element minOccurs="0" name="middleName" type="tns:LongTextType" />
+          <xs:element minOccurs="0" name="lastName" type="tns:LongTextType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveStatsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="type" type="tns:ShortTextType" />
+          <xs:element minOccurs="0" name="campaign" type="tns:IdNamePair" />
+          <xs:element minOccurs="0" name="startDate" type="xs:date" />
+          <xs:element minOccurs="0" name="endDate" type="xs:date" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveStatsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="type" type="tns:ShortTextType" />
+          <xs:element minOccurs="0" name="campaign" type="tns:IdNamePair" />
+          <xs:element minOccurs="0" name="monthlyStats" type="tns:MonthlyStatsList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

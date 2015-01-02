@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.z2systems.com/schemas/store/" xmlns:donation="http://www.z2systems.com/schemas/donation/" xmlns:common="http://www.z2systems.com/schemas/common/" xmlns:membership="http://www.z2systems.com/schemas/membership/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.z2systems.com/schemas/store/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_common_v100.xsd" namespace="http://www.z2systems.com/schemas/common/" />
+  <xs:import schemaLocation="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_donation_v100.xsd" namespace="http://www.z2systems.com/schemas/donation/" />
+  <xs:import schemaLocation="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_membership_v100.xsd" namespace="http://www.z2systems.com/schemas/membership/" />
+  <xs:annotation>
+    <xs:appinfo>Neon Web Service, store type definitions. Version 1.0.0</xs:appinfo>
+  </xs:annotation>
+  <xs:simpleType name="ImageType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="gif" />
+      <xs:enumeration value="jpg" />
+      <xs:enumeration value="png" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ProductImage">
+    <xs:sequence>
+      <xs:element name="imageSequenceId" type="xs:long" />
+      <xs:element name="imageUrl" type="common:TextFieldType" />
+      <xs:element name="imageLabel" type="common:MediumTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Catalog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="catalogId" type="xs:long" />
+      <xs:element minOccurs="0" name="code" type="common:ShortTextType" />
+      <xs:element name="name" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="description" type="common:LongTextType" />
+      <xs:element minOccurs="0" name="status" type="common:RecordStatus" />
+      <xs:element minOccurs="0" name="displaySequence" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Category">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="categoryId" type="xs:long" />
+      <xs:element minOccurs="0" name="code" type="common:ShortTextType" />
+      <xs:element name="name" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="description" type="common:LongTextType" />
+      <xs:element minOccurs="0" name="status" type="common:RecordStatus" />
+      <xs:element minOccurs="0" name="displaySequence" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductSearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="categoryId" type="xs:long" />
+      <xs:element minOccurs="0" name="catalogId" type="xs:long" />
+      <xs:element minOccurs="0" name="code" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="name" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="keyword" type="common:MediumTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="productId" type="xs:long" />
+      <xs:element minOccurs="0" name="catalogs" type="common:IdNamePairList">
+        <xs:annotation>
+          <xs:documentation>when create a product, this field is not used. set catalogs for a product via
+                        addProductToCatalog and removeProductFromCatalog.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="category" type="common:IdNamePair" />
+      <xs:element minOccurs="0" name="code" type="common:ShortTextType" />
+      <xs:element minOccurs="0" name="name" type="common:LongTextType" />
+      <xs:element minOccurs="0" name="description" type="common:TextFieldType" />
+      <xs:element minOccurs="0" name="unitPrice" type="xs:double" />
+      <xs:element minOccurs="0" name="shippingRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="daysToShip" type="xs:long" />
+      <xs:element minOccurs="0" name="defaultShippingCost" type="xs:double" />
+      <xs:element minOccurs="0" name="priceOffDiscount" type="xs:double" />
+      <xs:element minOccurs="0" name="isDiscountInPercentage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="priceOffDiscountStartDate" type="xs:date" />
+      <xs:element minOccurs="0" name="priceOffDiscountEndDate" type="xs:date" />
+      <xs:element minOccurs="0" name="imageUrl" type="common:TextFieldType" />
+      <xs:element minOccurs="0" name="imageLabel" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="pounds" type="xs:long" />
+      <xs:element minOccurs="0" name="ounces" type="xs:double" />
+      <xs:element minOccurs="0" name="hasOptions" type="xs:boolean" />
+      <xs:element minOccurs="0" name="status" type="common:RecordStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="optionId" type="xs:long" />
+      <xs:element name="name" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="optionValues" type="tns:ProductOptionValueList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductOptionValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="optionValueId" type="xs:long" />
+      <xs:element name="name" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="priceAdjustment" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="ShoppingCartItemType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Donation" />
+      <xs:enumeration value="Event" />
+      <xs:enumeration value="Membership" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ShoppingCartItemInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="unitPrice" type="xs:double" />
+      <xs:element name="itemType" type="tns:ShoppingCartItemType" />
+      <xs:element minOccurs="0" name="donation" type="donation:Donation" />
+      <xs:element minOccurs="0" name="membership" type="membership:MembershipResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ShoppingCartItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sequenceId" type="xs:long" />
+      <xs:element minOccurs="0" name="product" type="tns:Product">
+        <xs:annotation>
+          <xs:documentation>used when item is a product. when adding item shopping cart, only product id is
+                        required.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="itemInfo" type="tns:ShoppingCartItemInfo">
+        <xs:annotation>
+          <xs:documentation>used for donation/event/membership
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="quantity" type="xs:long" />
+      <xs:element minOccurs="0" name="selectedOptionIds" type="tns:SelectedProductOptionList">
+        <xs:annotation>
+          <xs:documentation>used for addItemTShoppingCart
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="selectedOptions" type="tns:ProductOptionList">
+        <xs:annotation>
+          <xs:documentation>used for retrieveShoppingCartSummary.
+                    </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ShippingMethod">
+    <xs:sequence>
+      <xs:element name="shippingMethodId" type="common:LongTextType" />
+      <xs:element name="shippingMethodName" type="common:LongTextType" />
+      <xs:element name="fee" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SelectedProductOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="optionId" type="xs:long" />
+      <xs:element minOccurs="0" name="optionValueId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ShoppingCart">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="shoppingCartId" type="xs:long" />
+      <xs:element minOccurs="0" name="shoppingCartItems" type="tns:ShoppingCartItemList" />
+      <xs:element minOccurs="0" name="accountId" type="xs:long" />
+      <xs:element minOccurs="0" name="shippingAddress" type="common:Address" />
+      <xs:element minOccurs="0" name="shippingHandlingFee" type="xs:double" />
+      <xs:element minOccurs="0" name="shippingHandlingMethod" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="discounts" type="common:NameValuePairsList" />
+      <xs:element minOccurs="0" name="itemsCount" type="xs:long" />
+      <xs:element minOccurs="0" name="totalDiscount" type="xs:double" />
+      <xs:element minOccurs="0" name="subTotal" type="xs:double" />
+      <xs:element minOccurs="0" name="taxAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="totalCharge" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Order">
+    <xs:sequence>
+      <xs:element name="orderId" type="xs:long" />
+      <xs:element name="orderDate" type="xs:dateTime" />
+      <xs:element name="shoppingCart" type="tns:ShoppingCart" />
+      <xs:element name="transaction" type="common:Transaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StorePurchaseStats">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="totalAmountPaid" type="xs:double" />
+      <xs:element minOccurs="0" name="numberOfStorePurchases" type="xs:long" />
+      <xs:element minOccurs="0" name="firstStorePurchaseDate" type="xs:date" />
+      <xs:element minOccurs="0" name="lastStorePurchaseDate" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrderList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="order" type="tns:Order" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="product" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ShoppingCartItemList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="shoppingCartItem" type="tns:ShoppingCartItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DonationIdList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="donationId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductOptionList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="option" type="tns:ProductOption" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SelectedProductOptionList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="selectedOption" type="tns:SelectedProductOption" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductOptionValueList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="optionValue" type="tns:ProductOptionValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CatalogList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="catalog" type="tns:Catalog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CatalogIdList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="catalogId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CategoryList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="category" type="tns:Category" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductImageList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="productImage" type="tns:ProductImage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ShippingMethodList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="shippingMethod" type="tns:ShippingMethod" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListCatalogsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListCatalogsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="catalogs" type="tns:CatalogList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateCatalogRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="catalog" type="tns:Catalog" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateCatalogResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="catalogId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateCatalogRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="catalog" type="tns:Catalog" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateCatalogResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="catalogId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveCatalogRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="catalogId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveCatalogResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddProductToCatalogRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="catalogId" type="xs:long" />
+          <xs:element name="productId" type="xs:long" />
+          <xs:element minOccurs="0" name="displayOnMainPage" type="xs:boolean" />
+          <xs:element minOccurs="0" name="displaySequence" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddProductToCatalogResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveProductFromCatalogRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="catalogId" type="xs:long" />
+          <xs:element name="productId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveProductFromCatalogResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListCategoriesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListCategoriesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="categories" type="tns:CategoryList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateCategoryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="category" type="tns:Category" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateCategoryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="categoryId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateCategoryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="category" type="tns:Category" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateCategoryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="categoryId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveCategoryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="categoryId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveCategoryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListProductsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="searchCriteria" type="tns:ProductSearchCriteria" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListProductsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="products" type="tns:ProductList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateProductRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="product" type="tns:Product" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateProductResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="productId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateProductRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="product" type="tns:Product" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateProductResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="productId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveProductRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="productId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveProductResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveProductRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="productId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveProductResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="product" type="tns:Product" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UploadProductImageRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="productId" type="xs:long" />
+          <xs:element name="imageLabel" type="common:MediumTextType" />
+          <xs:element minOccurs="0" name="imageData" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="imageUrl" type="common:TextFieldType" />
+          <xs:element name="imageType" type="tns:ImageType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UploadProductImageResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="imageSequenceId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveProductImageRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="productId" type="xs:long" />
+          <xs:element name="imageSequenceId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveProductImageResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListProductImagesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="productId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListProductImagesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="productImages" type="tns:ProductImageList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateProductOptionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="productOption" type="tns:ProductOption" />
+          <xs:element name="productId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateProductOptionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="optionId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListProductOptionsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="productId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListProductOptionsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="productOptions" type="tns:ProductOptionList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateProductOptionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="productOption" type="tns:ProductOption" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateProductOptionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="optionId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveProductOptionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="optionId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveProductOptionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateShoppingCartRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateShoppingCartResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="shoppingCartId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddItemToShoppingCartRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="shoppingCartId" type="xs:long" />
+          <xs:element name="shoppingCartItem" type="tns:ShoppingCartItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddItemToShoppingCartResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sequenceId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveItemFromShoppingCartRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="shoppingCartId" type="xs:long" />
+          <xs:element name="sequenceId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveItemFromShoppingCartResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddOrUpdateShippingAddressToShoppingCartRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="shoppingCartId" type="xs:long" />
+          <xs:element name="shippingAddress" type="common:Address" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddOrUpdateShippingAddressToShoppingCartResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListShippingMethodsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="shoppingCartId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListShippingMethodsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="shippingMethods" type="tns:ShippingMethodList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddOrUpdateShippingMethodToShoppingCartRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="shoppingCartId" type="xs:long" />
+          <xs:element name="shippingMethodId" type="common:LongTextType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddOrUpdateShippingMethodToShoppingCartResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddOrUpdateCustomerToShoppingCartRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:long" />
+          <xs:element name="shoppingCartId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddOrUpdateCustomerToShoppingCartResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveShoppingCartSummaryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="shoppingCartId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveShoppingCartSummaryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="shoppingCart" type="tns:ShoppingCart" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CheckoutRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="shoppingCartId" type="xs:long" />
+          <xs:element minOccurs="0" name="payment" type="common:Payment" />
+          <xs:element minOccurs="0" name="sendAcknowledgeEmail" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CheckoutResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="orderId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveOrderDetailsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="orderId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveOrderDetailsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="order" type="tns:Order" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListOrdersRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountId" type="xs:long" />
+          <xs:element minOccurs="0" name="orderDateFrom" type="xs:date" />
+          <xs:element minOccurs="0" name="orderDateTo" type="xs:date" />
+          <xs:element minOccurs="0" name="page" type="common:Page" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListOrdersResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="orders" type="tns:OrderList" />
+          <xs:element minOccurs="0" name="page" type="common:Page" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveReceiptRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="orderId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveReceiptResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="receiptPDF" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveStorePurchaseStatsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveStorePurchaseStatsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="storePurchaseStats" type="tns:StorePurchaseStats" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

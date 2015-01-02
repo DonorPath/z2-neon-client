@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ce662688-2bdf-4a69-8889-822348806d1e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>true</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://api.neoncrm.com/neonws/services/CommonService?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CommonService.xsd" MetadataType="Schema" ID="0fdce66f-e77b-45f5-9ca3-c1bbefdfdde2" SourceId="1" SourceUrl="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_store_v100.xsd" />
+    <MetadataFile FileName="CommonService1.xsd" MetadataType="Schema" ID="c13efc5b-6f2e-4cb2-bdd8-0fb277b69593" SourceId="1" SourceUrl="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_account_v100.xsd" />
+    <MetadataFile FileName="CommonService2.xsd" MetadataType="Schema" ID="e1c9d39a-a545-4612-b05e-2be2c0669ea8" SourceId="1" SourceUrl="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_donation_v100.xsd" />
+    <MetadataFile FileName="CommonService3.xsd" MetadataType="Schema" ID="8dd9da0a-6012-4d6a-8596-5e99c725472a" SourceId="1" SourceUrl="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_common_v100.xsd" />
+    <MetadataFile FileName="CommonService4.xsd" MetadataType="Schema" ID="30688ef5-27e9-4406-a9a0-f9070faa19d4" SourceId="1" SourceUrl="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_event_v100.xsd" />
+    <MetadataFile FileName="CommonService.wsdl" MetadataType="Wsdl" ID="0194f80b-ffc6-4313-b791-920e53ab36f1" SourceId="1" SourceUrl="https://api.neoncrm.com/neonws/services/CommonService?wsdl" />
+    <MetadataFile FileName="CommonService5.xsd" MetadataType="Schema" ID="01a1d652-2482-401d-b4ed-77703680162f" SourceId="1" SourceUrl="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_membership_v100.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

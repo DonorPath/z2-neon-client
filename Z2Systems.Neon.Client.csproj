@@ -1,0 +1,736 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9641AA6F-6BC9-4CCA-BBBA-2864DDEC0962}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Z2Systems.Neon</RootNamespace>
+    <AssemblyName>Z2Systems.Neon.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="Donation.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="Membership.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="Revenue.cs" />
+    <Compile Include="Service References\NeonService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Client.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Service References\NeonService\CommonService.wsdl" />
+    <None Include="Service References\NeonService\CommonService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NeonService\CommonService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NeonService\CommonService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NeonService\CommonService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NeonService\CommonService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NeonService\CommonService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.AddActivityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.addActivityResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.AddAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.addAddressResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.AddIndividualToHouseHoldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.addIndividualToHouseHoldResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.AddItemToShoppingCartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.addItemToShoppingCartResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.AddMembershipToAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.addMembershipToAccountResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.AddOrUpdateCustomerToShoppingCartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.addOrUpdateCustomerToShoppingCartResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.AddOrUpdateShippingAddressToShoppingCartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.addOrUpdateShippingAddressToShoppingCartResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.AddOrUpdateShippingMethodToShoppingCartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.addOrUpdateShippingMethodToShoppingCartResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.AddProductToCatalogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.addProductToCatalogResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.AuthenticateUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.authenticateUserResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.CheckoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.checkoutResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.CreateCatalogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.createCatalogResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.CreateCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.createCategoryResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.CreateDonationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.createDonationResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.CreateHouseHoldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.createHouseHoldResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.CreateIndividualAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.createIndividualAccountResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.CreateOrganizationAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.createOrganizationAccountResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.CreatePledgePaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.createPledgePaymentResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.CreatePledgeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.createPledgeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.CreateProductOptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.createProductOptionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.CreateProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.createProductResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.CreateRecurringDonationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.createRecurringDonationResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.CreateShoppingCartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.createShoppingCartResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.DeleteHouseHoldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.deleteHouseHoldResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.LinkIndividualToOrganizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.linkIndividualToOrganizationResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListAccountsByDefaultResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listAccountsByDefaultResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListAccountsByKeywordSearchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listAccountsByKeywordSearchResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListAccountsBySearchCriteriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listAccountsBySearchCriteriaResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListAccountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listAccountsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListActivitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listActivitiesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListActivityStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listActivityStatusResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListAddressTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listAddressTypesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListCampaignsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listCampaignsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListCatalogsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listCatalogsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListCategoriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listCategoriesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListCountriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listCountriesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListCreditCardTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listCreditCardTypesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListCustomFieldsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listCustomFieldsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListDonationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listDonationsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListEventsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listEventsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListFundsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listFundsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListGendersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listGendersResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListHouseHoldsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listHouseHoldsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListIndividualTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listIndividualTypesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListMembershipHistoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listMembershipHistoryResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListMembershipsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listMembershipsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListMembershipTermsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listMembershipTermsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListOrdersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listOrdersResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListOrganizationContactsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listOrganizationContactsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListOrganizationTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listOrganizationTypesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListPrefixesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listPrefixesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListProductImagesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listProductImagesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListProductOptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listProductOptionsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListProductsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listProductsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListPurposesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listPurposesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListRecurringDonorsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listRecurringDonorsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListRelationTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listRelationTypesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListShippingMethodsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listShippingMethodsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListSolicitationMethodsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listSolicitationMethodsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListSourcesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listSourcesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListStatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listStatesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListSystemUsersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listSystemUsersResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListTendersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listTendersResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.LoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.loginResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.LogoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.logoutResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RemoveActivityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.removeActivityResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RemoveAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.removeAddressResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RemoveCatalogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.removeCatalogResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RemoveCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.removeCategoryResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RemoveIndividualFromHouseHoldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.removeIndividualFromHouseHoldResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RemoveIndividualFromOrganizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.removeIndividualFromOrganizationResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RemoveItemFromShoppingCartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.removeItemFromShoppingCartResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RemoveProductFromCatalogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.removeProductFromCatalogResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RemoveProductImageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.removeProductImageResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RemoveProductOptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.removeProductOptionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RemoveProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.removeProductResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RetrieveActivityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.retrieveActivityResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RetrieveCampaignSummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.retrieveCampaignSummaryResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RetrieveCurrentSystemUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.retrieveCurrentSystemUserResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RetrieveDonationStatsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.retrieveDonationStatsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RetrieveEventRegistrationStatsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.retrieveEventRegistrationStatsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RetrieveIndividualAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.retrieveIndividualAccountResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RetrieveMembershipStatsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.retrieveMembershipStatsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RetrieveOrderDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.retrieveOrderDetailsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RetrieveOrganizationAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.retrieveOrganizationAccountResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RetrieveProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.retrieveProductResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RetrieveReceiptResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.retrieveReceiptResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RetrieveShoppingCartSummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.retrieveShoppingCartSummaryResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RetrieveStatsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.retrieveStatsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RetrieveStorePurchaseStatsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.retrieveStorePurchaseStatsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RetrieveTransactionStatsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.retrieveTransactionStatsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.SyncAccountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.syncAccountsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.SyncActivitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.syncActivitiesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.UpdateActivityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.updateActivityResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.UpdateAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.updateAddressResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.UpdateCatalogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.updateCatalogResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.UpdateCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.updateCategoryResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.UpdateHouseHoldPrimaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.updateHouseHoldPrimaryResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.UpdateHouseHoldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.updateHouseHoldResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.UpdateIndividualAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.updateIndividualAccountResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.UpdateOrganizationAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.updateOrganizationAccountResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.UpdatePaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.updatePaymentResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.UpdateProductOptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.updateProductOptionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.UpdateProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.updateProductResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.UploadProductImageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.uploadProductImageResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\NeonService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NeonService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NeonService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NeonService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

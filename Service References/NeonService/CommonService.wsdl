@@ -1,0 +1,2271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:store="http://www.z2systems.com/schemas/store/" xmlns:donation="http://www.z2systems.com/schemas/donation/" xmlns:tns="http://www.z2systems.com/schemas/neonws/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:common="http://www.z2systems.com/schemas/common/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:account="http://www.z2systems.com/schemas/account/" xmlns:event="http://www.z2systems.com/schemas/event/" xmlns:membership="http://www.z2systems.com/schemas/membership/" targetNamespace="http://www.z2systems.com/schemas/neonws/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <xs:annotation>
+    <xs:appinfo>Neon Web Service definition. Version 1.0.0</xs:appinfo>
+  </xs:annotation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.z2systems.com/schemas/neonws/" version="1_0">
+      <xs:import schemaLocation="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_common_v100.xsd" namespace="http://www.z2systems.com/schemas/common/" />
+      <xs:import schemaLocation="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_account_v100.xsd" namespace="http://www.z2systems.com/schemas/account/" />
+      <xs:import schemaLocation="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_event_v100.xsd" namespace="http://www.z2systems.com/schemas/event/" />
+      <xs:import schemaLocation="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_donation_v100.xsd" namespace="http://www.z2systems.com/schemas/donation/" />
+      <xs:import schemaLocation="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_membership_v100.xsd" namespace="http://www.z2systems.com/schemas/membership/" />
+      <xs:import schemaLocation="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_store_v100.xsd" namespace="http://www.z2systems.com/schemas/store/" />
+      <xs:element name="loginRequest" type="common:LoginRequest" />
+      <xs:element name="loginResponse" type="common:LoginResponse" />
+      <xs:element name="logoutRequest" type="common:LogoutRequest" />
+      <xs:element name="logoutResponse" type="common:LogoutResponse" />
+      <xs:element name="authenticateUserRequest" type="common:AuthenticateUserRequest" />
+      <xs:element name="authenticateUserResponse" type="common:AuthenticateUserResponse" />
+      <xs:element name="listCustomFieldsRequest" type="common:ListCustomFieldsRequest" />
+      <xs:element name="listCustomFieldsResponse" type="common:ListCustomFieldsResponse" />
+      <xs:element name="listCreditCardTypesRequest" type="common:ListCreditCardTypesRequest" />
+      <xs:element name="listCreditCardTypesResponse" type="common:ListCreditCardTypesResponse" />
+      <xs:element name="listTendersRequest" type="common:ListTendersRequest" />
+      <xs:element name="listTendersResponse" type="common:ListTendersResponse" />
+      <xs:element name="updatePaymentRequest" type="common:UpdatePaymentRequest" />
+      <xs:element name="updatePaymentResponse" type="common:UpdatePaymentResponse" />
+      <xs:element name="retrieveCurrentSystemUserRequest" type="common:RetrieveCurrentSystemUserRequest" />
+      <xs:element name="retrieveCurrentSystemUserResponse" type="common:RetrieveCurrentSystemUserResponse" />
+      <xs:element name="retrieveStatsRequest" type="common:RetrieveStatsRequest" />
+      <xs:element name="retrieveStatsResponse" type="common:RetrieveStatsResponse" />
+      <xs:element name="listSourcesRequest" type="account:ListSourcesRequest" />
+      <xs:element name="listSourcesResponse" type="account:ListSourcesResponse" />
+      <xs:element name="listOrganizationTypesRequest" type="account:ListOrganizationTypesRequest" />
+      <xs:element name="listOrganizationTypesResponse" type="account:ListOrganizationTypesResponse" />
+      <xs:element name="listIndividualTypesRequest" type="account:ListIndividualTypesRequest" />
+      <xs:element name="listIndividualTypesResponse" type="account:ListIndividualTypesResponse" />
+      <xs:element name="listGendersRequest" type="account:ListGendersRequest" />
+      <xs:element name="listGendersResponse" type="account:ListGendersResponse" />
+      <xs:element name="listAddressTypesRequest" type="account:ListAddressTypesRequest" />
+      <xs:element name="listAddressTypesResponse" type="account:ListAddressTypesResponse" />
+      <xs:element name="listPrefixesRequest" type="account:ListPrefixesRequest" />
+      <xs:element name="listPrefixesResponse" type="account:ListPrefixesResponse" />
+      <xs:element name="listStatesRequest" type="account:ListStatesRequest" />
+      <xs:element name="listStatesResponse" type="account:ListStatesResponse" />
+      <xs:element name="listCountriesRequest" type="account:ListCountriesRequest" />
+      <xs:element name="listCountriesResponse" type="account:ListCountriesResponse" />
+      <xs:element name="listRelationTypesRequest" type="account:ListRelationTypesRequest" />
+      <xs:element name="listRelationTypesResponse" type="account:ListRelationTypesResponse" />
+      <xs:element name="listActivityStatusRequest" type="account:ListActivityStatusRequest" />
+      <xs:element name="listActivityStatusResponse" type="account:ListActivityStatusResponse" />
+      <xs:element name="listActivitiesRequest" type="account:ListActivitiesRequest" />
+      <xs:element name="listActivitiesResponse" type="account:ListActivitiesResponse" />
+      <xs:element name="listSystemUsersRequest" type="account:ListSystemUsersRequest" />
+      <xs:element name="listSystemUsersResponse" type="account:ListSystemUsersResponse" />
+      <xs:element name="createIndividualAccountRequest" type="account:CreateIndividualAccountRequest" />
+      <xs:element name="createIndividualAccountResponse" type="account:CreateIndividualAccountResponse" />
+      <xs:element name="updateIndividualAccountRequest" type="account:UpdateIndividualAccountRequest" />
+      <xs:element name="updateIndividualAccountResponse" type="account:UpdateIndividualAccountResponse" />
+      <xs:element name="retrieveIndividualAccountRequest" type="account:RetrieveIndividualAccountRequest" />
+      <xs:element name="retrieveIndividualAccountResponse" type="account:RetrieveIndividualAccountResponse" />
+      <xs:element name="retrieveOrganizationAccountRequest" type="account:RetrieveOrganizationAccountRequest" />
+      <xs:element name="retrieveOrganizationAccountResponse" type="account:RetrieveOrganizationAccountResponse" />
+      <xs:element name="createOrganizationAccountRequest" type="account:CreateOrganizationAccountRequest" />
+      <xs:element name="createOrganizationAccountResponse" type="account:CreateOrganizationAccountResponse" />
+      <xs:element name="updateOrganizationAccountRequest" type="account:UpdateOrganizationAccountRequest" />
+      <xs:element name="updateOrganizationAccountResponse" type="account:UpdateOrganizationAccountResponse" />
+      <xs:element name="linkIndividualToOrganizationRequest" type="account:LinkIndividualToOrganizationRequest" />
+      <xs:element name="linkIndividualToOrganizationResponse" type="account:LinkIndividualToOrganizationResponse" />
+      <xs:element name="removeIndividualFromOrganizationRequest" type="account:RemoveIndividualFromOrganizationRequest" />
+      <xs:element name="removeIndividualFromOrganizationResponse" type="account:RemoveIndividualFromOrganizationResponse" />
+      <xs:element name="listOrganizationContactsRequest" type="account:ListOrganizationContactsRequest" />
+      <xs:element name="listOrganizationContactsResponse" type="account:ListOrganizationContactsResponse" />
+      <xs:element name="listAccountsRequest" type="account:ListAccountsRequest" />
+      <xs:element name="listAccountsResponse" type="account:ListAccountsResponse" />
+      <xs:element name="listAccountsByDefaultRequest" type="account:ListAccountsByDefaultRequest" />
+      <xs:element name="listAccountsByDefaultResponse" type="account:ListAccountsByDefaultResponse" />
+      <xs:element name="syncAccountsRequest" type="account:SyncAccountsRequest" />
+      <xs:element name="syncAccountsResponse" type="account:SyncAccountsResponse" />
+      <xs:element name="listAccountsByKeywordSearchRequest" type="account:ListAccountsByKeywordSearchRequest" />
+      <xs:element name="listAccountsByKeywordSearchResponse" type="account:ListAccountsByKeywordSearchResponse" />
+      <xs:element name="listAccountsBySearchCriteriaRequest" type="account:ListAccountsBySearchCriteriaRequest" />
+      <xs:element name="listAccountsBySearchCriteriaResponse" type="account:ListAccountsBySearchCriteriaResponse" />
+      <xs:element name="addAddressRequest" type="account:AddAddressRequest" />
+      <xs:element name="addAddressResponse" type="account:AddAddressResponse" />
+      <xs:element name="updateAddressRequest" type="account:UpdateAddressRequest" />
+      <xs:element name="updateAddressResponse" type="account:UpdateAddressResponse" />
+      <xs:element name="removeAddressRequest" type="account:RemoveAddressRequest" />
+      <xs:element name="removeAddressResponse" type="account:RemoveAddressResponse" />
+      <xs:element name="addActivityRequest" type="account:AddActivityRequest" />
+      <xs:element name="addActivityResponse" type="account:AddActivityResponse" />
+      <xs:element name="updateActivityRequest" type="account:UpdateActivityRequest" />
+      <xs:element name="updateActivityResponse" type="account:UpdateActivityResponse" />
+      <xs:element name="removeActivityRequest" type="account:RemoveActivityRequest" />
+      <xs:element name="removeActivityResponse" type="account:RemoveActivityResponse" />
+      <xs:element name="createHouseHoldRequest" type="account:CreateHouseHoldRequest" />
+      <xs:element name="createHouseHoldResponse" type="account:CreateHouseHoldResponse" />
+      <xs:element name="updateHouseHoldRequest" type="account:UpdateHouseHoldRequest" />
+      <xs:element name="updateHouseHoldResponse" type="account:UpdateHouseHoldResponse" />
+      <xs:element name="listHouseHoldsRequest" type="account:ListHouseHoldsRequest" />
+      <xs:element name="listHouseHoldsResponse" type="account:ListHouseHoldsResponse" />
+      <xs:element name="addIndividualToHouseHoldRequest" type="account:AddIndividualToHouseHoldRequest" />
+      <xs:element name="addIndividualToHouseHoldResponse" type="account:AddIndividualToHouseHoldResponse" />
+      <xs:element name="removeIndividualFromHouseHoldRequest" type="account:RemoveIndividualFromHouseHoldRequest" />
+      <xs:element name="removeIndividualFromHouseHoldResponse" type="account:RemoveIndividualFromHouseHoldResponse" />
+      <xs:element name="updateHouseHoldPrimaryRequest" type="account:UpdateHouseHoldPrimaryRequest" />
+      <xs:element name="updateHouseHoldPrimaryResponse" type="account:UpdateHouseHoldPrimaryResponse" />
+      <xs:element name="deleteHouseHoldRequest" type="account:DeleteHouseHoldRequest" />
+      <xs:element name="deleteHouseHoldResponse" type="account:DeleteHouseHoldResponse" />
+      <xs:element name="syncActivitiesRequest" type="account:SyncActivitiesRequest" />
+      <xs:element name="syncActivitiesResponse" type="account:SyncActivitiesResponse" />
+      <xs:element name="retrieveActivityRequest" type="account:RetrieveActivityRequest" />
+      <xs:element name="retrieveActivityResponse" type="account:RetrieveActivityResponse" />
+      <xs:element name="retrieveTransactionStatsRequest" type="account:RetrieveTransactionStatsRequest" />
+      <xs:element name="retrieveTransactionStatsResponse" type="account:RetrieveTransactionStatsResponse" />
+      <xs:element name="listEventsRequest" type="event:ListEventsRequest" />
+      <xs:element name="listEventsResponse" type="event:ListEventsResponse" />
+      <xs:element name="retrieveEventRegistrationStatsRequest" type="event:RetrieveEventRegistrationStatsRequest" />
+      <xs:element name="retrieveEventRegistrationStatsResponse" type="event:RetrieveEventRegistrationStatsResponse" />
+      <xs:element name="listFundsRequest" type="donation:ListFundsRequest" />
+      <xs:element name="listFundsResponse" type="donation:ListFundsResponse" />
+      <xs:element name="listSolicitationMethodsRequest" type="donation:ListSolicitationMethodsRequest" />
+      <xs:element name="listSolicitationMethodsResponse" type="donation:ListSolicitationMethodsResponse" />
+      <xs:element name="listCampaignsRequest" type="donation:ListCampaignsRequest" />
+      <xs:element name="listCampaignsResponse" type="donation:ListCampaignsResponse" />
+      <xs:element name="listPurposesRequest" type="donation:ListPurposesRequest" />
+      <xs:element name="listPurposesResponse" type="donation:ListPurposesResponse" />
+      <xs:element name="createDonationRequest" type="donation:CreateDonationRequest" />
+      <xs:element name="createDonationResponse" type="donation:CreateDonationResponse" />
+      <xs:element name="createRecurringDonationRequest" type="donation:CreateRecurringDonationRequest" />
+      <xs:element name="createRecurringDonationResponse" type="donation:CreateRecurringDonationResponse" />
+      <xs:element name="createPledgeRequest" type="donation:CreatePledgeRequest" />
+      <xs:element name="createPledgeResponse" type="donation:CreatePledgeResponse" />
+      <xs:element name="createPledgePaymentRequest" type="donation:CreatePledgePaymentRequest" />
+      <xs:element name="createPledgePaymentResponse" type="donation:CreatePledgePaymentResponse" />
+      <xs:element name="listDonationsRequest" type="donation:ListDonationsRequest" />
+      <xs:element name="listDonationsResponse" type="donation:ListDonationsResponse" />
+      <xs:element name="listRecurringDonorsRequest" type="donation:ListRecurringDonorsRequest" />
+      <xs:element name="listRecurringDonorsResponse" type="donation:ListRecurringDonorsResponse" />
+      <xs:element name="retrieveDonationStatsRequest" type="donation:RetrieveDonationStatsRequest" />
+      <xs:element name="retrieveDonationStatsResponse" type="donation:RetrieveDonationStatsResponse" />
+      <xs:element name="retrieveCampaignSummaryRequest" type="donation:RetrieveCampaignSummaryRequest" />
+      <xs:element name="retrieveCampaignSummaryResponse" type="donation:RetrieveCampaignSummaryResponse" />
+      <xs:element name="listMembershipsRequest" type="membership:ListMembershipsRequest" />
+      <xs:element name="listMembershipsResponse" type="membership:ListMembershipsResponse" />
+      <xs:element name="listMembershipTermsRequest" type="membership:ListMembershipTermsRequest" />
+      <xs:element name="listMembershipTermsResponse" type="membership:ListMembershipTermsResponse" />
+      <xs:element name="addMembershipToAccountRequest" type="membership:AddMembershipToAccountRequest" />
+      <xs:element name="addMembershipToAccountResponse" type="membership:AddMembershipToAccountResponse" />
+      <xs:element name="listMembershipHistoryRequest" type="membership:ListMembershipHistoryRequest" />
+      <xs:element name="listMembershipHistoryResponse" type="membership:ListMembershipHistoryResponse" />
+      <xs:element name="retrieveMembershipStatsRequest" type="membership:RetrieveMembershipStatsRequest" />
+      <xs:element name="retrieveMembershipStatsResponse" type="membership:RetrieveMembershipStatsResponse" />
+      <xs:element name="listCatalogsRequest" type="store:ListCatalogsRequest" />
+      <xs:element name="listCatalogsResponse" type="store:ListCatalogsResponse" />
+      <xs:element name="createCatalogRequest" type="store:CreateCatalogRequest" />
+      <xs:element name="createCatalogResponse" type="store:CreateCatalogResponse" />
+      <xs:element name="updateCatalogRequest" type="store:UpdateCatalogRequest" />
+      <xs:element name="updateCatalogResponse" type="store:UpdateCatalogResponse" />
+      <xs:element name="removeCatalogRequest" type="store:RemoveCatalogRequest" />
+      <xs:element name="removeCatalogResponse" type="store:RemoveCatalogResponse" />
+      <xs:element name="addProductToCatalogRequest" type="store:AddProductToCatalogRequest" />
+      <xs:element name="addProductToCatalogResponse" type="store:AddProductToCatalogResponse" />
+      <xs:element name="removeProductFromCatalogRequest" type="store:RemoveProductFromCatalogRequest" />
+      <xs:element name="removeProductFromCatalogResponse" type="store:RemoveProductFromCatalogResponse" />
+      <xs:element name="listCategoriesRequest" type="store:ListCategoriesRequest" />
+      <xs:element name="listCategoriesResponse" type="store:ListCategoriesResponse" />
+      <xs:element name="createCategoryRequest" type="store:CreateCategoryRequest" />
+      <xs:element name="createCategoryResponse" type="store:CreateCategoryResponse" />
+      <xs:element name="updateCategoryRequest" type="store:UpdateCategoryRequest" />
+      <xs:element name="updateCategoryResponse" type="store:UpdateCategoryResponse" />
+      <xs:element name="removeCategoryRequest" type="store:RemoveCategoryRequest" />
+      <xs:element name="removeCategoryResponse" type="store:RemoveCategoryResponse" />
+      <xs:element name="listProductsRequest" type="store:ListProductsRequest" />
+      <xs:element name="listProductsResponse" type="store:ListProductsResponse" />
+      <xs:element name="createProductRequest" type="store:CreateProductRequest" />
+      <xs:element name="createProductResponse" type="store:CreateProductResponse" />
+      <xs:element name="updateProductRequest" type="store:UpdateProductRequest" />
+      <xs:element name="updateProductResponse" type="store:UpdateProductResponse" />
+      <xs:element name="removeProductRequest" type="store:RemoveProductRequest" />
+      <xs:element name="removeProductResponse" type="store:RemoveProductResponse" />
+      <xs:element name="retrieveProductRequest" type="store:RetrieveProductRequest" />
+      <xs:element name="retrieveProductResponse" type="store:RetrieveProductResponse" />
+      <xs:element name="uploadProductImageRequest" type="store:UploadProductImageRequest" />
+      <xs:element name="uploadProductImageResponse" type="store:UploadProductImageResponse" />
+      <xs:element name="removeProductImageRequest" type="store:RemoveProductImageRequest" />
+      <xs:element name="removeProductImageResponse" type="store:RemoveProductImageResponse" />
+      <xs:element name="listProductImagesRequest" type="store:ListProductImagesRequest" />
+      <xs:element name="listProductImagesResponse" type="store:ListProductImagesResponse" />
+      <xs:element name="createProductOptionRequest" type="store:CreateProductOptionRequest" />
+      <xs:element name="createProductOptionResponse" type="store:CreateProductOptionResponse" />
+      <xs:element name="listProductOptionsRequest" type="store:ListProductOptionsRequest" />
+      <xs:element name="listProductOptionsResponse" type="store:ListProductOptionsResponse" />
+      <xs:element name="updateProductOptionRequest" type="store:UpdateProductOptionRequest" />
+      <xs:element name="updateProductOptionResponse" type="store:UpdateProductOptionResponse" />
+      <xs:element name="removeProductOptionRequest" type="store:RemoveProductOptionRequest" />
+      <xs:element name="removeProductOptionResponse" type="store:RemoveProductOptionResponse" />
+      <xs:element name="createShoppingCartRequest" type="store:CreateShoppingCartRequest" />
+      <xs:element name="createShoppingCartResponse" type="store:CreateShoppingCartResponse" />
+      <xs:element name="addItemToShoppingCartRequest" type="store:AddItemToShoppingCartRequest" />
+      <xs:element name="addItemToShoppingCartResponse" type="store:AddItemToShoppingCartResponse" />
+      <xs:element name="removeItemFromShoppingCartRequest" type="store:RemoveItemFromShoppingCartRequest" />
+      <xs:element name="removeItemFromShoppingCartResponse" type="store:RemoveItemFromShoppingCartResponse" />
+      <xs:element name="addOrUpdateShippingAddressToShoppingCartRequest" type="store:AddOrUpdateShippingAddressToShoppingCartRequest" />
+      <xs:element name="addOrUpdateShippingAddressToShoppingCartResponse" type="store:AddOrUpdateShippingAddressToShoppingCartResponse" />
+      <xs:element name="listShippingMethodsRequest" type="store:ListShippingMethodsRequest" />
+      <xs:element name="listShippingMethodsResponse" type="store:ListShippingMethodsResponse" />
+      <xs:element name="addOrUpdateShippingMethodToShoppingCartRequest" type="store:AddOrUpdateShippingMethodToShoppingCartRequest" />
+      <xs:element name="addOrUpdateShippingMethodToShoppingCartResponse" type="store:AddOrUpdateShippingMethodToShoppingCartResponse" />
+      <xs:element name="addOrUpdateCustomerToShoppingCartRequest" type="store:AddOrUpdateCustomerToShoppingCartRequest" />
+      <xs:element name="addOrUpdateCustomerToShoppingCartResponse" type="store:AddOrUpdateCustomerToShoppingCartResponse" />
+      <xs:element name="retrieveShoppingCartSummaryRequest" type="store:RetrieveShoppingCartSummaryRequest" />
+      <xs:element name="retrieveShoppingCartSummaryResponse" type="store:RetrieveShoppingCartSummaryResponse" />
+      <xs:element name="checkoutRequest" type="store:CheckoutRequest" />
+      <xs:element name="checkoutResponse" type="store:CheckoutResponse" />
+      <xs:element name="retrieveOrderDetailsRequest" type="store:RetrieveOrderDetailsRequest" />
+      <xs:element name="retrieveOrderDetailsResponse" type="store:RetrieveOrderDetailsResponse" />
+      <xs:element name="listOrdersRequest" type="store:ListOrdersRequest" />
+      <xs:element name="listOrdersResponse" type="store:ListOrdersResponse" />
+      <xs:element name="retrieveReceiptRequest" type="store:RetrieveReceiptRequest" />
+      <xs:element name="retrieveReceiptResponse" type="store:RetrieveReceiptResponse" />
+      <xs:element name="retrieveStorePurchaseStatsRequest" type="store:RetrieveStorePurchaseStatsRequest" />
+      <xs:element name="retrieveStorePurchaseStatsResponse" type="store:RetrieveStorePurchaseStatsResponse" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="listCountriesResponse">
+    <wsdl:part name="response" element="tns:listCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="logoutRequest">
+    <wsdl:part name="request" element="tns:logoutRequest" />
+  </wsdl:message>
+  <wsdl:message name="retrieveReceiptResponse">
+    <wsdl:part name="response" element="tns:retrieveReceiptResponse" />
+  </wsdl:message>
+  <wsdl:message name="listIndividualTypesRequest">
+    <wsdl:part name="request" element="tns:listIndividualTypesRequest" />
+  </wsdl:message>
+  <wsdl:message name="addMembershipToAccountResponse">
+    <wsdl:part name="response" element="tns:addMembershipToAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="listSystemUsersRequest">
+    <wsdl:part name="request" element="tns:listSystemUsersRequest" />
+  </wsdl:message>
+  <wsdl:message name="listAccountsByDefaultResponse">
+    <wsdl:part name="response" element="tns:listAccountsByDefaultResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkoutResponse">
+    <wsdl:part name="response" element="tns:checkoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="listOrganizationContactsResponse">
+    <wsdl:part name="response" element="tns:listOrganizationContactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveEventRegistrationStatsRequest">
+    <wsdl:part name="request" element="tns:retrieveEventRegistrationStatsRequest" />
+  </wsdl:message>
+  <wsdl:message name="retrieveProductRequest">
+    <wsdl:part name="request" element="tns:retrieveProductRequest" />
+  </wsdl:message>
+  <wsdl:message name="retrieveCampaignSummaryRequest">
+    <wsdl:part name="request" element="tns:retrieveCampaignSummaryRequest" />
+  </wsdl:message>
+  <wsdl:message name="removeProductImageResponse">
+    <wsdl:part name="response" element="tns:removeProductImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="listTendersResponse">
+    <wsdl:part name="response" element="tns:listTendersResponse" />
+  </wsdl:message>
+  <wsdl:message name="createCategoryResponse">
+    <wsdl:part name="response" element="tns:createCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="listStatesResponse">
+    <wsdl:part name="response" element="tns:listStatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="removeProductFromCatalogResponse">
+    <wsdl:part name="response" element="tns:removeProductFromCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateProductOptionResponse">
+    <wsdl:part name="response" element="tns:updateProductOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="createRecurringDonationRequest">
+    <wsdl:part name="request" element="tns:createRecurringDonationRequest" />
+  </wsdl:message>
+  <wsdl:message name="listOrdersResponse">
+    <wsdl:part name="response" element="tns:listOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="listProductOptionsRequest">
+    <wsdl:part name="request" element="tns:listProductOptionsRequest" />
+  </wsdl:message>
+  <wsdl:message name="removeProductOptionResponse">
+    <wsdl:part name="response" element="tns:removeProductOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveReceiptRequest">
+    <wsdl:part name="request" element="tns:retrieveReceiptRequest" />
+  </wsdl:message>
+  <wsdl:message name="retrieveStatsResponse">
+    <wsdl:part name="response" element="tns:retrieveStatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="listCatalogsResponse">
+    <wsdl:part name="response" element="tns:listCatalogsResponse" />
+  </wsdl:message>
+  <wsdl:message name="listGendersResponse">
+    <wsdl:part name="response" element="tns:listGendersResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveMembershipStatsRequest">
+    <wsdl:part name="request" element="tns:retrieveMembershipStatsRequest" />
+  </wsdl:message>
+  <wsdl:message name="addOrUpdateShippingAddressToShoppingCartRequest">
+    <wsdl:part name="request" element="tns:addOrUpdateShippingAddressToShoppingCartRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateAddressResponse">
+    <wsdl:part name="response" element="tns:updateAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="listAccountsBySearchCriteriaResponse">
+    <wsdl:part name="response" element="tns:listAccountsBySearchCriteriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="listCategoriesRequest">
+    <wsdl:part name="request" element="tns:listCategoriesRequest" />
+  </wsdl:message>
+  <wsdl:message name="removeCategoryResponse">
+    <wsdl:part name="response" element="tns:removeCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="removeIndividualFromOrganizationRequest">
+    <wsdl:part name="request" element="tns:removeIndividualFromOrganizationRequest" />
+  </wsdl:message>
+  <wsdl:message name="listCountriesRequest">
+    <wsdl:part name="request" element="tns:listCountriesRequest" />
+  </wsdl:message>
+  <wsdl:message name="listOrganizationContactsRequest">
+    <wsdl:part name="request" element="tns:listOrganizationContactsRequest" />
+  </wsdl:message>
+  <wsdl:message name="listRecurringDonorsResponse">
+    <wsdl:part name="response" element="tns:listRecurringDonorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="listPurposesRequest">
+    <wsdl:part name="request" element="tns:listPurposesRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateCatalogRequest">
+    <wsdl:part name="request" element="tns:updateCatalogRequest" />
+  </wsdl:message>
+  <wsdl:message name="removeProductOptionRequest">
+    <wsdl:part name="request" element="tns:removeProductOptionRequest" />
+  </wsdl:message>
+  <wsdl:message name="listActivityStatusResponse">
+    <wsdl:part name="response" element="tns:listActivityStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="syncAccountsResponse">
+    <wsdl:part name="response" element="tns:syncAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="addActivityResponse">
+    <wsdl:part name="response" element="tns:addActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="loginRequest">
+    <wsdl:part name="request" element="tns:loginRequest" />
+  </wsdl:message>
+  <wsdl:message name="syncAccountsRequest">
+    <wsdl:part name="request" element="tns:syncAccountsRequest" />
+  </wsdl:message>
+  <wsdl:message name="deleteHouseHoldResponse">
+    <wsdl:part name="response" element="tns:deleteHouseHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="listCreditCardTypesRequest">
+    <wsdl:part name="request" element="tns:listCreditCardTypesRequest" />
+  </wsdl:message>
+  <wsdl:message name="linkIndividualToOrganizationResponse">
+    <wsdl:part name="response" element="tns:linkIndividualToOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="loginResponse">
+    <wsdl:part name="response" element="tns:loginResponse" />
+  </wsdl:message>
+  <wsdl:message name="addActivityRequest">
+    <wsdl:part name="request" element="tns:addActivityRequest" />
+  </wsdl:message>
+  <wsdl:message name="listRelationTypesResponse">
+    <wsdl:part name="response" element="tns:listRelationTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="addOrUpdateShippingMethodToShoppingCartRequest">
+    <wsdl:part name="request" element="tns:addOrUpdateShippingMethodToShoppingCartRequest" />
+  </wsdl:message>
+  <wsdl:message name="addMembershipToAccountRequest">
+    <wsdl:part name="request" element="tns:addMembershipToAccountRequest" />
+  </wsdl:message>
+  <wsdl:message name="retrieveOrderDetailsResponse">
+    <wsdl:part name="response" element="tns:retrieveOrderDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="updatePaymentResponse">
+    <wsdl:part name="response" element="tns:updatePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="listCustomFieldsRequest">
+    <wsdl:part name="request" element="tns:listCustomFieldsRequest" />
+  </wsdl:message>
+  <wsdl:message name="listCampaignsResponse">
+    <wsdl:part name="response" element="tns:listCampaignsResponse" />
+  </wsdl:message>
+  <wsdl:message name="removeAddressResponse">
+    <wsdl:part name="response" element="tns:removeAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="listSolicitationMethodsResponse">
+    <wsdl:part name="response" element="tns:listSolicitationMethodsResponse" />
+  </wsdl:message>
+  <wsdl:message name="createIndividualAccountRequest">
+    <wsdl:part name="request" element="tns:createIndividualAccountRequest" />
+  </wsdl:message>
+  <wsdl:message name="listProductsRequest">
+    <wsdl:part name="request" element="tns:listProductsRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateCategoryRequest">
+    <wsdl:part name="request" element="tns:updateCategoryRequest" />
+  </wsdl:message>
+  <wsdl:message name="removeProductFromCatalogRequest">
+    <wsdl:part name="request" element="tns:removeProductFromCatalogRequest" />
+  </wsdl:message>
+  <wsdl:message name="listSourcesResponse">
+    <wsdl:part name="response" element="tns:listSourcesResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateAddressRequest">
+    <wsdl:part name="request" element="tns:updateAddressRequest" />
+  </wsdl:message>
+  <wsdl:message name="retrieveDonationStatsResponse">
+    <wsdl:part name="response" element="tns:retrieveDonationStatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateCategoryResponse">
+    <wsdl:part name="response" element="tns:updateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="createProductOptionRequest">
+    <wsdl:part name="request" element="tns:createProductOptionRequest" />
+  </wsdl:message>
+  <wsdl:message name="listRecurringDonorsRequest">
+    <wsdl:part name="request" element="tns:listRecurringDonorsRequest" />
+  </wsdl:message>
+  <wsdl:message name="createIndividualAccountResponse">
+    <wsdl:part name="response" element="tns:createIndividualAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="syncActivitiesRequest">
+    <wsdl:part name="request" element="tns:syncActivitiesRequest" />
+  </wsdl:message>
+  <wsdl:message name="retrieveCurrentSystemUserRequest">
+    <wsdl:part name="request" element="tns:retrieveCurrentSystemUserRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateOrganizationAccountResponse">
+    <wsdl:part name="response" element="tns:updateOrganizationAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="removeIndividualFromHouseHoldRequest">
+    <wsdl:part name="request" element="tns:removeIndividualFromHouseHoldRequest" />
+  </wsdl:message>
+  <wsdl:message name="createPledgePaymentResponse">
+    <wsdl:part name="response" element="tns:createPledgePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="listTendersRequest">
+    <wsdl:part name="request" element="tns:listTendersRequest" />
+  </wsdl:message>
+  <wsdl:message name="listAccountsByKeywordSearchResponse">
+    <wsdl:part name="response" element="tns:listAccountsByKeywordSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="createOrganizationAccountRequest">
+    <wsdl:part name="request" element="tns:createOrganizationAccountRequest" />
+  </wsdl:message>
+  <wsdl:message name="createPledgeRequest">
+    <wsdl:part name="request" element="tns:createPledgeRequest" />
+  </wsdl:message>
+  <wsdl:message name="listSolicitationMethodsRequest">
+    <wsdl:part name="request" element="tns:listSolicitationMethodsRequest" />
+  </wsdl:message>
+  <wsdl:message name="createDonationRequest">
+    <wsdl:part name="request" element="tns:createDonationRequest" />
+  </wsdl:message>
+  <wsdl:message name="listHouseHoldsRequest">
+    <wsdl:part name="request" element="tns:listHouseHoldsRequest" />
+  </wsdl:message>
+  <wsdl:message name="listActivitiesResponse">
+    <wsdl:part name="response" element="tns:listActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveTransactionStatsResponse">
+    <wsdl:part name="response" element="tns:retrieveTransactionStatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="createPledgeResponse">
+    <wsdl:part name="response" element="tns:createPledgeResponse" />
+  </wsdl:message>
+  <wsdl:message name="addProductToCatalogResponse">
+    <wsdl:part name="response" element="tns:addProductToCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="createShoppingCartRequest">
+    <wsdl:part name="request" element="tns:createShoppingCartRequest" />
+  </wsdl:message>
+  <wsdl:message name="listOrganizationTypesResponse">
+    <wsdl:part name="response" element="tns:listOrganizationTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="createCatalogResponse">
+    <wsdl:part name="response" element="tns:createCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="updatePaymentRequest">
+    <wsdl:part name="request" element="tns:updatePaymentRequest" />
+  </wsdl:message>
+  <wsdl:message name="listMembershipHistoryRequest">
+    <wsdl:part name="request" element="tns:listMembershipHistoryRequest" />
+  </wsdl:message>
+  <wsdl:message name="uploadProductImageResponse">
+    <wsdl:part name="response" element="tns:uploadProductImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="createPledgePaymentRequest">
+    <wsdl:part name="request" element="tns:createPledgePaymentRequest" />
+  </wsdl:message>
+  <wsdl:message name="removeIndividualFromHouseHoldResponse">
+    <wsdl:part name="response" element="tns:removeIndividualFromHouseHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="addIndividualToHouseHoldResponse">
+    <wsdl:part name="response" element="tns:addIndividualToHouseHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="listIndividualTypesResponse">
+    <wsdl:part name="response" element="tns:listIndividualTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="listAccountsByKeywordSearchRequest">
+    <wsdl:part name="request" element="tns:listAccountsByKeywordSearchRequest" />
+  </wsdl:message>
+  <wsdl:message name="listSystemUsersResponse">
+    <wsdl:part name="response" element="tns:listSystemUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="createRecurringDonationResponse">
+    <wsdl:part name="response" element="tns:createRecurringDonationResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateActivityRequest">
+    <wsdl:part name="request" element="tns:updateActivityRequest" />
+  </wsdl:message>
+  <wsdl:message name="listEventsRequest">
+    <wsdl:part name="request" element="tns:listEventsRequest" />
+  </wsdl:message>
+  <wsdl:message name="listShippingMethodsResponse">
+    <wsdl:part name="response" element="tns:listShippingMethodsResponse" />
+  </wsdl:message>
+  <wsdl:message name="listShippingMethodsRequest">
+    <wsdl:part name="request" element="tns:listShippingMethodsRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateIndividualAccountResponse">
+    <wsdl:part name="response" element="tns:updateIndividualAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateHouseHoldRequest">
+    <wsdl:part name="request" element="tns:updateHouseHoldRequest" />
+  </wsdl:message>
+  <wsdl:message name="listAccountsResponse">
+    <wsdl:part name="response" element="tns:listAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="listCategoriesResponse">
+    <wsdl:part name="response" element="tns:listCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateIndividualAccountRequest">
+    <wsdl:part name="request" element="tns:updateIndividualAccountRequest" />
+  </wsdl:message>
+  <wsdl:message name="syncActivitiesResponse">
+    <wsdl:part name="response" element="tns:syncActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="removeActivityResponse">
+    <wsdl:part name="response" element="tns:removeActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveDonationStatsRequest">
+    <wsdl:part name="request" element="tns:retrieveDonationStatsRequest" />
+  </wsdl:message>
+  <wsdl:message name="listFundsResponse">
+    <wsdl:part name="response" element="tns:listFundsResponse" />
+  </wsdl:message>
+  <wsdl:message name="createOrganizationAccountResponse">
+    <wsdl:part name="response" element="tns:createOrganizationAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateHouseHoldPrimaryRequest">
+    <wsdl:part name="request" element="tns:updateHouseHoldPrimaryRequest" />
+  </wsdl:message>
+  <wsdl:message name="listActivitiesRequest">
+    <wsdl:part name="request" element="tns:listActivitiesRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateCatalogResponse">
+    <wsdl:part name="response" element="tns:updateCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveMembershipStatsResponse">
+    <wsdl:part name="response" element="tns:retrieveMembershipStatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="removeItemFromShoppingCartRequest">
+    <wsdl:part name="request" element="tns:removeItemFromShoppingCartRequest" />
+  </wsdl:message>
+  <wsdl:message name="listPrefixesResponse">
+    <wsdl:part name="response" element="tns:listPrefixesResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveOrderDetailsRequest">
+    <wsdl:part name="request" element="tns:retrieveOrderDetailsRequest" />
+  </wsdl:message>
+  <wsdl:message name="listMembershipTermsResponse">
+    <wsdl:part name="response" element="tns:listMembershipTermsResponse" />
+  </wsdl:message>
+  <wsdl:message name="removeAddressRequest">
+    <wsdl:part name="request" element="tns:removeAddressRequest" />
+  </wsdl:message>
+  <wsdl:message name="listEventsResponse">
+    <wsdl:part name="response" element="tns:listEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="listPurposesResponse">
+    <wsdl:part name="response" element="tns:listPurposesResponse" />
+  </wsdl:message>
+  <wsdl:message name="authenticateUserResponse">
+    <wsdl:part name="response" element="tns:authenticateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="listMembershipsRequest">
+    <wsdl:part name="request" element="tns:listMembershipsRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateProductOptionRequest">
+    <wsdl:part name="request" element="tns:updateProductOptionRequest" />
+  </wsdl:message>
+  <wsdl:message name="createHouseHoldResponse">
+    <wsdl:part name="response" element="tns:createHouseHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="removeIndividualFromOrganizationResponse">
+    <wsdl:part name="response" element="tns:removeIndividualFromOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveCurrentSystemUserResponse">
+    <wsdl:part name="response" element="tns:retrieveCurrentSystemUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="linkIndividualToOrganizationRequest">
+    <wsdl:part name="request" element="tns:linkIndividualToOrganizationRequest" />
+  </wsdl:message>
+  <wsdl:message name="deleteHouseHoldRequest">
+    <wsdl:part name="request" element="tns:deleteHouseHoldRequest" />
+  </wsdl:message>
+  <wsdl:message name="listDonationsRequest">
+    <wsdl:part name="request" element="tns:listDonationsRequest" />
+  </wsdl:message>
+  <wsdl:message name="createDonationResponse">
+    <wsdl:part name="response" element="tns:createDonationResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateHouseHoldResponse">
+    <wsdl:part name="response" element="tns:updateHouseHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveStatsRequest">
+    <wsdl:part name="request" element="tns:retrieveStatsRequest" />
+  </wsdl:message>
+  <wsdl:message name="listCampaignsRequest">
+    <wsdl:part name="request" element="tns:listCampaignsRequest" />
+  </wsdl:message>
+  <wsdl:message name="retrieveActivityResponse">
+    <wsdl:part name="response" element="tns:retrieveActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="listMembershipTermsRequest">
+    <wsdl:part name="request" element="tns:listMembershipTermsRequest" />
+  </wsdl:message>
+  <wsdl:message name="retrieveShoppingCartSummaryResponse">
+    <wsdl:part name="response" element="tns:retrieveShoppingCartSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="removeProductResponse">
+    <wsdl:part name="response" element="tns:removeProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="removeActivityRequest">
+    <wsdl:part name="request" element="tns:removeActivityRequest" />
+  </wsdl:message>
+  <wsdl:message name="listGendersRequest">
+    <wsdl:part name="request" element="tns:listGendersRequest" />
+  </wsdl:message>
+  <wsdl:message name="listAddressTypesRequest">
+    <wsdl:part name="request" element="tns:listAddressTypesRequest" />
+  </wsdl:message>
+  <wsdl:message name="retrieveOrganizationAccountResponse">
+    <wsdl:part name="response" element="tns:retrieveOrganizationAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="uploadProductImageRequest">
+    <wsdl:part name="request" element="tns:uploadProductImageRequest" />
+  </wsdl:message>
+  <wsdl:message name="retrieveIndividualAccountRequest">
+    <wsdl:part name="request" element="tns:retrieveIndividualAccountRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateProductRequest">
+    <wsdl:part name="request" element="tns:updateProductRequest" />
+  </wsdl:message>
+  <wsdl:message name="retrieveIndividualAccountResponse">
+    <wsdl:part name="response" element="tns:retrieveIndividualAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="addItemToShoppingCartRequest">
+    <wsdl:part name="request" element="tns:addItemToShoppingCartRequest" />
+  </wsdl:message>
+  <wsdl:message name="addAddressResponse">
+    <wsdl:part name="response" element="tns:addAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveStorePurchaseStatsResponse">
+    <wsdl:part name="response" element="tns:retrieveStorePurchaseStatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="createShoppingCartResponse">
+    <wsdl:part name="response" element="tns:createShoppingCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="addOrUpdateCustomerToShoppingCartResponse">
+    <wsdl:part name="response" element="tns:addOrUpdateCustomerToShoppingCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="createProductOptionResponse">
+    <wsdl:part name="response" element="tns:createProductOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="createProductRequest">
+    <wsdl:part name="request" element="tns:createProductRequest" />
+  </wsdl:message>
+  <wsdl:message name="addItemToShoppingCartResponse">
+    <wsdl:part name="response" element="tns:addItemToShoppingCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="listAccountsRequest">
+    <wsdl:part name="request" element="tns:listAccountsRequest" />
+  </wsdl:message>
+  <wsdl:message name="logoutResponse">
+    <wsdl:part name="response" element="tns:logoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="listMembershipsResponse">
+    <wsdl:part name="response" element="tns:listMembershipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="removeCatalogResponse">
+    <wsdl:part name="response" element="tns:removeCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateActivityResponse">
+    <wsdl:part name="response" element="tns:updateActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="listAccountsBySearchCriteriaRequest">
+    <wsdl:part name="request" element="tns:listAccountsBySearchCriteriaRequest" />
+  </wsdl:message>
+  <wsdl:message name="listProductOptionsResponse">
+    <wsdl:part name="response" element="tns:listProductOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateOrganizationAccountRequest">
+    <wsdl:part name="request" element="tns:updateOrganizationAccountRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateProductResponse">
+    <wsdl:part name="response" element="tns:updateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="listProductImagesResponse">
+    <wsdl:part name="response" element="tns:listProductImagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="listOrganizationTypesRequest">
+    <wsdl:part name="request" element="tns:listOrganizationTypesRequest" />
+  </wsdl:message>
+  <wsdl:message name="listFundsRequest">
+    <wsdl:part name="request" element="tns:listFundsRequest" />
+  </wsdl:message>
+  <wsdl:message name="addProductToCatalogRequest">
+    <wsdl:part name="request" element="tns:addProductToCatalogRequest" />
+  </wsdl:message>
+  <wsdl:message name="addOrUpdateShippingMethodToShoppingCartResponse">
+    <wsdl:part name="response" element="tns:addOrUpdateShippingMethodToShoppingCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="listCatalogsRequest">
+    <wsdl:part name="request" element="tns:listCatalogsRequest" />
+  </wsdl:message>
+  <wsdl:message name="addOrUpdateShippingAddressToShoppingCartResponse">
+    <wsdl:part name="response" element="tns:addOrUpdateShippingAddressToShoppingCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="listAccountsByDefaultRequest">
+    <wsdl:part name="request" element="tns:listAccountsByDefaultRequest" />
+  </wsdl:message>
+  <wsdl:message name="listProductImagesRequest">
+    <wsdl:part name="request" element="tns:listProductImagesRequest" />
+  </wsdl:message>
+  <wsdl:message name="addIndividualToHouseHoldRequest">
+    <wsdl:part name="request" element="tns:addIndividualToHouseHoldRequest" />
+  </wsdl:message>
+  <wsdl:message name="authenticateUserRequest">
+    <wsdl:part name="request" element="tns:authenticateUserRequest" />
+  </wsdl:message>
+  <wsdl:message name="removeCategoryRequest">
+    <wsdl:part name="request" element="tns:removeCategoryRequest" />
+  </wsdl:message>
+  <wsdl:message name="checkoutRequest">
+    <wsdl:part name="request" element="tns:checkoutRequest" />
+  </wsdl:message>
+  <wsdl:message name="addAddressRequest">
+    <wsdl:part name="request" element="tns:addAddressRequest" />
+  </wsdl:message>
+  <wsdl:message name="removeCatalogRequest">
+    <wsdl:part name="request" element="tns:removeCatalogRequest" />
+  </wsdl:message>
+  <wsdl:message name="createProductResponse">
+    <wsdl:part name="response" element="tns:createProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveActivityRequest">
+    <wsdl:part name="request" element="tns:retrieveActivityRequest" />
+  </wsdl:message>
+  <wsdl:message name="removeProductRequest">
+    <wsdl:part name="request" element="tns:removeProductRequest" />
+  </wsdl:message>
+  <wsdl:message name="listCreditCardTypesResponse">
+    <wsdl:part name="response" element="tns:listCreditCardTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="listOrdersRequest">
+    <wsdl:part name="request" element="tns:listOrdersRequest" />
+  </wsdl:message>
+  <wsdl:message name="removeItemFromShoppingCartResponse">
+    <wsdl:part name="response" element="tns:removeItemFromShoppingCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveShoppingCartSummaryRequest">
+    <wsdl:part name="request" element="tns:retrieveShoppingCartSummaryRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateHouseHoldPrimaryResponse">
+    <wsdl:part name="response" element="tns:updateHouseHoldPrimaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="listStatesRequest">
+    <wsdl:part name="request" element="tns:listStatesRequest" />
+  </wsdl:message>
+  <wsdl:message name="listProductsResponse">
+    <wsdl:part name="response" element="tns:listProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveEventRegistrationStatsResponse">
+    <wsdl:part name="response" element="tns:retrieveEventRegistrationStatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="listDonationsResponse">
+    <wsdl:part name="response" element="tns:listDonationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="listActivityStatusRequest">
+    <wsdl:part name="request" element="tns:listActivityStatusRequest" />
+  </wsdl:message>
+  <wsdl:message name="listSourcesRequest">
+    <wsdl:part name="request" element="tns:listSourcesRequest" />
+  </wsdl:message>
+  <wsdl:message name="retrieveOrganizationAccountRequest">
+    <wsdl:part name="request" element="tns:retrieveOrganizationAccountRequest" />
+  </wsdl:message>
+  <wsdl:message name="retrieveStorePurchaseStatsRequest">
+    <wsdl:part name="request" element="tns:retrieveStorePurchaseStatsRequest" />
+  </wsdl:message>
+  <wsdl:message name="listRelationTypesRequest">
+    <wsdl:part name="request" element="tns:listRelationTypesRequest" />
+  </wsdl:message>
+  <wsdl:message name="createCatalogRequest">
+    <wsdl:part name="request" element="tns:createCatalogRequest" />
+  </wsdl:message>
+  <wsdl:message name="listHouseHoldsResponse">
+    <wsdl:part name="response" element="tns:listHouseHoldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveProductResponse">
+    <wsdl:part name="response" element="tns:retrieveProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveCampaignSummaryResponse">
+    <wsdl:part name="response" element="tns:retrieveCampaignSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveTransactionStatsRequest">
+    <wsdl:part name="request" element="tns:retrieveTransactionStatsRequest" />
+  </wsdl:message>
+  <wsdl:message name="listPrefixesRequest">
+    <wsdl:part name="request" element="tns:listPrefixesRequest" />
+  </wsdl:message>
+  <wsdl:message name="createCategoryRequest">
+    <wsdl:part name="request" element="tns:createCategoryRequest" />
+  </wsdl:message>
+  <wsdl:message name="createHouseHoldRequest">
+    <wsdl:part name="request" element="tns:createHouseHoldRequest" />
+  </wsdl:message>
+  <wsdl:message name="listAddressTypesResponse">
+    <wsdl:part name="response" element="tns:listAddressTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="listMembershipHistoryResponse">
+    <wsdl:part name="response" element="tns:listMembershipHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="addOrUpdateCustomerToShoppingCartRequest">
+    <wsdl:part name="request" element="tns:addOrUpdateCustomerToShoppingCartRequest" />
+  </wsdl:message>
+  <wsdl:message name="removeProductImageRequest">
+    <wsdl:part name="request" element="tns:removeProductImageRequest" />
+  </wsdl:message>
+  <wsdl:message name="listCustomFieldsResponse">
+    <wsdl:part name="response" element="tns:listCustomFieldsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AccountService">
+    <wsdl:operation name="listSources">
+      <wsdl:input message="tns:listSourcesRequest" />
+      <wsdl:output message="tns:listSourcesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listOrganizationTypes">
+      <wsdl:input message="tns:listOrganizationTypesRequest" />
+      <wsdl:output message="tns:listOrganizationTypesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listIndividualTypes">
+      <wsdl:input message="tns:listIndividualTypesRequest" />
+      <wsdl:output message="tns:listIndividualTypesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listGenders">
+      <wsdl:input message="tns:listGendersRequest" />
+      <wsdl:output message="tns:listGendersResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listAddressTypes">
+      <wsdl:input message="tns:listAddressTypesRequest" />
+      <wsdl:output message="tns:listAddressTypesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listPrefixes">
+      <wsdl:input message="tns:listPrefixesRequest" />
+      <wsdl:output message="tns:listPrefixesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listStates">
+      <wsdl:input message="tns:listStatesRequest" />
+      <wsdl:output message="tns:listStatesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listCountries">
+      <wsdl:input message="tns:listCountriesRequest" />
+      <wsdl:output message="tns:listCountriesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listRelationTypes">
+      <wsdl:input message="tns:listRelationTypesRequest" />
+      <wsdl:output message="tns:listRelationTypesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listActivityStatus">
+      <wsdl:input message="tns:listActivityStatusRequest" />
+      <wsdl:output message="tns:listActivityStatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listActivities">
+      <wsdl:input message="tns:listActivitiesRequest" />
+      <wsdl:output message="tns:listActivitiesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listSystemUsers">
+      <wsdl:input message="tns:listSystemUsersRequest" />
+      <wsdl:output message="tns:listSystemUsersResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createIndividualAccount">
+      <wsdl:input message="tns:createIndividualAccountRequest" />
+      <wsdl:output message="tns:createIndividualAccountResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateIndividualAccount">
+      <wsdl:input message="tns:updateIndividualAccountRequest" />
+      <wsdl:output message="tns:updateIndividualAccountResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveIndividualAccount">
+      <wsdl:input message="tns:retrieveIndividualAccountRequest" />
+      <wsdl:output message="tns:retrieveIndividualAccountResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveOrganizationAccount">
+      <wsdl:input message="tns:retrieveOrganizationAccountRequest" />
+      <wsdl:output message="tns:retrieveOrganizationAccountResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createOrganizationAccount">
+      <wsdl:input message="tns:createOrganizationAccountRequest" />
+      <wsdl:output message="tns:createOrganizationAccountResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateOrganizationAccount">
+      <wsdl:input message="tns:updateOrganizationAccountRequest" />
+      <wsdl:output message="tns:updateOrganizationAccountResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="linkIndividualToOrganization">
+      <wsdl:input message="tns:linkIndividualToOrganizationRequest" />
+      <wsdl:output message="tns:linkIndividualToOrganizationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="removeIndividualFromOrganization">
+      <wsdl:input message="tns:removeIndividualFromOrganizationRequest" />
+      <wsdl:output message="tns:removeIndividualFromOrganizationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listOrganizationContacts">
+      <wsdl:input message="tns:listOrganizationContactsRequest" />
+      <wsdl:output message="tns:listOrganizationContactsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listAccounts">
+      <wsdl:input message="tns:listAccountsRequest" />
+      <wsdl:output message="tns:listAccountsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listAccountsByDefault">
+      <wsdl:input message="tns:listAccountsByDefaultRequest" />
+      <wsdl:output message="tns:listAccountsByDefaultResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="syncAccounts">
+      <wsdl:input message="tns:syncAccountsRequest" />
+      <wsdl:output message="tns:syncAccountsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listAccountsByKeywordSearch">
+      <wsdl:input message="tns:listAccountsByKeywordSearchRequest" />
+      <wsdl:output message="tns:listAccountsByKeywordSearchResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listAccountsBySearchCriteria">
+      <wsdl:input message="tns:listAccountsBySearchCriteriaRequest" />
+      <wsdl:output message="tns:listAccountsBySearchCriteriaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addAddress">
+      <wsdl:input message="tns:addAddressRequest" />
+      <wsdl:output message="tns:addAddressResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateAddress">
+      <wsdl:input message="tns:updateAddressRequest" />
+      <wsdl:output message="tns:updateAddressResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="removeAddress">
+      <wsdl:input message="tns:removeAddressRequest" />
+      <wsdl:output message="tns:removeAddressResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addActivity">
+      <wsdl:input message="tns:addActivityRequest" />
+      <wsdl:output message="tns:addActivityResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateActivity">
+      <wsdl:input message="tns:updateActivityRequest" />
+      <wsdl:output message="tns:updateActivityResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="removeActivity">
+      <wsdl:input message="tns:removeActivityRequest" />
+      <wsdl:output message="tns:removeActivityResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createHouseHold">
+      <wsdl:input message="tns:createHouseHoldRequest" />
+      <wsdl:output message="tns:createHouseHoldResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateHouseHold">
+      <wsdl:input message="tns:updateHouseHoldRequest" />
+      <wsdl:output message="tns:updateHouseHoldResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listHouseHolds">
+      <wsdl:input message="tns:listHouseHoldsRequest" />
+      <wsdl:output message="tns:listHouseHoldsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addIndividualToHouseHold">
+      <wsdl:input message="tns:addIndividualToHouseHoldRequest" />
+      <wsdl:output message="tns:addIndividualToHouseHoldResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="removeIndividualFromHouseHold">
+      <wsdl:input message="tns:removeIndividualFromHouseHoldRequest" />
+      <wsdl:output message="tns:removeIndividualFromHouseHoldResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateHouseHoldPrimary">
+      <wsdl:input message="tns:updateHouseHoldPrimaryRequest" />
+      <wsdl:output message="tns:updateHouseHoldPrimaryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteHouseHold">
+      <wsdl:input message="tns:deleteHouseHoldRequest" />
+      <wsdl:output message="tns:deleteHouseHoldResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="syncActivities">
+      <wsdl:input message="tns:syncActivitiesRequest" />
+      <wsdl:output message="tns:syncActivitiesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveActivity">
+      <wsdl:input message="tns:retrieveActivityRequest" />
+      <wsdl:output message="tns:retrieveActivityResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveTransactionStats">
+      <wsdl:input message="tns:retrieveTransactionStatsRequest" />
+      <wsdl:output message="tns:retrieveTransactionStatsResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="DonationService">
+    <wsdl:operation name="listFunds">
+      <wsdl:input message="tns:listFundsRequest" />
+      <wsdl:output message="tns:listFundsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listSolicitationMethods">
+      <wsdl:input message="tns:listSolicitationMethodsRequest" />
+      <wsdl:output message="tns:listSolicitationMethodsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listCampaigns">
+      <wsdl:input message="tns:listCampaignsRequest" />
+      <wsdl:output message="tns:listCampaignsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listPurposes">
+      <wsdl:input message="tns:listPurposesRequest" />
+      <wsdl:output message="tns:listPurposesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createDonation">
+      <wsdl:input message="tns:createDonationRequest" />
+      <wsdl:output message="tns:createDonationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createRecurringDonation">
+      <wsdl:input message="tns:createRecurringDonationRequest" />
+      <wsdl:output message="tns:createRecurringDonationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createPledge">
+      <wsdl:input message="tns:createPledgeRequest" />
+      <wsdl:output message="tns:createPledgeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createPledgePayment">
+      <wsdl:input message="tns:createPledgePaymentRequest" />
+      <wsdl:output message="tns:createPledgePaymentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listDonations">
+      <wsdl:input message="tns:listDonationsRequest" />
+      <wsdl:output message="tns:listDonationsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listRecurringDonors">
+      <wsdl:input message="tns:listRecurringDonorsRequest" />
+      <wsdl:output message="tns:listRecurringDonorsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveDonationStats">
+      <wsdl:input message="tns:retrieveDonationStatsRequest" />
+      <wsdl:output message="tns:retrieveDonationStatsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveCampaignSummary">
+      <wsdl:input message="tns:retrieveCampaignSummaryRequest" />
+      <wsdl:output message="tns:retrieveCampaignSummaryResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MembershipService">
+    <wsdl:operation name="listMemberships">
+      <wsdl:input message="tns:listMembershipsRequest" />
+      <wsdl:output message="tns:listMembershipsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listMembershipTerms">
+      <wsdl:input message="tns:listMembershipTermsRequest" />
+      <wsdl:output message="tns:listMembershipTermsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addMembershipToAccount">
+      <wsdl:input message="tns:addMembershipToAccountRequest" />
+      <wsdl:output message="tns:addMembershipToAccountResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listMembershipHistory">
+      <wsdl:input message="tns:listMembershipHistoryRequest" />
+      <wsdl:output message="tns:listMembershipHistoryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveMembershipStats">
+      <wsdl:input message="tns:retrieveMembershipStatsRequest" />
+      <wsdl:output message="tns:retrieveMembershipStatsResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="EventService">
+    <wsdl:operation name="listEvents">
+      <wsdl:input message="tns:listEventsRequest" />
+      <wsdl:output message="tns:listEventsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveEventRegistrationStats">
+      <wsdl:input message="tns:retrieveEventRegistrationStatsRequest" />
+      <wsdl:output message="tns:retrieveEventRegistrationStatsResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CommonService">
+    <wsdl:operation name="login">
+      <wsdl:input message="tns:loginRequest" />
+      <wsdl:output message="tns:loginResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="logout">
+      <wsdl:input message="tns:logoutRequest" />
+      <wsdl:output message="tns:logoutResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="authenticateUser">
+      <wsdl:input message="tns:authenticateUserRequest" />
+      <wsdl:output message="tns:authenticateUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listCustomFields">
+      <wsdl:input message="tns:listCustomFieldsRequest" />
+      <wsdl:output message="tns:listCustomFieldsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listCreditCardTypes">
+      <wsdl:input message="tns:listCreditCardTypesRequest" />
+      <wsdl:output message="tns:listCreditCardTypesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listTenders">
+      <wsdl:input message="tns:listTendersRequest" />
+      <wsdl:output message="tns:listTendersResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updatePayment">
+      <wsdl:input message="tns:updatePaymentRequest" />
+      <wsdl:output message="tns:updatePaymentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveCurrentSystemUser">
+      <wsdl:input message="tns:retrieveCurrentSystemUserRequest" />
+      <wsdl:output message="tns:retrieveCurrentSystemUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveStats">
+      <wsdl:input message="tns:retrieveStatsRequest" />
+      <wsdl:output message="tns:retrieveStatsResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="StoreService">
+    <wsdl:operation name="listCatalogs">
+      <wsdl:input message="tns:listCatalogsRequest" />
+      <wsdl:output message="tns:listCatalogsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createCatalog">
+      <wsdl:input message="tns:createCatalogRequest" />
+      <wsdl:output message="tns:createCatalogResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCatalog">
+      <wsdl:input message="tns:updateCatalogRequest" />
+      <wsdl:output message="tns:updateCatalogResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="removeCatalog">
+      <wsdl:input message="tns:removeCatalogRequest" />
+      <wsdl:output message="tns:removeCatalogResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addProductToCatalog">
+      <wsdl:input message="tns:addProductToCatalogRequest" />
+      <wsdl:output message="tns:addProductToCatalogResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="removeProductFromCatalog">
+      <wsdl:input message="tns:removeProductFromCatalogRequest" />
+      <wsdl:output message="tns:removeProductFromCatalogResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listCategories">
+      <wsdl:input message="tns:listCategoriesRequest" />
+      <wsdl:output message="tns:listCategoriesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createCategory">
+      <wsdl:input message="tns:createCategoryRequest" />
+      <wsdl:output message="tns:createCategoryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCategory">
+      <wsdl:input message="tns:updateCategoryRequest" />
+      <wsdl:output message="tns:updateCategoryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="removeCategory">
+      <wsdl:input message="tns:removeCategoryRequest" />
+      <wsdl:output message="tns:removeCategoryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listProducts">
+      <wsdl:input message="tns:listProductsRequest" />
+      <wsdl:output message="tns:listProductsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createProduct">
+      <wsdl:input message="tns:createProductRequest" />
+      <wsdl:output message="tns:createProductResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateProduct">
+      <wsdl:input message="tns:updateProductRequest" />
+      <wsdl:output message="tns:updateProductResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="removeProduct">
+      <wsdl:input message="tns:removeProductRequest" />
+      <wsdl:output message="tns:removeProductResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveProduct">
+      <wsdl:input message="tns:retrieveProductRequest" />
+      <wsdl:output message="tns:retrieveProductResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="uploadProductImage">
+      <wsdl:input message="tns:uploadProductImageRequest" />
+      <wsdl:output message="tns:uploadProductImageResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="removeProductImage">
+      <wsdl:input message="tns:removeProductImageRequest" />
+      <wsdl:output message="tns:removeProductImageResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listProductImages">
+      <wsdl:input message="tns:listProductImagesRequest" />
+      <wsdl:output message="tns:listProductImagesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createProductOption">
+      <wsdl:input message="tns:createProductOptionRequest" />
+      <wsdl:output message="tns:createProductOptionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listProductOptions">
+      <wsdl:input message="tns:listProductOptionsRequest" />
+      <wsdl:output message="tns:listProductOptionsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateProductOption">
+      <wsdl:input message="tns:updateProductOptionRequest" />
+      <wsdl:output message="tns:updateProductOptionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="removeProductOption">
+      <wsdl:input message="tns:removeProductOptionRequest" />
+      <wsdl:output message="tns:removeProductOptionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createShoppingCart">
+      <wsdl:input message="tns:createShoppingCartRequest" />
+      <wsdl:output message="tns:createShoppingCartResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addItemToShoppingCart">
+      <wsdl:input message="tns:addItemToShoppingCartRequest" />
+      <wsdl:output message="tns:addItemToShoppingCartResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="removeItemFromShoppingCart">
+      <wsdl:input message="tns:removeItemFromShoppingCartRequest" />
+      <wsdl:output message="tns:removeItemFromShoppingCartResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addOrUpdateShippingAddressToShoppingCart">
+      <wsdl:input message="tns:addOrUpdateShippingAddressToShoppingCartRequest" />
+      <wsdl:output message="tns:addOrUpdateShippingAddressToShoppingCartResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listShippingMethods">
+      <wsdl:input message="tns:listShippingMethodsRequest" />
+      <wsdl:output message="tns:listShippingMethodsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addOrUpdateShippingMethodToShoppingCart">
+      <wsdl:input message="tns:addOrUpdateShippingMethodToShoppingCartRequest" />
+      <wsdl:output message="tns:addOrUpdateShippingMethodToShoppingCartResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addOrUpdateCustomerToShoppingCart">
+      <wsdl:input message="tns:addOrUpdateCustomerToShoppingCartRequest" />
+      <wsdl:output message="tns:addOrUpdateCustomerToShoppingCartResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveShoppingCartSummary">
+      <wsdl:input message="tns:retrieveShoppingCartSummaryRequest" />
+      <wsdl:output message="tns:retrieveShoppingCartSummaryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="checkout">
+      <wsdl:input message="tns:checkoutRequest" />
+      <wsdl:output message="tns:checkoutResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveOrderDetails">
+      <wsdl:input message="tns:retrieveOrderDetailsRequest" />
+      <wsdl:output message="tns:retrieveOrderDetailsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listOrders">
+      <wsdl:input message="tns:listOrdersRequest" />
+      <wsdl:output message="tns:listOrdersResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveReceipt">
+      <wsdl:input message="tns:retrieveReceiptRequest" />
+      <wsdl:output message="tns:retrieveReceiptResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveStorePurchaseStats">
+      <wsdl:input message="tns:retrieveStorePurchaseStatsRequest" />
+      <wsdl:output message="tns:retrieveStorePurchaseStatsResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccountBinding" type="tns:AccountService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listSources">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listOrganizationTypes">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listIndividualTypes">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listGenders">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listAddressTypes">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listPrefixes">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listStates">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listCountries">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listRelationTypes">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listActivityStatus">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listActivities">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listSystemUsers">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createIndividualAccount">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateIndividualAccount">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveIndividualAccount">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveOrganizationAccount">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createOrganizationAccount">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateOrganizationAccount">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="linkIndividualToOrganization">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeIndividualFromOrganization">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listOrganizationContacts">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listAccounts">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listAccountsByDefault">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="syncAccounts">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listAccountsByKeywordSearch">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listAccountsBySearchCriteria">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addAddress">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAddress">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeAddress">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addActivity">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateActivity">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeActivity">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createHouseHold">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateHouseHold">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listHouseHolds">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addIndividualToHouseHold">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeIndividualFromHouseHold">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateHouseHoldPrimary">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteHouseHold">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="syncActivities">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveActivity">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveTransactionStats">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StoreBinding" type="tns:StoreService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listCatalogs">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createCatalog">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCatalog">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeCatalog">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addProductToCatalog">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeProductFromCatalog">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listCategories">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createCategory">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCategory">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeCategory">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listProducts">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createProduct">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateProduct">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeProduct">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveProduct">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uploadProductImage">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeProductImage">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listProductImages">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createProductOption">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listProductOptions">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateProductOption">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeProductOption">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createShoppingCart">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addItemToShoppingCart">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeItemFromShoppingCart">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addOrUpdateShippingAddressToShoppingCart">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listShippingMethods">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addOrUpdateShippingMethodToShoppingCart">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addOrUpdateCustomerToShoppingCart">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveShoppingCartSummary">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkout">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveOrderDetails">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listOrders">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveReceipt">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveStorePurchaseStats">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CommonBinding" type="tns:CommonService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="login">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logout">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="authenticateUser">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listCustomFields">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listCreditCardTypes">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listTenders">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePayment">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveCurrentSystemUser">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveStats">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EventBinding" type="tns:EventService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listEvents">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveEventRegistrationStats">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DonationBinding" type="tns:DonationService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listFunds">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listSolicitationMethods">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listCampaigns">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listPurposes">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createDonation">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRecurringDonation">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPledge">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createPledgePayment">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listDonations">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listRecurringDonors">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveDonationStats">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveCampaignSummary">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MembershipBinding" type="tns:MembershipService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listMemberships">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listMembershipTerms">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMembershipToAccount">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listMembershipHistory">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveMembershipStats">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Neonws">
+    <wsdl:port name="DonationPort" binding="tns:DonationBinding">
+      <soap:address location="https://api.neoncrm.com/neonws/services/DonationService" />
+    </wsdl:port>
+    <wsdl:port name="MembershipPort" binding="tns:MembershipBinding">
+      <soap:address location="https://api.neoncrm.com/neonws/services/MembershipService" />
+    </wsdl:port>
+    <wsdl:port name="EventPort" binding="tns:EventBinding">
+      <soap:address location="https://api.neoncrm.com/neonws/services/EventService" />
+    </wsdl:port>
+    <wsdl:port name="AccountPort" binding="tns:AccountBinding">
+      <soap:address location="https://api.neoncrm.com/neonws/services/AccountService" />
+    </wsdl:port>
+    <wsdl:port name="StorePort" binding="tns:StoreBinding">
+      <soap:address location="https://api.neoncrm.com/neonws/services/StoreService" />
+    </wsdl:port>
+    <wsdl:port name="CommonPort" binding="tns:CommonBinding">
+      <soap:address location="https://api.neoncrm.com/neonws/services/CommonService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

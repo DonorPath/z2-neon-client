@@ -1,0 +1,1031 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:store="http://www.z2systems.com/schemas/store/" xmlns:donation="http://www.z2systems.com/schemas/donation/" xmlns:tns="http://www.z2systems.com/schemas/account/" xmlns:common="http://www.z2systems.com/schemas/common/" xmlns:event="http://www.z2systems.com/schemas/event/" xmlns:membership="http://www.z2systems.com/schemas/membership/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.z2systems.com/schemas/account/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_common_v100.xsd" namespace="http://www.z2systems.com/schemas/common/" />
+  <xs:annotation>
+    <xs:appinfo>Neon Web Service, account type definitions. Version 1.0.0</xs:appinfo>
+  </xs:annotation>
+  <xs:simpleType name="PriorityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="High" />
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="Low" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PhoneType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Work" />
+      <xs:enumeration value="Home" />
+      <xs:enumeration value="Mobile" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AccountType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Individual" />
+      <xs:enumeration value="Organization" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RelationTypeCategory">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Individual-Individual" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Contact">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactId" type="xs:long" />
+      <xs:element minOccurs="0" name="firstName" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="lastName" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="middleName" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="prefix" type="common:ShortTextType" />
+      <xs:element minOccurs="0" name="suffix" type="common:ShortTextType" />
+      <xs:element minOccurs="0" name="salutation" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="preferredName" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="phone1" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="phone1Type" type="tns:PhoneType" />
+      <xs:element minOccurs="0" name="phone2" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="phone2Type" type="tns:PhoneType" />
+      <xs:element minOccurs="0" name="phone3" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="phone3Type" type="tns:PhoneType" />
+      <xs:element minOccurs="0" name="fax" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="dob" type="xs:date" />
+      <xs:element minOccurs="0" name="gender" type="common:CodeNamePair" />
+      <xs:element minOccurs="0" name="email1" type="common:LongTextType" />
+      <xs:element minOccurs="0" name="email2" type="common:LongTextType" />
+      <xs:element minOccurs="0" name="email3" type="common:LongTextType" />
+      <xs:element minOccurs="0" name="deceased" type="xs:boolean" />
+      <xs:element minOccurs="0" name="addresses" type="tns:AddressList" />
+      <xs:element minOccurs="0" name="department" type="common:LongTextType" />
+      <xs:element minOccurs="0" name="title" type="common:LongTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrganizationContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountId" type="xs:long" />
+      <xs:element name="isPrimaryContact" type="xs:boolean" />
+      <xs:element name="contact" type="tns:Contact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HouseHoldContact">
+    <xs:sequence>
+      <xs:element name="accountId" type="xs:long" />
+      <xs:element minOccurs="0" name="contactId" type="xs:long" />
+      <xs:element minOccurs="0" name="contactName" type="common:LongTextType" />
+      <xs:element minOccurs="0" name="relationType" type="common:IdNamePair" />
+      <xs:element minOccurs="0" name="isPrimaryHouseHoldContact" type="xs:boolean" />
+      <xs:element minOccurs="0" name="confirmDelete" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Account">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:CreationLog">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountId" type="xs:long" />
+          <xs:element minOccurs="0" name="primaryContact" type="tns:Contact">
+            <xs:annotation>
+              <xs:documentation>this field is required if used as IndividualAccount.
+                            </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="noSolicitation" type="xs:boolean" />
+          <xs:element minOccurs="0" name="url" type="common:LongTextType" />
+          <xs:element minOccurs="0" name="login" type="common:Login" />
+          <xs:element minOccurs="0" name="customFieldDataList" type="common:CustomFieldDataList" />
+          <xs:element minOccurs="0" name="source" type="common:IdNamePair" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IndividualAccount">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Account">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="existingOrganizationId" type="xs:long">
+            <xs:annotation>
+              <xs:documentation>Retrieved from listAccounts call. If provided, this individual will be
+                                linked to this organization.
+                            </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="organizationName" type="common:LongTextType">
+            <xs:annotation>
+              <xs:documentation>If the organization cannot be found from listAccounts call, organization
+                                name can be provided as plain text. and as a result this individual will not be linked
+                                to any organization
+                            </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="individualTypes" type="tns:IndividualTypeList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OrganizationAccount">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Account">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="primaryContactAccountId" type="xs:long" />
+          <xs:element name="organizationName" type="common:LongTextType" />
+          <xs:element minOccurs="0" name="organizationTypes" type="tns:OrganizationTypeList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AccountSearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountId" type="xs:long" />
+      <xs:element minOccurs="0" name="firstName" type="common:LongTextType" />
+      <xs:element minOccurs="0" name="lastName" type="common:LongTextType" />
+      <xs:element minOccurs="0" name="organizationName" type="common:LongTextType" />
+      <xs:element minOccurs="0" name="email" type="common:LongTextType" />
+      <xs:element minOccurs="0" name="userType" type="common:MediumTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AccountSearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountId" type="xs:long" />
+      <xs:element minOccurs="0" name="firstName" type="common:LongTextType" />
+      <xs:element minOccurs="0" name="lastName" type="common:LongTextType" />
+      <xs:element minOccurs="0" name="organizationName" type="common:LongTextType" />
+      <xs:element minOccurs="0" name="email" type="common:LongTextType" />
+      <xs:element minOccurs="0" name="userType" type="common:MediumTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Activity">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:CreationLog">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="activityId" type="xs:long" />
+          <xs:element name="subject" type="common:LongTextType" />
+          <xs:element minOccurs="0" name="note" type="common:ExtraLongTextType" />
+          <xs:element minOccurs="0" name="startDateTime" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>timezone info required.
+                            </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="endDateTime" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>timezone info required.
+                            </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="clientId" type="xs:long" />
+          <xs:element minOccurs="0" name="systemUserId" type="xs:long" />
+          <xs:element name="activityStatus" type="common:IdNamePair" />
+          <xs:element name="activityPriority" type="tns:PriorityType" />
+          <xs:element minOccurs="0" name="encryptedIosCalendarKey" type="common:LongTextType" />
+          <xs:element minOccurs="0" name="customFieldDataList" type="common:CustomFieldDataList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ActivitySearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="systemUserId" type="xs:long" />
+      <xs:element minOccurs="0" name="clientId" type="xs:long" />
+      <xs:element minOccurs="0" name="keyword" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="activityStatusId" type="xs:long" />
+      <xs:element minOccurs="0" name="startDate" type="xs:date" />
+      <xs:element minOccurs="0" name="endDate" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HouseHold">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="houseHoldId" type="xs:long" />
+      <xs:element minOccurs="0" name="name" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="salutation" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="houseHoldContacts" type="tns:HouseHoldContactList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SystemUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="systemUserId" type="xs:long" />
+      <xs:element name="firstName" type="common:MediumTextType" />
+      <xs:element name="lastName" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="middleName" type="common:MediumTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TransactionStats">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="donationStats" type="donation:DonationStats" />
+      <xs:element minOccurs="0" name="membershipStats" type="membership:MembershipStats" />
+      <xs:element minOccurs="0" name="membershipResult" type="membership:MembershipResult" />
+      <xs:element minOccurs="0" name="eventRegistrationStats" type="event:EventRegistrationStats" />
+      <xs:element minOccurs="0" name="storePurchaseStats" type="store:StorePurchaseStats" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AccountIdList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="accountId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ActivityIdList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="activityId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AccountSearchResultList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="accountSearchResult" type="tns:AccountSearchResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IndividualAccountList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="individualAccount" type="tns:IndividualAccount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrganizationAccountList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="organizationAccount" type="tns:OrganizationAccount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AddressList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="address" type="common:Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IndividualTypeList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="individualType" type="common:IdNamePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrganizationTypeList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="organizationType" type="common:IdNamePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrganizationContactList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="organizationContact" type="tns:OrganizationContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HouseHoldContactList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="houseHoldContact" type="tns:HouseHoldContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HouseHoldList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="houseHold" type="tns:HouseHold" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RelationTypeList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="relationType" type="common:IdNamePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SourceList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="source" type="common:IdNamePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GenderList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="gender" type="common:CodeNamePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AddressTypeList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="addressType" type="common:IdNamePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PrefixList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="prefix" type="common:MediumTextType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StateList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="state" type="common:CodeNamePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CountryList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="country" type="common:IdNamePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ActivityStatusList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="activityStatus" type="common:IdNamePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ActivityList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="activity" type="tns:Activity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SystemUserList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="systemUser" type="tns:SystemUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListSourcesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListSourcesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sources" type="tns:SourceList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListOrganizationTypesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListOrganizationTypesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="organizationTypes" type="tns:OrganizationTypeList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListIndividualTypesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListIndividualTypesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="individualTypes" type="tns:IndividualTypeList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListGendersRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListGendersResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="genders" type="tns:GenderList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListAddressTypesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListAddressTypesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="addressTypes" type="tns:AddressTypeList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListPrefixesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListPrefixesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="prefixes" type="tns:PrefixList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListStatesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListStatesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="states" type="tns:StateList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListRelationTypesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="relationTypeCategory" type="tns:RelationTypeCategory" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListRelationTypesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="relationTypes" type="tns:RelationTypeList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListCountriesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListCountriesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="countries" type="tns:CountryList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListActivityStatusRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListActivityStatusResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="activityStatusList" type="tns:ActivityStatusList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListActivitiesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractSearchRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="activitySearchCriteria" type="tns:ActivitySearchCriteria" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListActivitiesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractSearchResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="activities" type="tns:ActivityList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListSystemUsersRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListSystemUsersResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="systemUsers" type="tns:SystemUserList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateIndividualAccountRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="individualAccount" type="tns:IndividualAccount" />
+          <xs:element minOccurs="0" name="sendAcknowledgeEmail" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateIndividualAccountResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateIndividualAccountRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="individualAccount" type="tns:IndividualAccount" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateIndividualAccountResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveIndividualAccountRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveIndividualAccountResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IndividualAccount" type="tns:IndividualAccount" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveOrganizationAccountRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveOrganizationAccountResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="organizationAccount" type="tns:OrganizationAccount" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateOrganizationAccountRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="organizationAccount" type="tns:OrganizationAccount" />
+          <xs:element minOccurs="0" name="sendAcknowledgeEmail" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateOrganizationAccountResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateOrganizationAccountRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="organizationAccount" type="tns:OrganizationAccount" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateOrganizationAccountResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LinkIndividualToOrganizationRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="individualContactId" type="xs:long" />
+          <xs:element name="organizationAccountId" type="xs:long" />
+          <xs:element minOccurs="0" name="isPrimaryContact" type="xs:boolean" />
+          <xs:element minOccurs="0" name="isCurrentEmployee" type="xs:boolean" />
+          <xs:element minOccurs="0" name="startDate" type="xs:date" />
+          <xs:element minOccurs="0" name="endDate" type="xs:date" />
+          <xs:element minOccurs="0" name="address" type="common:Address" />
+          <xs:element minOccurs="0" name="department" type="common:LongTextType" />
+          <xs:element minOccurs="0" name="title" type="common:LongTextType" />
+          <xs:element minOccurs="0" name="organizationEmail" type="common:LongTextType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LinkIndividualToOrganizationResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveIndividualFromOrganizationRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="individualContactId" type="xs:long" />
+          <xs:element name="organizationAccountId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveIndividualFromOrganizationResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListOrganizationContactsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="organizationAccountId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListOrganizationContactsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="organizationContacts" type="tns:OrganizationContactList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddAddressRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:long" />
+          <xs:element name="address" type="common:Address" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddAddressResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="addressId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateAddressRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:long" />
+          <xs:element name="address" type="common:Address" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateAddressResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="addressId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveAddressRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="addressId" type="xs:long" />
+          <xs:element name="accountId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveAddressResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddActivityRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="activity" type="tns:Activity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddActivityResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="activityId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateActivityRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="activity" type="tns:Activity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateActivityResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="activityId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveActivityRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="activityId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveActivityResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateHouseHoldRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="houseHold" type="tns:HouseHold" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateHouseHoldResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="houseHoldId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateHouseHoldRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="houseHold" type="tns:HouseHold" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateHouseHoldResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="houseHoldId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListHouseHoldsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="houseHoldId" type="xs:long" />
+          <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListHouseHoldsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="houseHolds" type="tns:HouseHoldList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddIndividualToHouseHoldRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="individualAccountId" type="xs:long" />
+          <xs:element name="houseHoldId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddIndividualToHouseHoldResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveIndividualFromHouseHoldRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="individualAccountId" type="xs:long" />
+          <xs:element name="houseHoldId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveIndividualFromHouseHoldResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateHouseHoldPrimaryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="primaryIndividualAccountId" type="xs:long" />
+          <xs:element name="houseHoldId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateHouseHoldPrimaryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DeleteHouseHoldRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="houseHoldId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DeleteHouseHoldResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SyncAccountsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountIds" type="tns:AccountIdList" />
+          <xs:element minOccurs="0" name="syncAccountTimeFrom" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="syncAccountTimeTo" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="page" type="common:Page" />
+          <xs:element minOccurs="0" name="ignoreDeletedIdList" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SyncAccountsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="individualAccounts" type="tns:IndividualAccountList" />
+          <xs:element minOccurs="0" name="organizationAccounts" type="tns:OrganizationAccountList" />
+          <xs:element minOccurs="0" name="deletedAccountList" type="tns:AccountIdList" />
+          <xs:element minOccurs="0" name="page" type="common:Page" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListAccountsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractSearchRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListAccountsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractSearchResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListAccountsByDefaultRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountSearchCriteria" type="tns:AccountSearchCriteria" />
+          <xs:element minOccurs="0" name="page" type="common:Page" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListAccountsByDefaultResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractSearchResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListAccountsByKeywordSearchRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="keyword" type="common:LongTextType" />
+          <xs:element minOccurs="0" name="userType" type="common:MediumTextType" />
+          <xs:element minOccurs="0" name="page" type="common:Page" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListAccountsByKeywordSearchResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountSearchResults" type="tns:AccountSearchResultList" />
+          <xs:element minOccurs="0" name="page" type="common:Page" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListAccountsBySearchCriteriaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountSearchCriteria" type="tns:AccountSearchCriteria" />
+          <xs:element minOccurs="0" name="page" type="common:Page" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListAccountsBySearchCriteriaResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountSearchResults" type="tns:AccountSearchResultList" />
+          <xs:element minOccurs="0" name="page" type="common:Page" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SyncActivitiesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="activityIds" type="tns:ActivityIdList" />
+          <xs:element minOccurs="0" name="syncActivityTimeFrom" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="syncActivityTimeTo" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="page" type="common:Page" />
+          <xs:element minOccurs="0" name="ignoreDeletedIdList" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SyncActivitiesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="activities" type="tns:ActivityList" />
+          <xs:element minOccurs="0" name="page" type="common:Page" />
+          <xs:element minOccurs="0" name="deletedActivityIdList" type="tns:ActivityIdList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveActivityRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="activityId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveActivityResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="activity" type="tns:Activity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveTransactionStatsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveTransactionStatsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="transactionStats" type="tns:TransactionStats" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

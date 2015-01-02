@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.z2systems.com/schemas/event/" xmlns:common="http://www.z2systems.com/schemas/common/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.z2systems.com/schemas/event/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_common_v100.xsd" namespace="http://www.z2systems.com/schemas/common/" />
+  <xs:annotation>
+    <xs:appinfo>Neon Web Service, event type definitions. Version 1.0.0 </xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="EventRegistrationStats">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="totalAmountPaid" type="xs:double" />
+      <xs:element minOccurs="0" name="numberOfEventRegistrations" type="xs:long" />
+      <xs:element minOccurs="0" name="firstEventRegistrationDate" type="xs:date" />
+      <xs:element minOccurs="0" name="lastEventRegistrationDate" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListEventsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractSearchRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListEventsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractSearchResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveEventRegistrationStatsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveEventRegistrationStatsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="eventRegistrationStats" type="tns:EventRegistrationStats" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

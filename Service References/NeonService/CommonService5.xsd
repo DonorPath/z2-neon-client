@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.z2systems.com/schemas/membership/" xmlns:common="http://www.z2systems.com/schemas/common/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.z2systems.com/schemas/membership/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.neoncrm.com/neonws/services/CommonService?xsd=NeonService_common_v100.xsd" namespace="http://www.z2systems.com/schemas/common/" />
+  <xs:annotation>
+    <xs:appinfo>Neon Web Service, membership type definitions. Version 1.0.0</xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="MembershipTerm">
+    <xs:sequence>
+      <xs:element name="termInfo" type="common:IdNamePair" />
+      <xs:element minOccurs="0" name="isParentTerm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="childTerms" type="common:IdNamePairList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Membership">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountId" type="xs:long" />
+      <xs:element minOccurs="0" name="membershipTerm" type="tns:MembershipTerm" />
+      <xs:element minOccurs="0" name="autoRenewal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="source" type="common:IdNamePair" />
+      <xs:element minOccurs="0" name="customFieldDataList" type="common:CustomFieldDataList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MembershipResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Membership">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="membershipId" type="xs:long" />
+          <xs:element minOccurs="0" name="membershipName" type="common:LongTextType" />
+          <xs:element minOccurs="0" name="termDuration" type="common:MediumTextType" />
+          <xs:element minOccurs="0" name="fee" type="xs:double" />
+          <xs:element minOccurs="0" name="transactionDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="termStartDate" type="xs:date" />
+          <xs:element minOccurs="0" name="termEndDate" type="xs:date" />
+          <xs:element minOccurs="0" name="enrollmentType" type="common:MediumTextType" />
+          <xs:element minOccurs="0" name="status" type="common:TransactionStatus" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MembershipStats">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="totalAmountPaid" type="xs:double" />
+      <xs:element minOccurs="0" name="numberOfMemberships" type="xs:long" />
+      <xs:element minOccurs="0" name="firstEnrollmentDate" type="xs:date" />
+      <xs:element minOccurs="0" name="lastEnrollmentDate" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MembershipResultList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="membershipResult" type="tns:MembershipResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MembershipTermList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="membershipTerm" type="tns:MembershipTerm" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListMembershipHistoryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListMembershipHistoryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="membershipResults" type="tns:MembershipResultList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddMembershipToAccountRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="membership" type="tns:Membership" />
+          <xs:element name="payment" type="common:Payment" />
+          <xs:element minOccurs="0" name="sendAcknowledgeEmail" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddMembershipToAccountResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="membershipId" type="xs:long" />
+          <xs:element minOccurs="0" name="transaction" type="common:Transaction" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="updateMembershipToAccountRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:long" />
+          <xs:element name="payment" type="common:Payment" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UpdateMembershipToAccountResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="membershipId" type="xs:long" />
+          <xs:element minOccurs="0" name="transaction" type="common:Transaction" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListMembershipTermsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="termId" type="xs:long" />
+          <xs:element minOccurs="0" name="termName" type="common:LongTextType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListMembershipTermsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="membershipTerms" type="tns:MembershipTermList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListMembershipsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractSearchRequest" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListMembershipsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractSearchResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveMembershipStatsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveMembershipStatsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="membershipStats" type="tns:MembershipStats" />
+          <xs:element minOccurs="0" name="currentMembership" type="tns:MembershipResult" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>
