@@ -22,13 +22,13 @@ namespace Z2Systems.Neon
         public static MembershipData ToMembershipSummary(this NameValuePair[] data)
         {
             MembershipData membership = new MembershipData();
-            membership.accountId = Convert.ToInt64(data.GetValue("Account Id"));
-            membership.status = data.GetValue("Membership Status");
+            membership.accountId = Convert.ToInt64(data.GetValue(Fields.Membership.accountId));
+            membership.status = data.GetValue(Fields.Membership.membershipStatus);
             double amount;
-            double.TryParse(data.GetValue("Membership Cost"), out amount);
+            double.TryParse(data.GetValue(Fields.Membership.membershipCost), out amount);
             membership.amount = amount;
             DateTime date;
-            if (DateTime.TryParse(data.GetValue("Last Enrollment Date"), out date))
+            if (DateTime.TryParse(data.GetValue(Fields.Membership.lastEnrollmentDate), out date))
                 membership.enrollmentDate = date;
             return membership;
         }
@@ -38,16 +38,17 @@ namespace Z2Systems.Neon
         {
             Donation donation = new Donation();
             double amount;
-            double.TryParse(data.GetValue("Amount"), out amount);
+            double.TryParse(data.GetValue(Fields.Donation.amount), out amount);
             donation.amount = amount;
 
             DateTime date;
-            DateTime.TryParse(data.GetValue("Donation Date"), out date);
+            DateTime.TryParse(data.GetValue(Fields.Donation.donationDate), out date);
             donation.date = date;
 
-            donation.accountId = Convert.ToInt64(data.GetValue("Account Id"));
-            donation.campaign = new IdNamePair{ name = data.GetValue("Campaign Name")};
-            donation.donationId = Convert.ToInt64(data.GetValue("Donation Id"));
+            donation.accountId = Convert.ToInt64(data.GetValue(Fields.Donation.accountId));
+            donation.campaign = new IdNamePair{ name = data.GetValue(Fields.Donation.campaignName)};
+            donation.donationId = Convert.ToInt64(data.GetValue(Fields.Donation.donationId));
+            donation.status = (DonationStatus)Enum.Parse(typeof(DonationStatus), data.GetValue(Fields.Donation.donationStatus), true);
             //Status = data.GetValue("Donation Status")
             //,SourceSubSegment = data.GetValue("Donation Note")    //Commented out for now - web service is throwing maxlength errors.
             return donation;
@@ -55,37 +56,37 @@ namespace Z2Systems.Neon
 
         public static Account ToAccount(this NameValuePair[] x)
         {
-            if (x.GetValue("Account Type").ToLower().Contains("organization"))
+            if (x.GetValue(Fields.Account.accountType).ToLower().Contains("organization"))
             {
                 return new OrganizationAccount
                 {
-                    accountId = Convert.ToInt64(x.GetValue("Account Id")),
-                    organizationName = x.GetValue("Company Name"),
+                    accountId = Convert.ToInt64(x.GetValue(Fields.Account.accountId)),
+                    organizationName = x.GetValue(Fields.Account.companyName),
                     organizationTypes = new IdNamePair[]
                     {
                         new IdNamePair
                         {
-                            name = x.GetValue("Organization Type")
+                            name = x.GetValue(Fields.Account.organizationType)
                         }
                     },
                     primaryContact = new Contact
                     {
-                        firstName = x.GetValue("First Name"),
-                        lastName = x.GetValue("Last Name"),
-                        email1 = x.GetValue("Email"),
-                        phone1 = x.GetValue("Phone1 Full Number (F)"),
+                        firstName = x.GetValue(Fields.Account.firstName),
+                        lastName = x.GetValue(Fields.Account.lastName),
+                        email1 = x.GetValue(Fields.Account.email1),
+                        phone1 = x.GetValue(Fields.Account.phone1),
                         addresses = new Address[] 
                         { 
                             new Address
                             {
-                                addressLine1 = x.GetValue("Street 1"), 
-                                addressLine2 = x.GetValue("Street 2"),
-                                city = x.GetValue("City"), 
+                                addressLine1 = x.GetValue(Fields.Account.street1), 
+                                addressLine2 = x.GetValue(Fields.Account.street2),
+                                city = x.GetValue(Fields.Account.city), 
                                 state = new CodeNamePair
                                 {
-                                    name = x.GetValue("State")
+                                    name = x.GetValue(Fields.Account.state)
                                 }, 
-                                zipCode = x.GetValue("Zip Code")
+                                zipCode = x.GetValue(Fields.Account.zipCode)
 
                             },
                         }
@@ -96,33 +97,33 @@ namespace Z2Systems.Neon
             {
                 return new IndividualAccount
                 {
-                    accountId = Convert.ToInt64(x.GetValue("Account Id")),
-                    organizationName = x.GetValue("Company Name"),
+                    accountId = Convert.ToInt64(x.GetValue(Fields.Account.accountId)),
+                    organizationName = x.GetValue(Fields.Account.companyName),
                     individualTypes = new IdNamePair[]
                 {
                     new IdNamePair
                     {
-                        name = x.GetValue("Individual Type")
+                        name = x.GetValue(Fields.Account.individualType)
                     }
                 },
                     primaryContact = new Contact
                     {
-                        firstName = x.GetValue("First Name"),
-                        lastName = x.GetValue("Last Name"),
-                        email1 = x.GetValue("Email"),
-                        phone1 = x.GetValue("Phone1 Full Number (F)"),
+                        firstName = x.GetValue(Fields.Account.firstName),
+                        lastName = x.GetValue(Fields.Account.lastName),
+                        email1 = x.GetValue(Fields.Account.email1),
+                        phone1 = x.GetValue(Fields.Account.phone1),
                         addresses = new Address[] 
-                        { 
+                        {
                             new Address
                             {
-                                addressLine1 = x.GetValue("Street 1"), 
-                                addressLine2 = x.GetValue("Street 2"),
-                                city = x.GetValue("City"), 
+                                addressLine1 = x.GetValue(Fields.Account.street1), 
+                                addressLine2 = x.GetValue(Fields.Account.street2),
+                                city = x.GetValue(Fields.Account.city), 
                                 state = new CodeNamePair
                                 {
-                                    name = x.GetValue("State")
+                                    name = x.GetValue(Fields.Account.state)
                                 }, 
-                                zipCode = x.GetValue("Zip Code")
+                                zipCode = x.GetValue(Fields.Account.zipCode)
 
                             },
 
