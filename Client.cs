@@ -130,7 +130,7 @@ namespace Z2Systems.Neon
                 EnsureSession();
                 
                 AccountServiceClient accountService = new AccountServiceClient(binding, accountAddress);
-                
+
                 ListAccountsResponse response = null;
                 ListAccountsRequest request = new ListAccountsRequest
                 {
@@ -155,7 +155,7 @@ namespace Z2Systems.Neon
 
                     if (response.operationResult == OperationResult.SUCCESS)
                     {
-                        accounts.AddRange(response.searchResults.Select(x => new Account(x)));
+                        accounts.AddRange(response.searchResults.Select(x => x.ToAccount()));
                     }
                     else
                     {
@@ -176,7 +176,6 @@ namespace Z2Systems.Neon
                 EnsureSession();
                 DonationServiceClient donationService = new DonationServiceClient(binding, donationAddress);
                 ListDonationsResponse response = null;
-
                 ListDonationsRequest request = new ListDonationsRequest
                 {
                     userSessionId = SessionId,
@@ -189,9 +188,9 @@ namespace Z2Systems.Neon
                     },
                     outputFields = DonationFields,
                     searches = new[]
-                {
-                    new SearchObject { key = "Donation Status", value = "SUCCEED"}
-                }
+                    {
+                        new SearchObject { key = "Donation Status", value = "SUCCEED"}
+                    }
                 };
 
                 do
@@ -202,7 +201,7 @@ namespace Z2Systems.Neon
 
                     if (response.operationResult == OperationResult.SUCCESS)
                     {
-                        donations.AddRange(response.searchResults.Select(x => new Donation(x)));
+                        donations.AddRange(response.searchResults.Select(x => x.ToDonation()));
                     }
                     else
                     {
@@ -251,7 +250,7 @@ namespace Z2Systems.Neon
 
                     if (response.operationResult == OperationResult.SUCCESS)
                     {
-                        orders.AddRange(response.orders.Select(x => new Order(x)));
+                        orders.AddRange(response.orders);
                     }
                     else
                         throw new ApplicationException(string.Format("Neon Web Service Failure Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage));
@@ -261,14 +260,14 @@ namespace Z2Systems.Neon
 
 
 
-                return orders.Where(x => x.Amount > 0).ToArray();
+                return orders.ToArray();
             }
 
 
-            public Membership[] GetAllMemberships()
+            public MembershipSummary[] GetAllMemberships()
             {
                 EnsureSession();
-                List<Membership> memberships = new List<Membership>();
+                List<MembershipSummary> memberships = new List<MembershipSummary>();
 
                 ListMembershipsRequest request = new ListMembershipsRequest
                 {
@@ -294,7 +293,7 @@ namespace Z2Systems.Neon
 
                     if (response.operationResult == OperationResult.SUCCESS)
                     {
-                        memberships.AddRange(response.searchResults.Select(x => new Membership(x)));
+                        memberships.AddRange(response.searchResults.Select(x => x.ToMembershipSummary()));
                     }
                     else
                         throw new ApplicationException(string.Format("Neon Web Service Failure Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage));

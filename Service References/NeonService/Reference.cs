@@ -13,7 +13,7 @@ namespace Z2Systems.Neon.NeonService {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", ConfigurationName="NeonService.AccountService")]
-    internal interface AccountService {
+    public interface AccountService {
         
         // CODEGEN: Generating message contract since the operation listSources is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
@@ -16482,7 +16482,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listSourcesRequest1 {
+    public partial class listSourcesRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListSourcesRequest listSourcesRequest;
@@ -16499,7 +16499,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listSourcesResponse1 {
+    public partial class listSourcesResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListSourcesResponse listSourcesResponse;
@@ -16516,7 +16516,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listOrganizationTypesRequest1 {
+    public partial class listOrganizationTypesRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListOrganizationTypesRequest listOrganizationTypesRequest;
@@ -16533,7 +16533,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listOrganizationTypesResponse1 {
+    public partial class listOrganizationTypesResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListOrganizationTypesResponse listOrganizationTypesResponse;
@@ -16550,7 +16550,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listIndividualTypesRequest1 {
+    public partial class listIndividualTypesRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListIndividualTypesRequest listIndividualTypesRequest;
@@ -16567,7 +16567,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listIndividualTypesResponse1 {
+    public partial class listIndividualTypesResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListIndividualTypesResponse listIndividualTypesResponse;
@@ -16584,7 +16584,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listGendersRequest1 {
+    public partial class listGendersRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListGendersRequest listGendersRequest;
@@ -16601,7 +16601,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listGendersResponse1 {
+    public partial class listGendersResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListGendersResponse listGendersResponse;
@@ -16618,7 +16618,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listAddressTypesRequest1 {
+    public partial class listAddressTypesRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListAddressTypesRequest listAddressTypesRequest;
@@ -16635,7 +16635,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listAddressTypesResponse1 {
+    public partial class listAddressTypesResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListAddressTypesResponse listAddressTypesResponse;
@@ -16652,7 +16652,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listPrefixesRequest1 {
+    public partial class listPrefixesRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListPrefixesRequest listPrefixesRequest;
@@ -16669,7 +16669,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listPrefixesResponse1 {
+    public partial class listPrefixesResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListPrefixesResponse listPrefixesResponse;
@@ -16686,7 +16686,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listStatesRequest1 {
+    public partial class listStatesRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListStatesRequest listStatesRequest;
@@ -16703,7 +16703,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listStatesResponse1 {
+    public partial class listStatesResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListStatesResponse listStatesResponse;
@@ -16720,7 +16720,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listCountriesRequest1 {
+    public partial class listCountriesRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListCountriesRequest listCountriesRequest;
@@ -16737,7 +16737,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listCountriesResponse1 {
+    public partial class listCountriesResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListCountriesResponse listCountriesResponse;
@@ -16754,7 +16754,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listRelationTypesRequest1 {
+    public partial class listRelationTypesRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListRelationTypesRequest listRelationTypesRequest;
@@ -16771,7 +16771,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listRelationTypesResponse1 {
+    public partial class listRelationTypesResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListRelationTypesResponse listRelationTypesResponse;
@@ -16788,7 +16788,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listActivityStatusRequest1 {
+    public partial class listActivityStatusRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListActivityStatusRequest listActivityStatusRequest;
@@ -16805,7 +16805,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listActivityStatusResponse1 {
+    public partial class listActivityStatusResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListActivityStatusResponse listActivityStatusResponse;
@@ -16822,7 +16822,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listActivitiesRequest1 {
+    public partial class listActivitiesRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListActivitiesRequest listActivitiesRequest;
@@ -16839,7 +16839,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listActivitiesResponse1 {
+    public partial class listActivitiesResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListActivitiesResponse listActivitiesResponse;
@@ -16856,7 +16856,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listSystemUsersRequest1 {
+    public partial class listSystemUsersRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListSystemUsersRequest listSystemUsersRequest;
@@ -16873,7 +16873,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listSystemUsersResponse1 {
+    public partial class listSystemUsersResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListSystemUsersResponse listSystemUsersResponse;
@@ -16890,7 +16890,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createIndividualAccountRequest1 {
+    public partial class createIndividualAccountRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateIndividualAccountRequest createIndividualAccountRequest;
@@ -16907,7 +16907,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createIndividualAccountResponse1 {
+    public partial class createIndividualAccountResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateIndividualAccountResponse createIndividualAccountResponse;
@@ -16924,7 +16924,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateIndividualAccountRequest1 {
+    public partial class updateIndividualAccountRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateIndividualAccountRequest updateIndividualAccountRequest;
@@ -16941,7 +16941,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateIndividualAccountResponse1 {
+    public partial class updateIndividualAccountResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateIndividualAccountResponse updateIndividualAccountResponse;
@@ -16958,7 +16958,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveIndividualAccountRequest1 {
+    public partial class retrieveIndividualAccountRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveIndividualAccountRequest retrieveIndividualAccountRequest;
@@ -16975,7 +16975,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveIndividualAccountResponse1 {
+    public partial class retrieveIndividualAccountResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveIndividualAccountResponse retrieveIndividualAccountResponse;
@@ -16992,7 +16992,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveOrganizationAccountRequest1 {
+    public partial class retrieveOrganizationAccountRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveOrganizationAccountRequest retrieveOrganizationAccountRequest;
@@ -17009,7 +17009,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveOrganizationAccountResponse1 {
+    public partial class retrieveOrganizationAccountResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveOrganizationAccountResponse retrieveOrganizationAccountResponse;
@@ -17026,7 +17026,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createOrganizationAccountRequest1 {
+    public partial class createOrganizationAccountRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateOrganizationAccountRequest createOrganizationAccountRequest;
@@ -17043,7 +17043,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createOrganizationAccountResponse1 {
+    public partial class createOrganizationAccountResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateOrganizationAccountResponse createOrganizationAccountResponse;
@@ -17060,7 +17060,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateOrganizationAccountRequest1 {
+    public partial class updateOrganizationAccountRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateOrganizationAccountRequest updateOrganizationAccountRequest;
@@ -17077,7 +17077,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateOrganizationAccountResponse1 {
+    public partial class updateOrganizationAccountResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateOrganizationAccountResponse updateOrganizationAccountResponse;
@@ -17094,7 +17094,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class linkIndividualToOrganizationRequest1 {
+    public partial class linkIndividualToOrganizationRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.LinkIndividualToOrganizationRequest linkIndividualToOrganizationRequest;
@@ -17111,7 +17111,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class linkIndividualToOrganizationResponse1 {
+    public partial class linkIndividualToOrganizationResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.LinkIndividualToOrganizationResponse linkIndividualToOrganizationResponse;
@@ -17128,7 +17128,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeIndividualFromOrganizationRequest1 {
+    public partial class removeIndividualFromOrganizationRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveIndividualFromOrganizationRequest removeIndividualFromOrganizationRequest;
@@ -17145,7 +17145,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeIndividualFromOrganizationResponse1 {
+    public partial class removeIndividualFromOrganizationResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveIndividualFromOrganizationResponse removeIndividualFromOrganizationResponse;
@@ -17162,7 +17162,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listOrganizationContactsRequest1 {
+    public partial class listOrganizationContactsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListOrganizationContactsRequest listOrganizationContactsRequest;
@@ -17179,7 +17179,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listOrganizationContactsResponse1 {
+    public partial class listOrganizationContactsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListOrganizationContactsResponse listOrganizationContactsResponse;
@@ -17196,7 +17196,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listAccountsRequest1 {
+    public partial class listAccountsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListAccountsRequest listAccountsRequest;
@@ -17213,7 +17213,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listAccountsResponse1 {
+    public partial class listAccountsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListAccountsResponse listAccountsResponse;
@@ -17230,7 +17230,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listAccountsByDefaultRequest1 {
+    public partial class listAccountsByDefaultRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListAccountsByDefaultRequest listAccountsByDefaultRequest;
@@ -17247,7 +17247,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listAccountsByDefaultResponse1 {
+    public partial class listAccountsByDefaultResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListAccountsByDefaultResponse listAccountsByDefaultResponse;
@@ -17264,7 +17264,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class syncAccountsRequest1 {
+    public partial class syncAccountsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.SyncAccountsRequest syncAccountsRequest;
@@ -17281,7 +17281,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class syncAccountsResponse1 {
+    public partial class syncAccountsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.SyncAccountsResponse syncAccountsResponse;
@@ -17298,7 +17298,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listAccountsByKeywordSearchRequest1 {
+    public partial class listAccountsByKeywordSearchRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListAccountsByKeywordSearchRequest listAccountsByKeywordSearchRequest;
@@ -17315,7 +17315,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listAccountsByKeywordSearchResponse1 {
+    public partial class listAccountsByKeywordSearchResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListAccountsByKeywordSearchResponse listAccountsByKeywordSearchResponse;
@@ -17332,7 +17332,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listAccountsBySearchCriteriaRequest1 {
+    public partial class listAccountsBySearchCriteriaRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListAccountsBySearchCriteriaRequest listAccountsBySearchCriteriaRequest;
@@ -17349,7 +17349,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listAccountsBySearchCriteriaResponse1 {
+    public partial class listAccountsBySearchCriteriaResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListAccountsBySearchCriteriaResponse listAccountsBySearchCriteriaResponse;
@@ -17366,7 +17366,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class addAddressRequest1 {
+    public partial class addAddressRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AddAddressRequest addAddressRequest;
@@ -17383,7 +17383,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class addAddressResponse1 {
+    public partial class addAddressResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AddAddressResponse addAddressResponse;
@@ -17400,7 +17400,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateAddressRequest1 {
+    public partial class updateAddressRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateAddressRequest updateAddressRequest;
@@ -17417,7 +17417,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateAddressResponse1 {
+    public partial class updateAddressResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateAddressResponse updateAddressResponse;
@@ -17434,7 +17434,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeAddressRequest1 {
+    public partial class removeAddressRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveAddressRequest removeAddressRequest;
@@ -17451,7 +17451,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeAddressResponse1 {
+    public partial class removeAddressResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveAddressResponse removeAddressResponse;
@@ -17468,7 +17468,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class addActivityRequest1 {
+    public partial class addActivityRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AddActivityRequest addActivityRequest;
@@ -17485,7 +17485,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class addActivityResponse1 {
+    public partial class addActivityResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AddActivityResponse addActivityResponse;
@@ -17502,7 +17502,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateActivityRequest1 {
+    public partial class updateActivityRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateActivityRequest updateActivityRequest;
@@ -17519,7 +17519,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateActivityResponse1 {
+    public partial class updateActivityResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateActivityResponse updateActivityResponse;
@@ -17536,7 +17536,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeActivityRequest1 {
+    public partial class removeActivityRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveActivityRequest removeActivityRequest;
@@ -17553,7 +17553,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeActivityResponse1 {
+    public partial class removeActivityResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveActivityResponse removeActivityResponse;
@@ -17570,7 +17570,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createHouseHoldRequest1 {
+    public partial class createHouseHoldRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateHouseHoldRequest createHouseHoldRequest;
@@ -17587,7 +17587,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createHouseHoldResponse1 {
+    public partial class createHouseHoldResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateHouseHoldResponse createHouseHoldResponse;
@@ -17604,7 +17604,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateHouseHoldRequest1 {
+    public partial class updateHouseHoldRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateHouseHoldRequest updateHouseHoldRequest;
@@ -17621,7 +17621,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateHouseHoldResponse1 {
+    public partial class updateHouseHoldResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateHouseHoldResponse updateHouseHoldResponse;
@@ -17638,7 +17638,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listHouseHoldsRequest1 {
+    public partial class listHouseHoldsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListHouseHoldsRequest listHouseHoldsRequest;
@@ -17655,7 +17655,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listHouseHoldsResponse1 {
+    public partial class listHouseHoldsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListHouseHoldsResponse listHouseHoldsResponse;
@@ -17672,7 +17672,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class addIndividualToHouseHoldRequest1 {
+    public partial class addIndividualToHouseHoldRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AddIndividualToHouseHoldRequest addIndividualToHouseHoldRequest;
@@ -17689,7 +17689,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class addIndividualToHouseHoldResponse1 {
+    public partial class addIndividualToHouseHoldResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AddIndividualToHouseHoldResponse addIndividualToHouseHoldResponse;
@@ -17706,7 +17706,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeIndividualFromHouseHoldRequest1 {
+    public partial class removeIndividualFromHouseHoldRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveIndividualFromHouseHoldRequest removeIndividualFromHouseHoldRequest;
@@ -17723,7 +17723,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeIndividualFromHouseHoldResponse1 {
+    public partial class removeIndividualFromHouseHoldResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveIndividualFromHouseHoldResponse removeIndividualFromHouseHoldResponse;
@@ -17740,7 +17740,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateHouseHoldPrimaryRequest1 {
+    public partial class updateHouseHoldPrimaryRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateHouseHoldPrimaryRequest updateHouseHoldPrimaryRequest;
@@ -17757,7 +17757,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateHouseHoldPrimaryResponse1 {
+    public partial class updateHouseHoldPrimaryResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateHouseHoldPrimaryResponse updateHouseHoldPrimaryResponse;
@@ -17774,7 +17774,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class deleteHouseHoldRequest1 {
+    public partial class deleteHouseHoldRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.DeleteHouseHoldRequest deleteHouseHoldRequest;
@@ -17791,7 +17791,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class deleteHouseHoldResponse1 {
+    public partial class deleteHouseHoldResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.DeleteHouseHoldResponse deleteHouseHoldResponse;
@@ -17808,7 +17808,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class syncActivitiesRequest1 {
+    public partial class syncActivitiesRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.SyncActivitiesRequest syncActivitiesRequest;
@@ -17825,7 +17825,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class syncActivitiesResponse1 {
+    public partial class syncActivitiesResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.SyncActivitiesResponse syncActivitiesResponse;
@@ -17842,7 +17842,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveActivityRequest1 {
+    public partial class retrieveActivityRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveActivityRequest retrieveActivityRequest;
@@ -17859,7 +17859,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveActivityResponse1 {
+    public partial class retrieveActivityResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveActivityResponse retrieveActivityResponse;
@@ -17876,7 +17876,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveTransactionStatsRequest1 {
+    public partial class retrieveTransactionStatsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveTransactionStatsRequest retrieveTransactionStatsRequest;
@@ -17893,7 +17893,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveTransactionStatsResponse1 {
+    public partial class retrieveTransactionStatsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveTransactionStatsResponse retrieveTransactionStatsResponse;
@@ -17907,12 +17907,12 @@ namespace Z2Systems.Neon.NeonService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal interface AccountServiceChannel : Z2Systems.Neon.NeonService.AccountService, System.ServiceModel.IClientChannel {
+    public interface AccountServiceChannel : Z2Systems.Neon.NeonService.AccountService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal partial class AccountServiceClient : System.ServiceModel.ClientBase<Z2Systems.Neon.NeonService.AccountService>, Z2Systems.Neon.NeonService.AccountService {
+    public partial class AccountServiceClient : System.ServiceModel.ClientBase<Z2Systems.Neon.NeonService.AccountService>, Z2Systems.Neon.NeonService.AccountService {
         
         public AccountServiceClient() {
         }
@@ -18902,7 +18902,7 @@ namespace Z2Systems.Neon.NeonService {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", ConfigurationName="NeonService.DonationService")]
-    internal interface DonationService {
+    public interface DonationService {
         
         // CODEGEN: Generating message contract since the operation listFunds is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
@@ -19041,7 +19041,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listFundsRequest1 {
+    public partial class listFundsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListFundsRequest listFundsRequest;
@@ -19058,7 +19058,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listFundsResponse1 {
+    public partial class listFundsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListFundsResponse listFundsResponse;
@@ -19075,7 +19075,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listSolicitationMethodsRequest1 {
+    public partial class listSolicitationMethodsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListSolicitationMethodsRequest listSolicitationMethodsRequest;
@@ -19092,7 +19092,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listSolicitationMethodsResponse1 {
+    public partial class listSolicitationMethodsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListSolicitationMethodsResponse listSolicitationMethodsResponse;
@@ -19109,7 +19109,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listCampaignsRequest1 {
+    public partial class listCampaignsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListCampaignsRequest listCampaignsRequest;
@@ -19126,7 +19126,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listCampaignsResponse1 {
+    public partial class listCampaignsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListCampaignsResponse listCampaignsResponse;
@@ -19143,7 +19143,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listPurposesRequest1 {
+    public partial class listPurposesRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListPurposesRequest listPurposesRequest;
@@ -19160,7 +19160,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listPurposesResponse1 {
+    public partial class listPurposesResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListPurposesResponse listPurposesResponse;
@@ -19177,7 +19177,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createDonationRequest1 {
+    public partial class createDonationRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateDonationRequest createDonationRequest;
@@ -19194,7 +19194,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createDonationResponse1 {
+    public partial class createDonationResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateDonationResponse createDonationResponse;
@@ -19211,7 +19211,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createRecurringDonationRequest1 {
+    public partial class createRecurringDonationRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateRecurringDonationRequest createRecurringDonationRequest;
@@ -19228,7 +19228,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createRecurringDonationResponse1 {
+    public partial class createRecurringDonationResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateRecurringDonationResponse createRecurringDonationResponse;
@@ -19245,7 +19245,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createPledgeRequest1 {
+    public partial class createPledgeRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreatePledgeRequest createPledgeRequest;
@@ -19262,7 +19262,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createPledgeResponse1 {
+    public partial class createPledgeResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreatePledgeResponse createPledgeResponse;
@@ -19279,7 +19279,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createPledgePaymentRequest1 {
+    public partial class createPledgePaymentRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreatePledgePaymentRequest createPledgePaymentRequest;
@@ -19296,7 +19296,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createPledgePaymentResponse1 {
+    public partial class createPledgePaymentResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreatePledgePaymentResponse createPledgePaymentResponse;
@@ -19313,7 +19313,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listDonationsRequest1 {
+    public partial class listDonationsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListDonationsRequest listDonationsRequest;
@@ -19330,7 +19330,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listDonationsResponse1 {
+    public partial class listDonationsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListDonationsResponse listDonationsResponse;
@@ -19347,7 +19347,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listRecurringDonorsRequest1 {
+    public partial class listRecurringDonorsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListRecurringDonorsRequest listRecurringDonorsRequest;
@@ -19364,7 +19364,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listRecurringDonorsResponse1 {
+    public partial class listRecurringDonorsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListRecurringDonorsResponse listRecurringDonorsResponse;
@@ -19381,7 +19381,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveDonationStatsRequest1 {
+    public partial class retrieveDonationStatsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveDonationStatsRequest retrieveDonationStatsRequest;
@@ -19398,7 +19398,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveDonationStatsResponse1 {
+    public partial class retrieveDonationStatsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveDonationStatsResponse retrieveDonationStatsResponse;
@@ -19415,7 +19415,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveCampaignSummaryRequest1 {
+    public partial class retrieveCampaignSummaryRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveCampaignSummaryRequest retrieveCampaignSummaryRequest;
@@ -19432,7 +19432,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveCampaignSummaryResponse1 {
+    public partial class retrieveCampaignSummaryResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveCampaignSummaryResponse retrieveCampaignSummaryResponse;
@@ -19446,12 +19446,12 @@ namespace Z2Systems.Neon.NeonService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal interface DonationServiceChannel : Z2Systems.Neon.NeonService.DonationService, System.ServiceModel.IClientChannel {
+    public interface DonationServiceChannel : Z2Systems.Neon.NeonService.DonationService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal partial class DonationServiceClient : System.ServiceModel.ClientBase<Z2Systems.Neon.NeonService.DonationService>, Z2Systems.Neon.NeonService.DonationService {
+    public partial class DonationServiceClient : System.ServiceModel.ClientBase<Z2Systems.Neon.NeonService.DonationService>, Z2Systems.Neon.NeonService.DonationService {
         
         public DonationServiceClient() {
         }
@@ -19751,7 +19751,7 @@ namespace Z2Systems.Neon.NeonService {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", ConfigurationName="NeonService.MembershipService")]
-    internal interface MembershipService {
+    public interface MembershipService {
         
         // CODEGEN: Generating message contract since the operation listMemberships is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
@@ -19813,7 +19813,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listMembershipsRequest1 {
+    public partial class listMembershipsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListMembershipsRequest listMembershipsRequest;
@@ -19830,7 +19830,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listMembershipsResponse1 {
+    public partial class listMembershipsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListMembershipsResponse listMembershipsResponse;
@@ -19847,7 +19847,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listMembershipTermsRequest1 {
+    public partial class listMembershipTermsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListMembershipTermsRequest listMembershipTermsRequest;
@@ -19864,7 +19864,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listMembershipTermsResponse1 {
+    public partial class listMembershipTermsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListMembershipTermsResponse listMembershipTermsResponse;
@@ -19881,7 +19881,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class addMembershipToAccountRequest1 {
+    public partial class addMembershipToAccountRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AddMembershipToAccountRequest addMembershipToAccountRequest;
@@ -19898,7 +19898,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class addMembershipToAccountResponse1 {
+    public partial class addMembershipToAccountResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AddMembershipToAccountResponse addMembershipToAccountResponse;
@@ -19915,7 +19915,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listMembershipHistoryRequest1 {
+    public partial class listMembershipHistoryRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListMembershipHistoryRequest listMembershipHistoryRequest;
@@ -19932,7 +19932,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listMembershipHistoryResponse1 {
+    public partial class listMembershipHistoryResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListMembershipHistoryResponse listMembershipHistoryResponse;
@@ -19949,7 +19949,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveMembershipStatsRequest1 {
+    public partial class retrieveMembershipStatsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveMembershipStatsRequest retrieveMembershipStatsRequest;
@@ -19966,7 +19966,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveMembershipStatsResponse1 {
+    public partial class retrieveMembershipStatsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveMembershipStatsResponse retrieveMembershipStatsResponse;
@@ -19980,12 +19980,12 @@ namespace Z2Systems.Neon.NeonService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal interface MembershipServiceChannel : Z2Systems.Neon.NeonService.MembershipService, System.ServiceModel.IClientChannel {
+    public interface MembershipServiceChannel : Z2Systems.Neon.NeonService.MembershipService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal partial class MembershipServiceClient : System.ServiceModel.ClientBase<Z2Systems.Neon.NeonService.MembershipService>, Z2Systems.Neon.NeonService.MembershipService {
+    public partial class MembershipServiceClient : System.ServiceModel.ClientBase<Z2Systems.Neon.NeonService.MembershipService>, Z2Systems.Neon.NeonService.MembershipService {
         
         public MembershipServiceClient() {
         }
@@ -20124,7 +20124,7 @@ namespace Z2Systems.Neon.NeonService {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", ConfigurationName="NeonService.EventService")]
-    internal interface EventService {
+    public interface EventService {
         
         // CODEGEN: Generating message contract since the operation listEvents is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
@@ -20153,7 +20153,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listEventsRequest1 {
+    public partial class listEventsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListEventsRequest listEventsRequest;
@@ -20170,7 +20170,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listEventsResponse1 {
+    public partial class listEventsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListEventsResponse listEventsResponse;
@@ -20187,7 +20187,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveEventRegistrationStatsRequest1 {
+    public partial class retrieveEventRegistrationStatsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveEventRegistrationStatsRequest retrieveEventRegistrationStatsRequest;
@@ -20204,7 +20204,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveEventRegistrationStatsResponse1 {
+    public partial class retrieveEventRegistrationStatsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveEventRegistrationStatsResponse retrieveEventRegistrationStatsResponse;
@@ -20218,12 +20218,12 @@ namespace Z2Systems.Neon.NeonService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal interface EventServiceChannel : Z2Systems.Neon.NeonService.EventService, System.ServiceModel.IClientChannel {
+    public interface EventServiceChannel : Z2Systems.Neon.NeonService.EventService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal partial class EventServiceClient : System.ServiceModel.ClientBase<Z2Systems.Neon.NeonService.EventService>, Z2Systems.Neon.NeonService.EventService {
+    public partial class EventServiceClient : System.ServiceModel.ClientBase<Z2Systems.Neon.NeonService.EventService>, Z2Systems.Neon.NeonService.EventService {
         
         public EventServiceClient() {
         }
@@ -20293,7 +20293,7 @@ namespace Z2Systems.Neon.NeonService {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", ConfigurationName="NeonService.CommonService")]
-    internal interface CommonService {
+    public interface CommonService {
         
         // CODEGEN: Generating message contract since the operation login is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
@@ -20399,7 +20399,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class loginRequest1 {
+    public partial class loginRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.LoginRequest loginRequest;
@@ -20416,7 +20416,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class loginResponse1 {
+    public partial class loginResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.LoginResponse loginResponse;
@@ -20433,7 +20433,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class logoutRequest1 {
+    public partial class logoutRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.LogoutRequest logoutRequest;
@@ -20450,7 +20450,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class logoutResponse1 {
+    public partial class logoutResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.LogoutResponse logoutResponse;
@@ -20467,7 +20467,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class authenticateUserRequest1 {
+    public partial class authenticateUserRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AuthenticateUserRequest authenticateUserRequest;
@@ -20484,7 +20484,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class authenticateUserResponse1 {
+    public partial class authenticateUserResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AuthenticateUserResponse authenticateUserResponse;
@@ -20501,7 +20501,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listCustomFieldsRequest1 {
+    public partial class listCustomFieldsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListCustomFieldsRequest listCustomFieldsRequest;
@@ -20518,7 +20518,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listCustomFieldsResponse1 {
+    public partial class listCustomFieldsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListCustomFieldsResponse listCustomFieldsResponse;
@@ -20535,7 +20535,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listCreditCardTypesRequest1 {
+    public partial class listCreditCardTypesRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListCreditCardTypesRequest listCreditCardTypesRequest;
@@ -20552,7 +20552,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listCreditCardTypesResponse1 {
+    public partial class listCreditCardTypesResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListCreditCardTypesResponse listCreditCardTypesResponse;
@@ -20569,7 +20569,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listTendersRequest1 {
+    public partial class listTendersRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListTendersRequest listTendersRequest;
@@ -20586,7 +20586,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listTendersResponse1 {
+    public partial class listTendersResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListTendersResponse listTendersResponse;
@@ -20603,7 +20603,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updatePaymentRequest1 {
+    public partial class updatePaymentRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdatePaymentRequest updatePaymentRequest;
@@ -20620,7 +20620,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updatePaymentResponse1 {
+    public partial class updatePaymentResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdatePaymentResponse updatePaymentResponse;
@@ -20637,7 +20637,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveCurrentSystemUserRequest1 {
+    public partial class retrieveCurrentSystemUserRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveCurrentSystemUserRequest retrieveCurrentSystemUserRequest;
@@ -20654,7 +20654,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveCurrentSystemUserResponse1 {
+    public partial class retrieveCurrentSystemUserResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveCurrentSystemUserResponse retrieveCurrentSystemUserResponse;
@@ -20671,7 +20671,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveStatsRequest1 {
+    public partial class retrieveStatsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveStatsRequest retrieveStatsRequest;
@@ -20688,7 +20688,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveStatsResponse1 {
+    public partial class retrieveStatsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveStatsResponse retrieveStatsResponse;
@@ -20702,12 +20702,12 @@ namespace Z2Systems.Neon.NeonService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal interface CommonServiceChannel : Z2Systems.Neon.NeonService.CommonService, System.ServiceModel.IClientChannel {
+    public interface CommonServiceChannel : Z2Systems.Neon.NeonService.CommonService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal partial class CommonServiceClient : System.ServiceModel.ClientBase<Z2Systems.Neon.NeonService.CommonService>, Z2Systems.Neon.NeonService.CommonService {
+    public partial class CommonServiceClient : System.ServiceModel.ClientBase<Z2Systems.Neon.NeonService.CommonService>, Z2Systems.Neon.NeonService.CommonService {
         
         public CommonServiceClient() {
         }
@@ -20938,7 +20938,7 @@ namespace Z2Systems.Neon.NeonService {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", ConfigurationName="NeonService.StoreService")]
-    internal interface StoreService {
+    public interface StoreService {
         
         // CODEGEN: Generating message contract since the operation listCatalogs is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
@@ -21330,7 +21330,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listCatalogsRequest1 {
+    public partial class listCatalogsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListCatalogsRequest listCatalogsRequest;
@@ -21347,7 +21347,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listCatalogsResponse1 {
+    public partial class listCatalogsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListCatalogsResponse listCatalogsResponse;
@@ -21364,7 +21364,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createCatalogRequest1 {
+    public partial class createCatalogRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateCatalogRequest createCatalogRequest;
@@ -21381,7 +21381,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createCatalogResponse1 {
+    public partial class createCatalogResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateCatalogResponse createCatalogResponse;
@@ -21398,7 +21398,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateCatalogRequest1 {
+    public partial class updateCatalogRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateCatalogRequest updateCatalogRequest;
@@ -21415,7 +21415,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateCatalogResponse1 {
+    public partial class updateCatalogResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateCatalogResponse updateCatalogResponse;
@@ -21432,7 +21432,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeCatalogRequest1 {
+    public partial class removeCatalogRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveCatalogRequest removeCatalogRequest;
@@ -21449,7 +21449,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeCatalogResponse1 {
+    public partial class removeCatalogResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveCatalogResponse removeCatalogResponse;
@@ -21466,7 +21466,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class addProductToCatalogRequest1 {
+    public partial class addProductToCatalogRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AddProductToCatalogRequest addProductToCatalogRequest;
@@ -21483,7 +21483,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class addProductToCatalogResponse1 {
+    public partial class addProductToCatalogResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AddProductToCatalogResponse addProductToCatalogResponse;
@@ -21500,7 +21500,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeProductFromCatalogRequest1 {
+    public partial class removeProductFromCatalogRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveProductFromCatalogRequest removeProductFromCatalogRequest;
@@ -21517,7 +21517,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeProductFromCatalogResponse1 {
+    public partial class removeProductFromCatalogResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveProductFromCatalogResponse removeProductFromCatalogResponse;
@@ -21534,7 +21534,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listCategoriesRequest1 {
+    public partial class listCategoriesRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListCategoriesRequest listCategoriesRequest;
@@ -21551,7 +21551,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listCategoriesResponse1 {
+    public partial class listCategoriesResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListCategoriesResponse listCategoriesResponse;
@@ -21568,7 +21568,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createCategoryRequest1 {
+    public partial class createCategoryRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateCategoryRequest createCategoryRequest;
@@ -21585,7 +21585,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createCategoryResponse1 {
+    public partial class createCategoryResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateCategoryResponse createCategoryResponse;
@@ -21602,7 +21602,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateCategoryRequest1 {
+    public partial class updateCategoryRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateCategoryRequest updateCategoryRequest;
@@ -21619,7 +21619,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateCategoryResponse1 {
+    public partial class updateCategoryResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateCategoryResponse updateCategoryResponse;
@@ -21636,7 +21636,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeCategoryRequest1 {
+    public partial class removeCategoryRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveCategoryRequest removeCategoryRequest;
@@ -21653,7 +21653,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeCategoryResponse1 {
+    public partial class removeCategoryResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveCategoryResponse removeCategoryResponse;
@@ -21670,7 +21670,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listProductsRequest1 {
+    public partial class listProductsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListProductsRequest listProductsRequest;
@@ -21687,7 +21687,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listProductsResponse1 {
+    public partial class listProductsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListProductsResponse listProductsResponse;
@@ -21704,7 +21704,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createProductRequest1 {
+    public partial class createProductRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateProductRequest createProductRequest;
@@ -21721,7 +21721,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createProductResponse1 {
+    public partial class createProductResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateProductResponse createProductResponse;
@@ -21738,7 +21738,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateProductRequest1 {
+    public partial class updateProductRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateProductRequest updateProductRequest;
@@ -21755,7 +21755,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateProductResponse1 {
+    public partial class updateProductResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateProductResponse updateProductResponse;
@@ -21772,7 +21772,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeProductRequest1 {
+    public partial class removeProductRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveProductRequest removeProductRequest;
@@ -21789,7 +21789,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeProductResponse1 {
+    public partial class removeProductResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveProductResponse removeProductResponse;
@@ -21806,7 +21806,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveProductRequest1 {
+    public partial class retrieveProductRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveProductRequest retrieveProductRequest;
@@ -21823,7 +21823,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveProductResponse1 {
+    public partial class retrieveProductResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveProductResponse retrieveProductResponse;
@@ -21840,7 +21840,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class uploadProductImageRequest1 {
+    public partial class uploadProductImageRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UploadProductImageRequest uploadProductImageRequest;
@@ -21857,7 +21857,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class uploadProductImageResponse1 {
+    public partial class uploadProductImageResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UploadProductImageResponse uploadProductImageResponse;
@@ -21874,7 +21874,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeProductImageRequest1 {
+    public partial class removeProductImageRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveProductImageRequest removeProductImageRequest;
@@ -21891,7 +21891,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeProductImageResponse1 {
+    public partial class removeProductImageResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveProductImageResponse removeProductImageResponse;
@@ -21908,7 +21908,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listProductImagesRequest1 {
+    public partial class listProductImagesRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListProductImagesRequest listProductImagesRequest;
@@ -21925,7 +21925,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listProductImagesResponse1 {
+    public partial class listProductImagesResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListProductImagesResponse listProductImagesResponse;
@@ -21942,7 +21942,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createProductOptionRequest1 {
+    public partial class createProductOptionRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateProductOptionRequest createProductOptionRequest;
@@ -21959,7 +21959,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createProductOptionResponse1 {
+    public partial class createProductOptionResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateProductOptionResponse createProductOptionResponse;
@@ -21976,7 +21976,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listProductOptionsRequest1 {
+    public partial class listProductOptionsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListProductOptionsRequest listProductOptionsRequest;
@@ -21993,7 +21993,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listProductOptionsResponse1 {
+    public partial class listProductOptionsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListProductOptionsResponse listProductOptionsResponse;
@@ -22010,7 +22010,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateProductOptionRequest1 {
+    public partial class updateProductOptionRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateProductOptionRequest updateProductOptionRequest;
@@ -22027,7 +22027,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class updateProductOptionResponse1 {
+    public partial class updateProductOptionResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.UpdateProductOptionResponse updateProductOptionResponse;
@@ -22044,7 +22044,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeProductOptionRequest1 {
+    public partial class removeProductOptionRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveProductOptionRequest removeProductOptionRequest;
@@ -22061,7 +22061,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeProductOptionResponse1 {
+    public partial class removeProductOptionResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveProductOptionResponse removeProductOptionResponse;
@@ -22078,7 +22078,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createShoppingCartRequest1 {
+    public partial class createShoppingCartRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateShoppingCartRequest createShoppingCartRequest;
@@ -22095,7 +22095,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class createShoppingCartResponse1 {
+    public partial class createShoppingCartResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CreateShoppingCartResponse createShoppingCartResponse;
@@ -22112,7 +22112,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class addItemToShoppingCartRequest1 {
+    public partial class addItemToShoppingCartRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AddItemToShoppingCartRequest addItemToShoppingCartRequest;
@@ -22129,7 +22129,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class addItemToShoppingCartResponse1 {
+    public partial class addItemToShoppingCartResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AddItemToShoppingCartResponse addItemToShoppingCartResponse;
@@ -22146,7 +22146,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeItemFromShoppingCartRequest1 {
+    public partial class removeItemFromShoppingCartRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveItemFromShoppingCartRequest removeItemFromShoppingCartRequest;
@@ -22163,7 +22163,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class removeItemFromShoppingCartResponse1 {
+    public partial class removeItemFromShoppingCartResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RemoveItemFromShoppingCartResponse removeItemFromShoppingCartResponse;
@@ -22180,7 +22180,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class addOrUpdateShippingAddressToShoppingCartRequest1 {
+    public partial class addOrUpdateShippingAddressToShoppingCartRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AddOrUpdateShippingAddressToShoppingCartRequest addOrUpdateShippingAddressToShoppingCartRequest;
@@ -22197,7 +22197,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class addOrUpdateShippingAddressToShoppingCartResponse1 {
+    public partial class addOrUpdateShippingAddressToShoppingCartResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AddOrUpdateShippingAddressToShoppingCartResponse addOrUpdateShippingAddressToShoppingCartResponse;
@@ -22214,7 +22214,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listShippingMethodsRequest1 {
+    public partial class listShippingMethodsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListShippingMethodsRequest listShippingMethodsRequest;
@@ -22231,7 +22231,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listShippingMethodsResponse1 {
+    public partial class listShippingMethodsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListShippingMethodsResponse listShippingMethodsResponse;
@@ -22248,7 +22248,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class addOrUpdateShippingMethodToShoppingCartRequest1 {
+    public partial class addOrUpdateShippingMethodToShoppingCartRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AddOrUpdateShippingMethodToShoppingCartRequest addOrUpdateShippingMethodToShoppingCartRequest;
@@ -22265,7 +22265,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class addOrUpdateShippingMethodToShoppingCartResponse1 {
+    public partial class addOrUpdateShippingMethodToShoppingCartResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AddOrUpdateShippingMethodToShoppingCartResponse addOrUpdateShippingMethodToShoppingCartResponse;
@@ -22282,7 +22282,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class addOrUpdateCustomerToShoppingCartRequest1 {
+    public partial class addOrUpdateCustomerToShoppingCartRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AddOrUpdateCustomerToShoppingCartRequest addOrUpdateCustomerToShoppingCartRequest;
@@ -22299,7 +22299,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class addOrUpdateCustomerToShoppingCartResponse1 {
+    public partial class addOrUpdateCustomerToShoppingCartResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.AddOrUpdateCustomerToShoppingCartResponse addOrUpdateCustomerToShoppingCartResponse;
@@ -22316,7 +22316,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveShoppingCartSummaryRequest1 {
+    public partial class retrieveShoppingCartSummaryRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveShoppingCartSummaryRequest retrieveShoppingCartSummaryRequest;
@@ -22333,7 +22333,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveShoppingCartSummaryResponse1 {
+    public partial class retrieveShoppingCartSummaryResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveShoppingCartSummaryResponse retrieveShoppingCartSummaryResponse;
@@ -22350,7 +22350,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class checkoutRequest1 {
+    public partial class checkoutRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CheckoutRequest checkoutRequest;
@@ -22367,7 +22367,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class checkoutResponse1 {
+    public partial class checkoutResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.CheckoutResponse checkoutResponse;
@@ -22384,7 +22384,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveOrderDetailsRequest1 {
+    public partial class retrieveOrderDetailsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveOrderDetailsRequest retrieveOrderDetailsRequest;
@@ -22401,7 +22401,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveOrderDetailsResponse1 {
+    public partial class retrieveOrderDetailsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveOrderDetailsResponse retrieveOrderDetailsResponse;
@@ -22418,7 +22418,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listOrdersRequest1 {
+    public partial class listOrdersRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListOrdersRequest listOrdersRequest;
@@ -22435,7 +22435,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class listOrdersResponse1 {
+    public partial class listOrdersResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.ListOrdersResponse listOrdersResponse;
@@ -22452,7 +22452,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveReceiptRequest1 {
+    public partial class retrieveReceiptRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveReceiptRequest retrieveReceiptRequest;
@@ -22469,7 +22469,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveReceiptResponse1 {
+    public partial class retrieveReceiptResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveReceiptResponse retrieveReceiptResponse;
@@ -22486,7 +22486,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveStorePurchaseStatsRequest1 {
+    public partial class retrieveStorePurchaseStatsRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveStorePurchaseStatsRequest retrieveStorePurchaseStatsRequest;
@@ -22503,7 +22503,7 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class retrieveStorePurchaseStatsResponse1 {
+    public partial class retrieveStorePurchaseStatsResponse1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
         public Z2Systems.Neon.NeonService.RetrieveStorePurchaseStatsResponse retrieveStorePurchaseStatsResponse;
@@ -22517,12 +22517,12 @@ namespace Z2Systems.Neon.NeonService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal interface StoreServiceChannel : Z2Systems.Neon.NeonService.StoreService, System.ServiceModel.IClientChannel {
+    public interface StoreServiceChannel : Z2Systems.Neon.NeonService.StoreService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal partial class StoreServiceClient : System.ServiceModel.ClientBase<Z2Systems.Neon.NeonService.StoreService>, Z2Systems.Neon.NeonService.StoreService {
+    public partial class StoreServiceClient : System.ServiceModel.ClientBase<Z2Systems.Neon.NeonService.StoreService>, Z2Systems.Neon.NeonService.StoreService {
         
         public StoreServiceClient() {
         }
