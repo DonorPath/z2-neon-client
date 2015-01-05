@@ -7,7 +7,7 @@ using Z2Systems.Neon.NeonService;
 
 namespace Z2Systems.Neon
 {
-    internal static class Helpers
+    internal static class Extensions
     {
 
         public static string GetValue(this NameValuePair[] data, string name)

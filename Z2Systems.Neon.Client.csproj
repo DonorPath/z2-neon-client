@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenticationData.cs" />
     <Compile Include="Fields.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="MembershipData.cs" />

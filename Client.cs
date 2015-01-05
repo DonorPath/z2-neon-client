@@ -21,8 +21,10 @@ namespace Z2Systems.Neon
         /// <summary>
         /// Initializes a new instance of the <see cref="Client"/> class.
         /// </summary>
-        public Client()
+        public Client(string apiKey, string orgId)
         {
+            ApiKey = apiKey;
+            OrgId = orgId;
             binding = new BasicHttpBinding { MaxBufferSize = 2147483647, MaxReceivedMessageSize = 2147483647, ReceiveTimeout = new TimeSpan(0, 10, 0), SendTimeout = new TimeSpan(0, 10, 0) };
             binding.ReaderQuotas = new XmlDictionaryReaderQuotas { MaxDepth = 2147483647, MaxStringContentLength = 2147483647, MaxArrayLength = 2147483647, MaxBytesPerRead = 2147483647, MaxNameTableCharCount = 2147483647 };
             binding.Security = new BasicHttpSecurity { Mode = BasicHttpSecurityMode.Transport };
@@ -33,10 +35,8 @@ namespace Z2Systems.Neon
         /// </summary>
         /// <param name="apiKey">The API key.</param>
         /// <param name="orgId">The org identifier.</param>
-        public virtual void Connect(string apiKey, string orgId)
+        public virtual void Connect()
         {
-            ApiKey = apiKey;
-            OrgId = orgId;
             EnsureSession();
         }
 
@@ -97,6 +97,179 @@ namespace Z2Systems.Neon
         private string ApiKey { get; set; }
         private string OrgId { get; set; }
         private string SessionId { get; set; }
+
+        public CodeNamePair[] CreditCardTypes
+        {
+            get
+            {
+                EnsureSession();
+                CommonServiceClient commonService = new CommonServiceClient(binding, commonAddress);
+                ListCreditCardTypesResponse response = commonService.listCreditCardTypes(new ListCreditCardTypesRequest { userSessionId = SessionId });
+                if (response.operationResult == OperationResult.FAIL)
+                {
+                    throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Error Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
+                }
+                commonService.Close();
+                return response.creditCardTypes;
+            }
+        }
+
+
+        public CustomField[] ListCustomFields(Component component, string name, string id)
+        {
+            EnsureSession();
+            CommonServiceClient commonService = new CommonServiceClient(binding, commonAddress);
+            ListCustomFieldsResponse response = commonService.listCustomFields(new ListCustomFieldsRequest()
+            {
+                userSessionId = SessionId,
+                searchCriteria = new CustomFieldSearchCriteria
+                {
+                    component = component,
+                    search = new IdNamePair
+                    {
+                        id = id,
+                        name = name
+                    }
+                }
+            });
+            if (response.operationResult == OperationResult.FAIL)
+            {
+                throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Error Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
+            }
+            commonService.Close();
+            return response.customFields;
+        }
+
+        public IdNamePair[] Tenders
+        {
+            get
+            {
+                EnsureSession();
+                CommonServiceClient commonService = new CommonServiceClient(binding, commonAddress);
+                ListTendersResponse response = commonService.listTenders(new ListTendersRequest()
+                {
+                    userSessionId = SessionId
+                });
+                if (response.operationResult == OperationResult.FAIL)
+                {
+                    throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Error Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
+                }
+                commonService.Close();
+                return response.tenders;
+            }
+        }
+
+        public long CurrentSystemUserId
+        {
+            get
+            {
+                EnsureSession();
+                CommonServiceClient commonService = new CommonServiceClient(binding, commonAddress);
+                RetrieveCurrentSystemUserResponse response = commonService.retrieveCurrentSystemUser(new RetrieveCurrentSystemUserRequest()
+                {
+                    userSessionId = SessionId
+                });
+                if (response.operationResult == OperationResult.FAIL)
+                {
+                    throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Error Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
+                }
+                commonService.Close();
+                return response.systemUserId;
+            }
+        }
+
+        public string CurrentSystemUserName
+        {
+            get
+            {
+                EnsureSession();
+                CommonServiceClient commonService = new CommonServiceClient(binding, commonAddress);
+                RetrieveCurrentSystemUserResponse response = commonService.retrieveCurrentSystemUser(new RetrieveCurrentSystemUserRequest()
+                {
+                    userSessionId = SessionId
+                });
+                if (response.operationResult == OperationResult.FAIL)
+                {
+                    throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Error Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
+                }
+                commonService.Close();
+                return string.Format("{0} {1} {2}", response.firstName, response.middleName, response.lastName);
+            }
+        }
+
+        public MonthlyStats[] RetrieveStats(IdNamePair campaign, DateTime? startDate, DateTime? endDate, string type = null)
+        {
+            EnsureSession();
+            CommonServiceClient commonService = new CommonServiceClient(binding, commonAddress);
+            RetrieveStatsRequest request = new RetrieveStatsRequest()
+            {
+                userSessionId = SessionId,
+                campaign = campaign,
+                type = type
+            };
+            if (startDate.HasValue)
+            {
+                request.startDate = startDate.Value;
+                request.startDateSpecified = true;
+            }
+            if (endDate.HasValue)
+            {
+                request.endDate = endDate.Value;
+                request.endDateSpecified = true;
+            }
+            RetrieveStatsResponse response = commonService.retrieveStats(request);
+
+            if (response.operationResult == OperationResult.FAIL)
+            {
+                throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Error Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
+            }
+            commonService.Close();
+            return response.monthlyStats;
+        }
+
+        public long UpdatePayment(Payment payment)
+        {
+            EnsureSession();
+            CommonServiceClient commonService = new CommonServiceClient(binding, commonAddress);
+            UpdatePaymentRequest request = new UpdatePaymentRequest()
+            {  
+                userSessionId = SessionId, 
+                payment = payment
+            };
+            UpdatePaymentResponse response = commonService.updatePayment(request);
+
+            if (response.operationResult == OperationResult.FAIL)
+            {
+                throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Error Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
+            }
+            commonService.Close();
+            return response.paymentId;
+        }
+
+        public AuthenticationData AuthenticateUser(string username, string password)
+        {
+            AuthenticationData data = new AuthenticationData();
+
+            EnsureSession();
+            CommonServiceClient commonService = new CommonServiceClient(binding, commonAddress);
+            AuthenticateUserRequest request = new AuthenticateUserRequest();
+            request.username = username;
+            request.password = password;
+            request.userSessionId = SessionId;
+            AuthenticateUserResponse response = commonService.authenticateUser(request);
+            if (response.operationResult == OperationResult.FAIL)
+            {
+                throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Error Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
+            }
+            commonService.Close();
+            data.accountId = response.accountId;
+            data.currentMembership = response.currentMembership;
+            data.isMember = response.isMember;
+            data.isSystemUser = response.isSystemUser;
+            data.name = response.name;
+            return data;
+        }
+
 
         /// <summary>
         /// Lists the accounts.
@@ -159,7 +332,7 @@ namespace Z2Systems.Neon
                 }
                 else
                 {
-                    throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Erorr Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
+                    throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Error Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
                 }
             } while (!page.HasValue && response.page.totalPage != response.page.currentPage);
             accountService.Close();
@@ -226,7 +399,7 @@ namespace Z2Systems.Neon
                 }
                 else
                 {
-                    throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Erorr Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
+                    throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Error Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
                 }
             } while (!page.HasValue && response.page.totalPage != response.page.currentPage);
             donationService.Close();
@@ -250,7 +423,7 @@ namespace Z2Systems.Neon
         /// <exception cref="System.ApplicationException">
         /// Error Communicating With Neon
         /// </exception>
-        public Order[] listOrders(out long totalResults, out long totalPages, int? page, int pageSize = 10, string accountId = null, DateTime? orderDateFrom = null, DateTime? orderDateTo = null)
+        public Order[] ListOrders(out long totalResults, out long totalPages, int? page, int pageSize = 10, string accountId = null, DateTime? orderDateFrom = null, DateTime? orderDateTo = null)
         {
             List<Order> orders = new List<Order>();
             EnsureSession();
@@ -299,7 +472,7 @@ namespace Z2Systems.Neon
                 }
                 else
                 {
-                    throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Erorr Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
+                    throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Error Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
                 }
             } while (!page.HasValue && response.page.totalPage != response.page.currentPage);
 
@@ -357,7 +530,7 @@ namespace Z2Systems.Neon
                 }
                 else
                 {
-                    throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Erorr Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
+                    throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Error Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
                 }
             } while (!page.HasValue && response.page.totalPage != response.page.currentPage);
 
