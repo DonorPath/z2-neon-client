@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Z2Systems Neon Client")]
 [assembly: AssemblyDescription(".NET library for working with Z2 System's Neon Web Service API")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("DonorPath, Inc.")]
+[assembly: AssemblyCompany("Joseph Johnson")]
 [assembly: AssemblyProduct("Neon")]
 [assembly: AssemblyCopyright("Copyright © 2015")]
 [assembly: AssemblyTrademark("")]

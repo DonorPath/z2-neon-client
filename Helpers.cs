@@ -19,7 +19,7 @@ namespace Z2Systems.Neon
                 return item.value;
         }
 
-        public static MembershipData ToMembershipSummary(this NameValuePair[] data)
+        public static MembershipData ToMembershipData(this NameValuePair[] data)
         {
             MembershipData membership = new MembershipData();
             membership.accountId = Convert.ToInt64(data.GetValue(Fields.Membership.accountId));
@@ -48,7 +48,9 @@ namespace Z2Systems.Neon
             donation.accountId = Convert.ToInt64(data.GetValue(Fields.Donation.accountId));
             donation.campaign = new IdNamePair{ name = data.GetValue(Fields.Donation.campaignName)};
             donation.donationId = Convert.ToInt64(data.GetValue(Fields.Donation.donationId));
-            donation.status = (DonationStatus)Enum.Parse(typeof(DonationStatus), data.GetValue(Fields.Donation.donationStatus), true);
+            DonationStatus status = DonationStatus.Pending;
+            if(Enum.TryParse<DonationStatus>(data.GetValue(Fields.Donation.donationStatus), true, out status))
+                donation.status = status;
             //Status = data.GetValue("Donation Status")
             //,SourceSubSegment = data.GetValue("Donation Note")    //Commented out for now - web service is throwing maxlength errors.
             return donation;

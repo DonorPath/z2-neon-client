@@ -481,9 +481,9 @@ namespace Z2Systems.Neon
         }
 
 
-        public MembershipSummary[] ListMemberships(out long totalResults, out long totalPages, int? page, int pageSize = 100, string sortColumn = null, SortDirection? sortDirection = null, IEnumerable<SearchObject> searches = null, params string[] outputFields)
+        public MembershipData[] ListMemberships(out long totalResults, out long totalPages, int? page, int pageSize = 100, string sortColumn = null, SortDirection? sortDirection = null, IEnumerable<SearchObject> searches = null, params string[] outputFields)
         {
-            List<MembershipSummary> memberships = new List<MembershipSummary>();
+            List<MembershipData> memberships = new List<MembershipData>();
             MembershipServiceClient membershipService = new MembershipServiceClient(binding, membershipAddress);
             EnsureSession();
             
@@ -526,7 +526,7 @@ namespace Z2Systems.Neon
                 {
                     totalPages = response.page.totalPage;
                     totalResults = response.page.totalResults;
-                    memberships.AddRange(response.searchResults.Select(x => x.ToMembershipSummary()));
+                    memberships.AddRange(response.searchResults.Select(x => x.ToMembershipData()));
                 }
                 else
                 {
