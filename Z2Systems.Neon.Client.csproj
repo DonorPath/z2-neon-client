@@ -41,10 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountData.cs" />
+    <Compile Include="ActivityData.cs" />
+    <Compile Include="AddressData.cs" />
     <Compile Include="AuthenticationData.cs" />
+    <Compile Include="CompanyData.cs" />
     <Compile Include="Fields.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="MembershipData.cs" />
+    <Compile Include="Metric.cs" />
+    <Compile Include="NoteData.cs" />
+    <Compile Include="PhoneData.cs" />
+    <Compile Include="ProspectData.cs" />
     <Compile Include="Service References\NeonService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

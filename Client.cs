@@ -286,9 +286,9 @@ namespace Z2Systems.Neon
         /// <exception cref="System.ApplicationException">
         /// Error Communicating With Neon
         /// </exception>
-        public Account[] ListAccounts(out long totalResults, out long totalPages, int? page, int pageSize = 100, string sortColumn = null, SortDirection? sortDirection = null, IEnumerable<SearchObject> searches = null, params string[] outputFields)
+        public AccountData[] ListAccounts(out long totalResults, out long totalPages, int? page, int pageSize = 100, string sortColumn = null, SortDirection? sortDirection = null, IEnumerable<SearchObject> searches = null, params string[] outputFields)
         {
-            List<Account> accounts = new List<Account>();
+            List<AccountData> accounts = new List<AccountData>();
 
             EnsureSession();
 
@@ -328,7 +328,7 @@ namespace Z2Systems.Neon
                 {
                     totalPages = response.page.totalPage;
                     totalResults = response.page.totalResults;
-                    accounts.AddRange(response.searchResults.Select(x => x.ToAccount()));
+                    accounts.AddRange(response.searchResults.Select(x => new AccountData(x)));
                 }
                 else
                 {
