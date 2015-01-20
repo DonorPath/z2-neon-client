@@ -28,7 +28,7 @@ namespace Z2Systems.Neon
             double.TryParse(data.GetValue(Fields.Membership.membershipCost), out amount);
             membership.amount = amount;
             DateTime date;
-            if (DateTime.TryParse(data.GetValue(Fields.Membership.lastEnrollmentDate), out date))
+            if (DateTime.TryParse(data.GetValue(Fields.Membership.lastMembershipEnrollmentDate), out date))
                 membership.enrollmentDate = date;
             return membership;
         }

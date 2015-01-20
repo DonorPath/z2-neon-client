@@ -12,12 +12,12 @@ namespace Z2Systems.Neon
         public AccountData(NameValuePair[] x)
         {
             CreatedBy = x.GetValue(Fields.Account.accountCreatedBy);
-            AccountCreated = x.GetValue(Fields.Account.accountCreatedTime);
+            AccountCreated = x.GetValue(Fields.Account.accountCreatedTimestamp);
             AccountId = x.GetValue(Fields.Account.accountId);
             AccountLastModifiedBy = x.GetValue(Fields.Account.accountLastModifiedBy);
-            AccountLastModified = x.GetValue(Fields.Account.accountLastModifiedTime);
+            AccountLastModified = x.GetValue(Fields.Account.accountLastModifiedTimestamp);
             AccountLoginName = x.GetValue(Fields.Account.accountLoginName);
-            AccountNote = x.GetValue(Fields.Account.accountNote);
+            AccountNote = x.GetValue(Fields.Account.accountNoteText);
             AccountType = x.GetValue(Fields.Account.accountType);
             Activity = new ActivityData
             {
@@ -38,20 +38,20 @@ namespace Z2Systems.Neon
             Address = new AddressData
             {
                 CreatedBy = x.GetValue(Fields.Account.addressCreatedBy),
-                Created = x.GetValue(Fields.Account.addressCreatedTime),
+                Created = x.GetValue(Fields.Account.addressCreatedTimestamp),
                 EndDate = x.GetValue(Fields.Account.addressEndDate),
-                FullStreet = x.GetValue(Fields.Account.addressFullStreet),
+                FullStreet = x.GetValue(Fields.Account.fullStreetAddress),
                 LastModifiedBy = x.GetValue(Fields.Account.addressLastModifiedBy),
-                LastModified = x.GetValue(Fields.Account.addressLastModifiedTime),
+                LastModified = x.GetValue(Fields.Account.addressLastModifiedTimestamp),
                 StartDate = x.GetValue(Fields.Account.addressStartDate),
                 Type = x.GetValue(Fields.Account.addressType),
                 State = x.GetValue(Fields.Account.state),
-                Street1 = x.GetValue(Fields.Account.street1),
-                Street2 = x.GetValue(Fields.Account.street2),
-                Street3 = x.GetValue(Fields.Account.street3),
-                Street4 = x.GetValue(Fields.Account.street4),
+                Street1 = x.GetValue(Fields.Account.addressLine1),
+                Street2 = x.GetValue(Fields.Account.addressLine2),
+                Street3 = x.GetValue(Fields.Account.addressLine3),
+                Street4 = x.GetValue(Fields.Account.addressLine4),
                 ZipCode = x.GetValue(Fields.Account.zipCode),
-                ZipSuffix = x.GetValue(Fields.Account.zipSuffix),
+                ZipSuffix = x.GetValue(Fields.Account.zipCodeSuffix),
                 Province = x.GetValue(Fields.Account.province),
                 City = x.GetValue(Fields.Account.city),
                 Country = x.GetValue(Fields.Account.country),
@@ -390,7 +390,7 @@ namespace Z2Systems.Neon
             EmailOptOut = x.GetValue(Fields.Account.emailOptOut);
             Fax = new PhoneData
             {
-                Area = x.GetValue(Fields.Account.faxArea),
+                Area = x.GetValue(Fields.Account.faxAreaCode),
                 FullNumber = x.GetValue(Fields.Account.faxFullNumber),
                 Number = x.GetValue(Fields.Account.faxNumber),
                 Type = x.GetValue(Fields.Account.faxType),
@@ -398,53 +398,53 @@ namespace Z2Systems.Neon
             FederalDistrict = x.GetValue(Fields.Account.federalDistrict);
             FirstDonationAmount = x.GetValue(Fields.Account.firstDonationAmount);
             FirstDonationDate = x.GetValue(Fields.Account.firstDonationDate);
-            FirstEnrollmentDate = x.GetValue(Fields.Account.firstEnrollmentDate);
+            FirstEnrollmentDate = x.GetValue(Fields.Account.firstMembershipEnrollmentDate);
             FirstName = x.GetValue(Fields.Account.firstName);
             FirstOrderDate = x.GetValue(Fields.Account.firstOrderDate);
-            FirstRegistrationDate = x.GetValue(Fields.Account.firstRegistrationDate);
+            FirstRegistrationDate = x.GetValue(Fields.Account.firstEventRegistrationDate);
             FullZipCode = x.GetValue(Fields.Account.fullZipCode);
             HouseholdName = x.GetValue(Fields.Account.householdName);
             HouseholdSalutation = x.GetValue(Fields.Account.householdSalutation);
             IndividualType = x.GetValue(Fields.Account.individualType);
             LastDonationAmount = x.GetValue(Fields.Account.lastDonationAmount);
             LastDonationDate = x.GetValue(Fields.Account.lastDonationDate);
-            LastEnrollmentDate = x.GetValue(Fields.Account.lastEnrollmentDate);
-            LastLoginTime = x.GetValue(Fields.Account.lastLoginTime);
+            LastEnrollmentDate = x.GetValue(Fields.Account.lastMembershipEnrollmentDate);
+            LastLoginTime = x.GetValue(Fields.Account.lastLoginDate);
             LastName = x.GetValue(Fields.Account.lastName);
-            lastOrderDate = x.GetValue(Fields.Account.lastOrderDate);
-            lastRegistration = x.GetValue(Fields.Account.lastRegistrationDate);
-            MailRemindTime = x.GetValue(Fields.Account.mailRemindTime);
+            lastOrderDate = x.GetValue(Fields.Account.lastStoreOrderDate);
+            lastRegistration = x.GetValue(Fields.Account.lastEventRegistrationDate);
+            MailRemindTime = x.GetValue(Fields.Account.activityReminderEmailSendTimestamp);
             MembershipCost = x.GetValue(Fields.Account.membershipCost);
-            MembershipEndDate = x.GetValue(Fields.Account.membershipEndDate);
-            MembershipEnrollType = x.GetValue(Fields.Account.membershipEnrollType);
+            MembershipEndDate = x.GetValue(Fields.Account.membershipExpirationDate);
+            MembershipEnrollType = x.GetValue(Fields.Account.membershipEnrollmentType);
             MembershipEnrollmentDate = x.GetValue(Fields.Account.membershipEnrollmentDate);
             MembershipName = x.GetValue(Fields.Account.membershipName);
             MembershipStartDate = x.GetValue(Fields.Account.membershipStartDate);
             MiddleName = x.GetValue(Fields.Account.middleName);
             Note = new NoteData
             {
-                LastModified = x.GetValue(Fields.Account.noteLastModifiedTime),
+                LastModified = x.GetValue(Fields.Account.noteLastModifiedDate),
                 Text = x.GetValue(Fields.Account.noteText),
                 Type = x.GetValue(Fields.Account.noteType),
             };
             OrganizationType = x.GetValue(Fields.Account.organizationType);
             Phone1 = new PhoneData
             {
-                Area = x.GetValue(Fields.Account.phone1Area),
+                Area = x.GetValue(Fields.Account.phone1AreaCode),
                 FullNumber = x.GetValue(Fields.Account.phone1FullNumber),
                 Number = x.GetValue(Fields.Account.phone1Number),
                 Type = x.GetValue(Fields.Account.phone1Type)
             };
             Phone2 = new PhoneData
             {
-                Area = x.GetValue(Fields.Account.phone2Area),
+                Area = x.GetValue(Fields.Account.phone2AreaCode),
                 FullNumber = x.GetValue(Fields.Account.phone2FullNumber),
                 Number = x.GetValue(Fields.Account.phone2Number),
                 Type = x.GetValue(Fields.Account.phone2Type)
             };
             Phone3 = new PhoneData
             {
-                Area = x.GetValue(Fields.Account.phone3Area),
+                Area = x.GetValue(Fields.Account.phone3AreaCode),
                 FullNumber = x.GetValue(Fields.Account.phone3FullNumber),
                 Number = x.GetValue(Fields.Account.phone3Number),
                 Type = x.GetValue(Fields.Account.phone3Type)
@@ -471,37 +471,37 @@ namespace Z2Systems.Neon
             Salutation = x.GetValue(Fields.Account.salutation);
             ShippingAddress = new AddressData
             {
-                Street1 = x.GetValue(Fields.Account.shippingAddress1),
-                Street2 = x.GetValue(Fields.Account.shippingAddress2),
-                Street3 = x.GetValue(Fields.Account.shippingAddress3),
-                Street4 = x.GetValue(Fields.Account.shippingAddress4),
+                Street1 = x.GetValue(Fields.Account.shippingAddressLine1),
+                Street2 = x.GetValue(Fields.Account.shippingAddressLine2),
+                Street3 = x.GetValue(Fields.Account.shippingAddressLine3),
+                Street4 = x.GetValue(Fields.Account.shippingAddressLine4),
                 City = x.GetValue(Fields.Account.shippingCity),
                 Country = x.GetValue(Fields.Account.shippingCountry),
                 County = x.GetValue(Fields.Account.shippingCounty),
                 Email = x.GetValue(Fields.Account.shippingEmail),
                 ShippingFaxNumber = new PhoneData
                 {
-                    Area = x.GetValue(Fields.Account.shippingFaxArea),
+                    Area = x.GetValue(Fields.Account.shippingFaxAreaCode),
                     Number = x.GetValue(Fields.Account.shippingFaxNumber),
                     Type = x.GetValue(Fields.Account.shippingFaxType),
                 },
                 Phone1 = new PhoneData
                 {
-                    Area = x.GetValue(Fields.Account.shippingPhone1Area),
+                    Area = x.GetValue(Fields.Account.shippingPhone1AreaCode),
                     FullNumber = x.GetValue(Fields.Account.shippingPhone1FullNumber),
                     Number = x.GetValue(Fields.Account.shippingPhone1Number),
                     Type = x.GetValue(Fields.Account.shippingPhone1Type)
                 },
                 Phone2 = new PhoneData
                 {
-                    Area = x.GetValue(Fields.Account.shippingPhone2Area),
+                    Area = x.GetValue(Fields.Account.shippingPhone2AreaCode),
                     FullNumber = x.GetValue(Fields.Account.shippingPhone2FullNumber),
                     Number = x.GetValue(Fields.Account.shippingPhone2Number),
                     Type = x.GetValue(Fields.Account.shippingPhone2Type)
                 },
                 Phone3 = new PhoneData
                 {
-                    Area = x.GetValue(Fields.Account.shippingPhone3Area),
+                    Area = x.GetValue(Fields.Account.shippingPhone3AreaCode),
                     FullNumber = x.GetValue(Fields.Account.shippingPhone3FullNumber),
                     Number = x.GetValue(Fields.Account.shippingPhone3Number),
                     Type = x.GetValue(Fields.Account.shippingPhone3Type)
@@ -509,23 +509,23 @@ namespace Z2Systems.Neon
                 State = x.GetValue(Fields.Account.shippingState),
                 ToName = x.GetValue(Fields.Account.shippingToName),
                 ToOrganization = x.GetValue(Fields.Account.shippingToOrganization),
-                ZipSuffix = x.GetValue(Fields.Account.shippingZipSuffix),
+                ZipSuffix = x.GetValue(Fields.Account.shippingZipCodeSuffix),
                 ZipCode = x.GetValue(Fields.Account.shippingZipCode)
 
             };
-            Source = x.GetValue(Fields.Account.source);
+            Source = x.GetValue(Fields.Account.accountSource);
             StateHouseDistrict = x.GetValue(Fields.Account.stateHouseDistrict);
             StateSenateDistrict = x.GetValue(Fields.Account.stateSenateDistrict);
             StickyNote = x.GetValue(Fields.Account.stickyNote);
-            Email1 = x.GetValue(Fields.Account.userEmail1);
-            Email2 = x.GetValue(Fields.Account.userEmail2);
-            Email3 = x.GetValue(Fields.Account.userEmail3);
-            FullName = x.GetValue(Fields.Account.userFullName);
-            Gender = x.GetValue(Fields.Account.userGender);
-            PreferredName = x.GetValue(Fields.Account.userPreferredName);
-            Prefix = x.GetValue(Fields.Account.userPrefix);
-            Suffix = x.GetValue(Fields.Account.userSuffix);
-            URL = x.GetValue(Fields.Account.userUrl);
+            Email1 = x.GetValue(Fields.Account.email1);
+            Email2 = x.GetValue(Fields.Account.email2);
+            Email3 = x.GetValue(Fields.Account.email3);
+            FullName = x.GetValue(Fields.Account.fullName);
+            Gender = x.GetValue(Fields.Account.gender);
+            PreferredName = x.GetValue(Fields.Account.preferredName);
+            Prefix = x.GetValue(Fields.Account.prefix);
+            Suffix = x.GetValue(Fields.Account.suffix);
+            URL = x.GetValue(Fields.Account.url);
         }
         public string AccountCreated;
         public string CreatedBy { get; set; }

@@ -36,259 +36,259 @@ namespace Z2Systems.Neon
             public const string orderCountAll = "All Order Count";
             public const string pledgeAmountAll = "All Pledge Amount";
             public const string pledgeCountAll = "All Pledge Count";
-            public const string registrationAmountAll = "All Registration Amount";
-            public const string registrationCountAll = "All Registration Count";
+            public const string registrationAmountAll = "All Event Amount";
+            public const string registrationCountAll = "All Event Count";
 
             public const string donationAmount2005 = "2005 Donation Amount";
             public const string donationCount2005 = "2005 Donation Count";
-            public const string membershipAmount2005 = "2005 Membership Amount";
-            public const string membershipCount2005 = "2005 Membership Count";
-            public const string orderAmount2005 = "2005 Order Amount";
-            public const string orderCount2005 = "2005 Order Count";
+            public const string membershipAmount2005 = "2005 Membership Enrollment Amount";
+            public const string membershipCount2005 = "2005 Membership Enrollment Count";
+            public const string orderAmount2005 = "2005 Store Order Amount";
+            public const string orderCount2005 = "2005 Store Order Count";
             public const string pledgeAmount2005 = "2005 Pledge Amount";
             public const string pledgeCount2005 = "2005 Pledge Count";
-            public const string registrationAmount2005 = "2005 Registration Amount";
-            public const string registrationCount2005 = "2005 Registration Count";
+            public const string registrationAmount2005 = "2005 Event Registration Amount";
+            public const string registrationCount2005 = "2005 Event Registration Count";
 
-            public const string donationAmount20052006 = "2005-2006 Donation Amount";
-            public const string donationCount20052006 = "2005-2006 Donation Count";
-            public const string membershipAmount20052006 = "2005-2006 Membership Amount";
-            public const string membershipCount20052006 = "2005-2006 Membership Count";
-            public const string orderAmount20052006 = "2005-2006 Order Amount";
-            public const string orderCount20052006 = "2005-2006 Order Count";
-            public const string pledgeAmount20052006 = "2005-2006 Pledge Amount";
-            public const string pledgeCount20052006 = "2005-2006 Pledge Count";
-            public const string registrationAmount20052006 = "2005-2006 Registration Amount";
-            public const string registrationCount20052006 = "2005-2006 Registration Count";
+            public const string donationAmount20052006 = "2005-2006 Fiscal Year Donation Amount";
+            public const string donationCount20052006 = "2005-2006 Fiscal Year Donation Count";
+            public const string membershipAmount20052006 = "2005-2006 Fiscal Year Membership Enrollment Amount";
+            public const string membershipCount20052006 = "2005-2006 Fiscal Year Membership Enrollment Count";
+            public const string orderAmount20052006 = "2005-2006 Fiscal Year Store Order Amount";
+            public const string orderCount20052006 = "2005-2006 Fiscal Year Store Order Count";
+            public const string pledgeAmount20052006 = "2005-2006 Fiscal Year Pledge Amount";
+            public const string pledgeCount20052006 = "2005-2006 Fiscal Year Pledge Count";
+            public const string registrationAmount20052006 = "2005-2006 Fiscal Year Event Registration Amount";
+            public const string registrationCount20052006 = "2005-2006 Fiscal Year Event Registration Count";
 
             public const string donationAmount2006 = "2006 Donation Amount";
             public const string donationCount2006 = "2006 Donation Count";
-            public const string membershipAmount2006 = "2006 Membership Amount";
-            public const string membershipCount2006 = "2006 Membership Count";
-            public const string orderAmount2006 = "2006 Order Amount";
-            public const string orderCount2006 = "2006 Order Count";
+            public const string membershipAmount2006 = "2006 Membership Enrollment Amount";
+            public const string membershipCount2006 = "2006 Membership Enrollment Count";
+            public const string orderAmount2006 = "2006 Store Order Amount";
+            public const string orderCount2006 = "2006 Store Order Count";
             public const string pledgeAmount2006 = "2006 Pledge Amount";
             public const string pledgeCount2006 = "2006 Pledge Count";
-            public const string registrationAmount2006 = "2006 Registration Amount";
-            public const string registrationCount2006 = "2006 Registration Count";
+            public const string registrationAmount2006 = "2006 Event Registration Amount";
+            public const string registrationCount2006 = "2006 Event Registration Count";
 
 
-            public const string donationAmount20062007 = "2006-2007 Donation Amount";
-            public const string donationCount20062007 = "2006-2007 Donation Count";
-            public const string membershipAmount20062007 = "2006-2007 Membership Amount";
-            public const string membershipCount20062007 = "2006-2007 Membership Count";
-            public const string orderAmount20062007 = "2006-2007 Order Amount";
-            public const string orderCount20062007 = "2006-2007 Order Count";
-            public const string pledgeAmount20062007 = "2006-2007 Pledge Amount";
-            public const string pledgeCount20062007 = "2006-2007 Pledge Count";
-            public const string registrationAmount20062007 = "2006-2007 Registration Amount";
-            public const string registrationCount20062007 = "2006-2007 Registration Count";
+            public const string donationAmount20062007 = "2006-2007 Fiscal Year Donation Amount";
+            public const string donationCount20062007 = "2006-2007 Fiscal Year Donation Count";
+            public const string membershipAmount20062007 = "2006-2007 Fiscal Year Membership Enrollment Amount";
+            public const string membershipCount20062007 = "2006-2007 Fiscal Year Membership Enrollment Count";
+            public const string orderAmount20062007 = "2006-2007 Fiscal Year Store Order Amount";
+            public const string orderCount20062007 = "2006-2007 Fiscal Year Store Order Count";
+            public const string pledgeAmount20062007 = "2006-2007 Fiscal Year Pledge Amount";
+            public const string pledgeCount20062007 = "2006-2007 Fiscal Year Pledge Count";
+            public const string registrationAmount20062007 = "2006-2007 Fiscal Year Event Registration Amount";
+            public const string registrationCount20062007 = "2006-2007 Fiscal Year Event Registration Count";
 
 
             public const string donationAmount2007 = "2007 Donation Amount";
             public const string donationCount2007 = "2007 Donation Count";
-            public const string membershipAmount2007 = "2007 Membership Amount";
-            public const string membershipCount2007 = "2007 Membership Count";
-            public const string orderAmount2007 = "2007 Order Amount";
-            public const string orderCount2007 = "2007 Order Count";
+            public const string membershipAmount2007 = "2007 Membership Enrollment Amount";
+            public const string membershipCount2007 = "2007 Membership Enrollment Count";
+            public const string orderAmount2007 = "2007 Store Order Amount";
+            public const string orderCount2007 = "2007 Store Order Count";
             public const string pledgeAmount2007 = "2007 Pledge Amount";
             public const string pledgeCount2007 = "2007 Pledge Count";
-            public const string registrationAmount2007 = "2007 Registration Amount";
-            public const string registrationCount2007 = "2007 Registration Count";
+            public const string registrationAmount2007 = "2007 Event Registration Amount";
+            public const string registrationCount2007 = "2007 Event Registration Count";
 
 
-            public const string donationAmount20072008 = "2007-2008 Donation Amount";
-            public const string donationCount20072008 = "2007-2008 Donation Count";
-            public const string membershipAmount20072008 = "2007-2008 Membership Amount";
-            public const string membershipCount20072008 = "2007-2008 Membership Count";
-            public const string orderAmount20072008 = "2007-2008 Order Amount";
-            public const string orderCount20072008 = "2007-2008 Order Count";
-            public const string pledgeAmount20072008 = "2007-2008 Pledge Amount";
-            public const string pledgeCount20072008 = "2007-2008 Pledge Count";
-            public const string registrationAmount20072008 = "2007-2008 Registration Amount";
-            public const string registrationCount20072008 = "2007-2008 Registration Count";
+            public const string donationAmount20072008 = "2007-2008 Fiscal Year Donation Amount";
+            public const string donationCount20072008 = "2007-2008 Fiscal Year Donation Count";
+            public const string membershipAmount20072008 = "2007-2008 Fiscal Year Membership Enrollment Amount";
+            public const string membershipCount20072008 = "2007-2008 Fiscal Year Membership Enrollment Count";
+            public const string orderAmount20072008 = "2007-2008 Fiscal Year Store Order Amount";
+            public const string orderCount20072008 = "2007-2008 Fiscal Year Store Order Count";
+            public const string pledgeAmount20072008 = "2007-2008 Fiscal Year Pledge Amount";
+            public const string pledgeCount20072008 = "2007-2008 Fiscal Year Pledge Count";
+            public const string registrationAmount20072008 = "2007-2008 Fiscal Year Event Registration Amount";
+            public const string registrationCount20072008 = "2007-2008 Fiscal Year Event Registration Count";
 
 
             public const string donationAmount2008 = "2008 Donation Amount";
             public const string donationCount2008 = "2008 Donation Count";
-            public const string membershipAmount2008 = "2008 Membership Amount";
-            public const string membershipCount2008 = "2008 Membership Count";
-            public const string orderAmount2008 = "2008 Order Amount";
-            public const string orderCount2008 = "2008 Order Count";
+            public const string membershipAmount2008 = "2008 Membership Enrollment Amount";
+            public const string membershipCount2008 = "2008 Membership Enrollment Count";
+            public const string orderAmount2008 = "2008 Store Order Amount";
+            public const string orderCount2008 = "2008 Store Order Count";
             public const string pledgeAmount2008 = "2008 Pledge Amount";
             public const string pledgeCount2008 = "2008 Pledge Count";
-            public const string registrationAmount2008 = "2008 Registration Amount";
-            public const string registrationCount2008 = "2008 Registration Count";
+            public const string registrationAmount2008 = "2008 Event Registration Amount";
+            public const string registrationCount2008 = "2008 Event Registration Count";
 
 
-            public const string donationAmount20082009 = "2008-2009 Donation Amount";
-            public const string donationCount20082009 = "2008-2009 Donation Count";
-            public const string membershipAmount20082009 = "2008-2009 Membership Amount";
-            public const string membershipCount20082009 = "2008-2009 Membership Count";
-            public const string orderAmount20082009 = "2008-2009 Order Amount";
-            public const string orderCount20082009 = "2008-2009 Order Count";
-            public const string pledgeAmount20082009 = "2008-2009 Pledge Amount";
-            public const string pledgeCount20082009 = "2008-2009 Pledge Count";
-            public const string registrationAmount20082009 = "2008-2009 Registration Amount";
-            public const string registrationCount20082009 = "2008-2009 Registration Count";
+            public const string donationAmount20082009 = "2008-2009 Fiscal Year Donation Amount";
+            public const string donationCount20082009 = "2008-2009 Fiscal Year Donation Count";
+            public const string membershipAmount20082009 = "2008-2009 Fiscal Year Membership Enrollment Amount";
+            public const string membershipCount20082009 = "2008-2009 Fiscal Year Membership Enrollment Count";
+            public const string orderAmount20082009 = "2008-2009 Fiscal Year Store Order Amount";
+            public const string orderCount20082009 = "2008-2009 Fiscal Year Store Order Count";
+            public const string pledgeAmount20082009 = "2008-2009 Fiscal Year Pledge Amount";
+            public const string pledgeCount20082009 = "2008-2009 Fiscal Year Pledge Count";
+            public const string registrationAmount20082009 = "2008-2009 Fiscal Year Event Registration Amount";
+            public const string registrationCount20082009 = "2008-2009 Fiscal Year Event Registration Count";
 
 
             public const string donationAmount2009 = "2009 Donation Amount";
             public const string donationCount2009 = "2009 Donation Count";
-            public const string membershipAmount2009 = "2009 Membership Amount";
-            public const string membershipCount2009 = "2009 Membership Count";
-            public const string orderAmount2009 = "2009 Order Amount";
-            public const string orderCount2009 = "2009 Order Count";
+            public const string membershipAmount2009 = "2009 Membership Enrollment Amount";
+            public const string membershipCount2009 = "2009 Membership Enrollment Count";
+            public const string orderAmount2009 = "2009 Store Order Amount";
+            public const string orderCount2009 = "2009 Store Order Count";
             public const string pledgeAmount2009 = "2009 Pledge Amount";
             public const string pledgeCount2009 = "2009 Pledge Count";
-            public const string registrationAmount2009 = "2009 Registration Amount";
-            public const string registrationCount2009 = "2009 Registration Count";
+            public const string registrationAmount2009 = "2009 Event Registration Amount";
+            public const string registrationCount2009 = "2009 Event Registration Count";
 
 
-            public const string donationAmount20092010 = "2009-2010 Donation Amount";
-            public const string donationCount20092010 = "2009-2010 Donation Count";
-            public const string membershipAmount20092010 = "2009-2010 Membership Amount";
-            public const string membershipCount20092010 = "2009-2010 Membership Count";
-            public const string orderAmount20092010 = "2009-2010 Order Amount";
-            public const string orderCount20092010 = "2009-2010 Order Count";
-            public const string pledgeAmount20092010 = "2009-2010 Pledge Amount";
-            public const string pledgeCount20092010 = "2009-2010 Pledge Count";
-            public const string registrationAmount20092010 = "2009-2010 Registration Amount";
-            public const string registrationCount20092010 = "2009-2010 Registration Count";
+            public const string donationAmount20092010 = "2009-2010 Fiscal Year Donation Amount";
+            public const string donationCount20092010 = "2009-2010 Fiscal Year Donation Count";
+            public const string membershipAmount20092010 = "2009-2010 Fiscal Year Membership Enrollment Amount";
+            public const string membershipCount20092010 = "2009-2010 Fiscal Year Membership Enrollment Count";
+            public const string orderAmount20092010 = "2009-2010 Fiscal Year Store Order Amount";
+            public const string orderCount20092010 = "2009-2010 Fiscal Year Store Order Count";
+            public const string pledgeAmount20092010 = "2009-2010 Fiscal Year Pledge Amount";
+            public const string pledgeCount20092010 = "2009-2010 Fiscal Year Pledge Count";
+            public const string registrationAmount20092010 = "2009-2010 Fiscal Year Event Registration Amount";
+            public const string registrationCount20092010 = "2009-2010 Fiscal Year Event Registration Count";
 
             public const string donationAmount2010 = "2010 Donation Amount";
             public const string donationCount2010 = "2010 Donation Count";
-            public const string membershipAmount2010 = "2010 Membership Amount";
-            public const string membershipCount2010 = "2010 Membership Count";
-            public const string orderAmount2010 = "2010 Order Amount";
-            public const string orderCount2010 = "2010 Order Count";
+            public const string membershipAmount2010 = "2010 Membership Enrollment Amount";
+            public const string membershipCount2010 = "2010 Membership Enrollment Count";
+            public const string orderAmount2010 = "2010 Store Order Amount";
+            public const string orderCount2010 = "2010 Store Order Count";
             public const string pledgeAmount2010 = "2010 Pledge Amount";
             public const string pledgeCount2010 = "2010 Pledge Count";
-            public const string registrationAmount2010 = "2010 Registration Amount";
-            public const string registrationCount2010 = "2010 Registration Count";
+            public const string registrationAmount2010 = "2010 Event Registration Amount";
+            public const string registrationCount2010 = "2010 Event Registration Count";
 
 
-            public const string donationAmount20102011 = "2010-2011 Donation Amount";
-            public const string donationCount20102011 = "2010-2011 Donation Count";
-            public const string membershipAmount20102011 = "2010-2011 Membership Amount";
-            public const string membershipCount20102011 = "2010-2011 Membership Count";
-            public const string orderAmount20102011 = "2010-2011 Order Amount";
-            public const string orderCount20102011 = "2010-2011 Order Count";
-            public const string pledgeAmount20102011 = "2010-2011 Pledge Amount";
-            public const string pledgeCount20102011 = "2010-2011 Pledge Count";
-            public const string registrationAmount20102011 = "2010-2011 Registration Amount";
-            public const string registrationCount20102011 = "2010-2011 Registration Count";
+            public const string donationAmount20102011 = "2010-2011 Fiscal Year Donation Amount";
+            public const string donationCount20102011 = "2010-2011 Fiscal Year Donation Count";
+            public const string membershipAmount20102011 = "2010-2011 Fiscal Year Membership Enrollment Amount";
+            public const string membershipCount20102011 = "2010-2011 Fiscal Year Membership Enrollment Count";
+            public const string orderAmount20102011 = "2010-2011 Fiscal Year Store Order Amount";
+            public const string orderCount20102011 = "2010-2011 Fiscal Year Store Order Count";
+            public const string pledgeAmount20102011 = "2010-2011 Fiscal Year Pledge Amount";
+            public const string pledgeCount20102011 = "2010-2011 Fiscal Year Pledge Count";
+            public const string registrationAmount20102011 = "2010-2011 Fiscal Year Event Registration Amount";
+            public const string registrationCount20102011 = "2010-2011 Fiscal Year Event Registration Count";
 
             public const string donationAmount2011 = "2011 Donation Amount";
             public const string donationCount2011 = "2011 Donation Count";
-            public const string membershipAmount2011 = "2011 Membership Amount";
-            public const string membershipCount2011 = "2011 Membership Count";
-            public const string orderAmount2011 = "2011 Order Amount";
-            public const string orderCount2011 = "2011 Order Count";
+            public const string membershipAmount2011 = "2011 Membership Enrollment Amount";
+            public const string membershipCount2011 = "2011 Membership Enrollment Count";
+            public const string orderAmount2011 = "2011 Store Order Amount";
+            public const string orderCount2011 = "2011 Store Order Count";
             public const string pledgeAmount2011 = "2011 Pledge Amount";
             public const string pledgeCount2011 = "2011 Pledge Count";
-            public const string registrationAmount2011 = "2011 Registration Amount";
-            public const string registrationCount2011 = "2011 Registration Count";
+            public const string registrationAmount2011 = "2011 Event Registration Amount";
+            public const string registrationCount2011 = "2011 Event Registration Count";
 
 
-            public const string donationAmount20112012 = "2011-2012 Donation Amount";
-            public const string donationCount20112012 = "2011-2012 Donation Count";
-            public const string membershipAmount20112012 = "2011-2012 Membership Amount";
-            public const string membershipCount20112012 = "2011-2012 Membership Count";
-            public const string orderAmount20112012 = "2011-2012 Order Amount";
-            public const string orderCount20112012 = "2011-2012 Order Count";
-            public const string pledgeAmount20112012 = "2011-2012 Pledge Amount";
-            public const string pledgeCount20112012 = "2011-2012 Pledge Count";
-            public const string registrationAmount20112012 = "2011-2012 Registration Amount";
-            public const string registrationCount20112012 = "2011-2012 Registration Count";
+            public const string donationAmount20112012 = "2011-2012 Fiscal Year Donation Amount";
+            public const string donationCount20112012 = "2011-2012 Fiscal Year Donation Count";
+            public const string membershipAmount20112012 = "2011-2012 Fiscal Year Membership Enrollment Amount";
+            public const string membershipCount20112012 = "2011-2012 Fiscal Year Membership Enrollment Count";
+            public const string orderAmount20112012 = "2011-2012 Fiscal Year Store Order Amount";
+            public const string orderCount20112012 = "2011-2012 Fiscal Year Store Order Count";
+            public const string pledgeAmount20112012 = "2011-2012 Fiscal Year Pledge Amount";
+            public const string pledgeCount20112012 = "2011-2012 Fiscal Year Pledge Count";
+            public const string registrationAmount20112012 = "2011-2012 Fiscal Year Event Registration Amount";
+            public const string registrationCount20112012 = "2011-2012 Fiscal Year Event Registration Count";
 
             public const string donationAmount2012 = "2012 Donation Amount";
             public const string donationCount2012 = "2012 Donation Count";
-            public const string membershipAmount2012 = "2012 Membership Amount";
-            public const string membershipCount2012 = "2012 Membership Count";
-            public const string orderAmount2012 = "2012 Order Amount";
-            public const string orderCount2012 = "2012 Order Count";
+            public const string membershipAmount2012 = "2012 Membership Enrollment Amount";
+            public const string membershipCount2012 = "2012 Membership Enrollment Count";
+            public const string orderAmount2012 = "2012 Store Order Amount";
+            public const string orderCount2012 = "2012 Store Order Count";
             public const string pledgeAmount2012 = "2012 Pledge Amount";
             public const string pledgeCount2012 = "2012 Pledge Count";
-            public const string registrationAmount2012 = "2012 Registration Amount";
-            public const string registrationCount2012 = "2012 Registration Count";
+            public const string registrationAmount2012 = "2012 Event Registration Amount";
+            public const string registrationCount2012 = "2012 Event Registration Count";
 
-            public const string donationAmount20122013 = "2012-2013 Donation Amount";
-            public const string donationCount20122013 = "2012-2013 Donation Count";
-            public const string membershipAmount20122013 = "2012-2013 Membership Amount";
-            public const string membershipCount20122013 = "2012-2013 Membership Count";
-            public const string orderAmount20122013 = "2012-2013 Order Amount";
-            public const string orderCount20122013 = "2012-2013 Order Count";
-            public const string pledgeAmount20122013 = "2012-2013 Pledge Amount";
-            public const string pledgeCount20122013 = "2012-2013 Pledge Count";
-            public const string registrationAmount20122013 = "2012-2013 Registration Amount";
-            public const string registrationCount20122013 = "2012-2013 Registration Count";
+            public const string donationAmount20122013 = "2012-2013 Fiscal Year Donation Amount";
+            public const string donationCount20122013 = "2012-2013 Fiscal Year Donation Count";
+            public const string membershipAmount20122013 = "2012-2013 Fiscal Year Membership Enrollment Amount";
+            public const string membershipCount20122013 = "2012-2013 Fiscal Year Membership Enrollment Count";
+            public const string orderAmount20122013 = "2012-2013 Fiscal Year Store Order Amount";
+            public const string orderCount20122013 = "2012-2013 Fiscal Year Store Order Count";
+            public const string pledgeAmount20122013 = "2012-2013 Fiscal Year Pledge Amount";
+            public const string pledgeCount20122013 = "2012-2013 Fiscal Year Pledge Count";
+            public const string registrationAmount20122013 = "2012-2013 Fiscal Year Event Registration Amount";
+            public const string registrationCount20122013 = "2012-2013 Fiscal Year Event Registration Count";
 
             public const string donationAmount2013 = "2013 Donation Amount";
             public const string donationCount2013 = "2013 Donation Count";
-            public const string membershipAmount2013 = "2013 Membership Amount";
-            public const string membershipCount2013 = "2013 Membership Count";
-            public const string orderAmount2013 = "2013 Order Amount";
-            public const string orderCount2013 = "2013 Order Count";
+            public const string membershipAmount2013 = "2013 Membership Enrollment Amount";
+            public const string membershipCount2013 = "2013 Membership Enrollment Count";
+            public const string orderAmount2013 = "2013 Store Order Amount";
+            public const string orderCount2013 = "2013 Store Order Count";
             public const string pledgeAmount2013 = "2013 Pledge Amount";
             public const string pledgeCount2013 = "2013 Pledge Count";
-            public const string registrationAmount2013 = "2013 Registration Amount";
-            public const string registrationCount2013 = "2013 Registration Count";
+            public const string registrationAmount2013 = "2013 Event Registration Amount";
+            public const string registrationCount2013 = "2013 Event Registration Count";
 
-            public const string donationAmount20132014 = "2013-2014 Donation Amount";
-            public const string donationCount20132014 = "2013-2104 Donation Count";
-            public const string membershipAmount20132014 = "2013-2104 Membership Amount";
-            public const string membershipCount20132014 = "2013-2104 Membership Count";
-            public const string orderAmount20132014 = "2013-2104 Order Amount";
-            public const string orderCount20132014 = "2013-2104 Order Count";
-            public const string pledgeAmount20132014 = "2013-2104 Pledge Amount";
-            public const string pledgeCount20132014 = "2013-2104 Pledge Count";
-            public const string registrationAmount20132014 = "2013-2104 Registration Amount";
-            public const string registrationCount20132014 = "2013-2104 Registration Count";
+            public const string donationAmount20132014 = "2013-2014 Fiscal Year Donation Amount";
+            public const string donationCount20132014 = "2013-2104 Fiscal Year Donation Count";
+            public const string membershipAmount20132014 = "2013-2104 Fiscal Year Membership Enrollment Amount";
+            public const string membershipCount20132014 = "2013-2104 Fiscal Year Membership Enrollment Count";
+            public const string orderAmount20132014 = "2013-2104 Fiscal Year Store Order Amount";
+            public const string orderCount20132014 = "2013-2104 Fiscal Year Store Order Count";
+            public const string pledgeAmount20132014 = "2013-2104 Fiscal Year Pledge Amount";
+            public const string pledgeCount20132014 = "2013-2104 Fiscal Year Pledge Count";
+            public const string registrationAmount20132014 = "2013-2104 Fiscal Year Event Registration Amount";
+            public const string registrationCount20132014 = "2013-2104 Fiscal Year Event Registration Count";
 
             public const string donationAmount2014 = "2014 Donation Amount";
             public const string donationCount2014 = "2014 Donation Count";
-            public const string membershipAmount2014 = "2014 Membership Amount";
-            public const string membershipCount2014 = "2014 Membership Count";
-            public const string orderAmount2014 = "2014 Order Amount";
-            public const string orderCount2014 = "2014 Order Count";
+            public const string membershipAmount2014 = "2014 Membership Enrollment Amount";
+            public const string membershipCount2014 = "2014 Membership Enrollment Count";
+            public const string orderAmount2014 = "2014 Store Order Amount";
+            public const string orderCount2014 = "2014 Store Order Count";
             public const string pledgeAmount2014 = "2014 Pledge Amount";
             public const string pledgeCount2014 = "2014 Pledge Count";
-            public const string registrationAmount2014 = "2014 Registration Amount";
-            public const string registrationCount2014 = "2014 Registration Count";
+            public const string registrationAmount2014 = "2014 Event Registration Amount";
+            public const string registrationCount2014 = "2014 Event Registration Count";
 
-            public const string donationAmount20142015 = "2014-2015 Donation Amount";
-            public const string donationCount20142015 = "2014-2015 Donation Count";
-            public const string membershipAmount20142015 = "2014-2015 Membership Amount";
-            public const string membershipCount20142015 = "2014-2015 Membership Count";
-            public const string orderAmount20142015 = "2014-2015 Order Amount";
-            public const string orderCount20142015 = "2014-2015 Order Count";
-            public const string pledgeAmount20142015 = "2014-2015 Pledge Amount";
-            public const string pledgeCount20142015 = "2014-2015 Pledge Count";
-            public const string registrationAmount20142015 = "2014-2015 Registration Amount";
-            public const string registrationCount20142015 = "2014-2015 Registration Count";
+            public const string donationAmount20142015 = "2014-2015 Fiscal Year Donation Amount";
+            public const string donationCount20142015 = "2014-2015 Fiscal Year Donation Count";
+            public const string membershipAmount20142015 = "2014-2015 Fiscal Year Membership Enrollment Amount";
+            public const string membershipCount20142015 = "2014-2015 Fiscal Year Membership Enrollment Count";
+            public const string orderAmount20142015 = "2014-2015 Fiscal Year Store Order Amount";
+            public const string orderCount20142015 = "2014-2015 Fiscal Year Store Order Count";
+            public const string pledgeAmount20142015 = "2014-2015 Fiscal Year Pledge Amount";
+            public const string pledgeCount20142015 = "2014-2015 Fiscal Year Pledge Count";
+            public const string registrationAmount20142015 = "2014-2015 Fiscal Year Event Registration Amount";
+            public const string registrationCount20142015 = "2014-2015 Fiscal Year Event Registration Count";
 
             public const string donationAmount2015 = "2015 Donation Amount";
             public const string donationCount2015 = "2015 Donation Count";
-            public const string membershipAmount2015 = "2015 Membership Amount";
-            public const string membershipCount2015 = "2015 Membership Count";
-            public const string orderAmount2015 = "2015 Order Amount";
-            public const string orderCount2015 = "2015 Order Count";
+            public const string membershipAmount2015 = "2015 Membership Enrollment Amount";
+            public const string membershipCount2015 = "2015 Membership Enrollment Count";
+            public const string orderAmount2015 = "2015 Store Order Amount";
+            public const string orderCount2015 = "2015 Store Order Count";
             public const string pledgeAmount2015 = "2015 Pledge Amount";
             public const string pledgeCount2015 = "2015 Pledge Count";
-            public const string registrationAmount2015 = "2015 Registration Amount";
-            public const string registrationCount2015 = "2015 Registration Count";
-            
-            public const string donationAmount20152016 = "2015-2016 Donation Amount";
-            public const string donationCount20152016 = "2015-2016 Donation Count";
-            public const string membershipAmount20152016 = "2015-2016 Membership Amount";
-            public const string membershipCount20152016 = "2015-2016 Membership Count";
-            public const string orderAmount20152016 = "2015-2016 Order Amount";
-            public const string orderCount20152016 = "2015-2016 Order Count";
-            public const string pledgeAmount20152016 = "2015-2016 Pledge Amount";
-            public const string pledgeCount20152016 = "2015-2016 Pledge Count";
-            public const string registrationAmount20152016 = "2015-2016 Registration Amount";
-            public const string registrationCount20152016 = "2015-2016 Registration Count";
+            public const string registrationAmount2015 = "2015 Event Registration Amount";
+            public const string registrationCount2015 = "2015 Event Registration Count";
+
+            public const string donationAmount20152016 = "2015-2016 Fiscal Year Donation Amount";
+            public const string donationCount20152016 = "2015-2016 Fiscal Year Donation Count";
+            public const string membershipAmount20152016 = "2015-2016 Fiscal Year Membership Enrollment Amount";
+            public const string membershipCount20152016 = "2015-2016 Fiscal Year Membership Enrollment Count";
+            public const string orderAmount20152016 = "2015-2016 Fiscal Year Store Order Amount";
+            public const string orderCount20152016 = "2015-2016 Fiscal Year Store Order Count";
+            public const string pledgeAmount20152016 = "2015-2016 Fiscal Year Pledge Amount";
+            public const string pledgeCount20152016 = "2015-2016 Fiscal Year Pledge Count";
+            public const string registrationAmount20152016 = "2015-2016 Fiscal Year Event Registration Amount";
+            public const string registrationCount20152016 = "2015-2016 Fiscal Year Event Registration Count";
 
             /// <summary>
             /// Search / Output
@@ -296,14 +296,19 @@ namespace Z2Systems.Neon
             public const string accountCreatedBy = "Account Created By";
 
             /// <summary>
-            /// Search / Output
+            /// Search 
             /// </summary>
-            public const string accountCreatedTime = "Account Created Time";
+            public const string accountCreatedDate = "Account Created Date";
+
+            /// <summary>
+            /// Output 
+            /// </summary>
+            public const string accountCreatedTimestamp = "Account Created Timestamp";
 
             /// <summary>
             /// Search / Output
             /// </summary>
-            public const string accountId = "Account Id";
+            public const string accountId = "Account ID";
 
             /// <summary>
             /// Search / Output
@@ -311,24 +316,24 @@ namespace Z2Systems.Neon
             public const string accountLastModifiedBy = "Account Last Modified By";
 
             /// <summary>
-            /// Search / Output
-            /// </summary>
-            public const string accountLastModifiedTime = "Account Last Modified Time";
-
-            /// <summary>
             /// Search
             /// </summary>
-            public const string accountLoginId = "Account Login ID";
+            public const string accountLastModifiedDate = "Account Last Modified Date";
 
             /// <summary>
             /// Output
+            /// </summary>
+            public const string accountLastModifiedTimestamp = "Account Last Modified Timestamp";
+
+            /// <summary>
+            /// Search / Output
             /// </summary>
             public const string accountLoginName = "Account Login Name";
 
             /// <summary>
             /// Search / Output
             /// </summary>
-            public const string accountNote = "Account Note";
+            public const string accountNoteText = "Account Note Text";
 
             /// <summary>
             /// Search
@@ -349,7 +354,7 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Output
             /// </summary>
-            public const string activityAccountId = "Activity Account Id";
+            public const string activityAccountId = "Activity Account ID";
 
             /// <summary>
             /// Search / Output
@@ -369,7 +374,7 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Output
             /// </summary>
-            public const string activityId = "Activity Id";
+            public const string activityId = "Activity ID";
 
 
             /// <summary>
@@ -420,7 +425,7 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Output
             /// </summary>
-            public const string addressCreatedTime = "Address Created Time";
+            public const string addressCreatedTimestamp = "Address Created Timestamp";
 
             /// <summary>
             /// Search / Output
@@ -430,7 +435,7 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Output
             /// </summary>
-            public const string addressFullStreet = "Address Full Street (F)";
+            public const string fullStreetAddress = "Full Street Address (F)";
 
             /// <summary>
             /// Output
@@ -440,7 +445,7 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Output
             /// </summary>
-            public const string addressLastModifiedTime = "Address Last Modified Time";
+            public const string addressLastModifiedTimestamp = "Address Last Modified Timestamp";
 
             /// <summary>
             /// Search / Output
@@ -483,9 +488,14 @@ namespace Z2Systems.Neon
             public const string companyName = "Company Name";
 
             /// <summary>
-            /// Search / Output
+            /// Search
             /// </summary>
             public const string companyTitle = "Company Title";
+
+            /// <summary>
+            /// Output
+            /// </summary>
+            public const string jobTitle = "Job Title";
 
             /// <summary>
             /// Search / Output
@@ -498,7 +508,7 @@ namespace Z2Systems.Neon
             public const string county = "County";
 
             /// <summary>
-            /// Output
+            /// Search / Output
             /// </summary>
             public const string deceased = "Deceased";
 
@@ -545,7 +555,7 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Search
             /// </summary>
-            public const string donationCreatedTime = "Donation Created Time";
+            public const string donationCreatedDate = "Donation Created Date";
 
             /// <summary>
             /// Search
@@ -570,7 +580,7 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Search
             /// </summary>
-            public const string donationLastModifiedTime = "Donation Last Modified Time";
+            public const string donationLastModifiedDate = "Donation Last Modified Date";
 
             /// <summary>
             /// Search
@@ -600,7 +610,7 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Search
             /// </summary>
-            public const string donationTender = "Donation Tender";
+            public const string donationTenderType = "Donation Tender Type";
 
             /// <summary>
             /// Search
@@ -610,7 +620,7 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Search
             /// </summary>
-            public const string donorsNote = "Donor's Note";
+            public const string donorNote = "Donor Note";
 
             /// <summary>
             /// Search
@@ -662,7 +672,7 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Output
             /// </summary>
-            public const string faxArea = "Fax Area";
+            public const string faxAreaCode = "Fax Area Code";
 
 
             /// <summary>
@@ -699,7 +709,7 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Search / Output
             /// </summary>
-            public const string firstEnrollmentDate = "First Enrollment Date";
+            public const string firstMembershipEnrollmentDate = "First Membership Enrollment Date";
 
             /// <summary>
             /// Search / Output
@@ -714,7 +724,7 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Output
             /// </summary>
-            public const string firstRegistrationDate = "First Registration Date";
+            public const string firstEventRegistrationDate = "First Event Registration Date";
 
             /// <summary>
             /// Search
@@ -729,17 +739,17 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Search
             /// </summary>
-            public const string honoryMemoryId = "Honor/Memory ID";
+            public const string honorMemoryId = "Honor/Memory ID";
 
             /// <summary>
             /// Search
             /// </summary>
-            public const string honoryMemoryName = "Honor/Memory Name";
+            public const string honorMemoryName = "Honor/Memory Name";
 
             /// <summary>
             /// Search
             /// </summary>
-            public const string honoryMemoryType = "Honor/Memory Type";
+            public const string honorMemoryType = "Honor/Memory Type";
 
             /// <summary>
             /// Search
@@ -784,7 +794,7 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Output
             /// </summary>
-            public const string lastEnrollmentDate = "Last Enrollment Date";
+            public const string lastMembershipEnrollmentDate = "Last Membership Enrollment Date";
 
             /// <summary>
             /// Search / Output
@@ -794,7 +804,7 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Output
             /// </summary>
-            public const string lastLoginTime = "Last Login Time";
+            public const string lastLoginDate = "Last Login Date";
 
             /// <summary>
             /// Search / Output
@@ -804,17 +814,17 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Output
             /// </summary>
-            public const string lastOrderDate = "Last Order Date";
+            public const string lastStoreOrderDate = "Last Store Order Date";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string lastRegistrationDate = "Last Registration Date";
+            public const string lastEventRegistrationDate = "Last Event Registration Date";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string mailRemindTime = "Mail Remind Time";
+            public const string activityReminderEmailSendTimestamp = "Activity Reminder Email Send Timestamp";
 
             /// <summary>
             /// Output
@@ -824,12 +834,12 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Output
             /// </summary>
-            public const string membershipEndDate = "Membership End Date";
+            public const string membershipExpirationDate = "Membership Expiration Date";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string membershipEnrollType = "Membership Enroll Type";
+            public const string membershipEnrollmentType = "Membership Enrollment Type";
 
             /// <summary>
             /// Output
@@ -859,7 +869,7 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Output
             /// </summary>
-            public const string noteLastModifiedTime = "Note Last Modified Time";
+            public const string noteLastModifiedDate = "Note Last Modified Date";
 
             /// <summary>
             /// Output
@@ -884,64 +894,64 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Output
             /// </summary>
-            public const string phone1Area = "Phone1 Area";
+            public const string phone1AreaCode = "Phone 1 Area Code";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string phone1FullNumber = "Phone1 Full Number (F)";
+            public const string phone1FullNumber = "Phone 1 Full Number (F)";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string phone1Number = "Phone1 Number";
+            public const string phone1Number = "Phone 1 Number";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string phone1Type = "Phone1 Type";
-
-
-            /// <summary>
-            /// Output
-            /// </summary>
-            public const string phone2Area = "phone2 Area";
-
-            /// <summary>
-            /// Output
-            /// </summary>
-            public const string phone2FullNumber = "phone2 Full Number (F)";
-
-            /// <summary>
-            /// Output
-            /// </summary>
-            public const string phone2Number = "phone2 Number";
-
-            /// <summary>
-            /// Output
-            /// </summary>
-            public const string phone2Type = "phone2 Type";
+            public const string phone1Type = "Phone 1 Type";
 
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string phone3Area  = "phone3 Area";
+            public const string phone2AreaCode = "Phone 2 Area Code";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string phone3FullNumber = "phone3 Full Number (F)";
+            public const string phone2FullNumber = "Phone 2 Full Number (F)";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string phone3Number = "phone3 Number";
+            public const string phone2Number = "Phone 2 Number";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string phone3Type = "phone3 Type";
+            public const string phone2Type = "Phone 2 Type";
+
+
+            /// <summary>
+            /// Output
+            /// </summary>
+            public const string phone3AreaCode  = "Phone 3 Area Code";
+
+            /// <summary>
+            /// Output
+            /// </summary>
+            public const string phone3FullNumber = "Phone 3 Full Number (F)";
+
+            /// <summary>
+            /// Output
+            /// </summary>
+            public const string phone3Number = "Phone 3 Number";
+
+            /// <summary>
+            /// Output
+            /// </summary>
+            public const string phone3Type = "Phone 3 Type";
 
             /// <summary>
             /// Search
@@ -954,7 +964,7 @@ namespace Z2Systems.Neon
             public const string pledgeExpectedDate = "Pledge Expected Date";
 
             /// <summary>
-            /// Search
+            /// Search / Output
             /// </summary>
             public const string preferredName = "Preferred Name";
 
@@ -1066,51 +1076,51 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Search 
             /// </summary>
-            public const string registrationAmount = "Registration Amount";
+            public const string eventRegistrationAmount = "Event Registration Amount";
 
             /// <summary>
             /// Search 
             /// </summary>
-            public const string registrationCreatedBy = "Registration Created By";
+            public const string eventRegistrationCreatedBy = "Event Registration Created By";
 
             /// <summary>
             /// Search 
             /// </summary>
-            public const string registrationCreatedTime = "Registration Created Time";
+            public const string eventRegistrationCreatedDate = "Event Registration Created Date";
 
             /// <summary>
             /// Search 
             /// </summary>
-            public const string registrationDate = "Registration Date";
+            public const string eventRegistrationDate = "Event Registration Date";
 
 
             /// <summary>
             /// Search 
             /// </summary>
-            public const string registrationLastModifiedBy = "Registration Last Modified By";
+            public const string eventRegistrationLastModifiedBy = "Event Registration Last Modified By";
 
             /// <summary>
             /// Search 
             /// </summary>
-            public const string registrationLastModifiedTime = "Registration Last Modified Time";
+            public const string eventRegistrationLastModifiedDate = "Event Registration Last Modified Date";
 
             /// <summary>
             /// Search 
             /// </summary>
-            public const string registrationSocialFundraiser = "Registration Social Fundraiser";
+            public const string eventRegistrationSocialFundraiser = "Event Registration Social Fundraiser";
 
             /// <summary>
             /// Search 
             /// </summary>
-            public const string registrationSolicitor = "Registration Solicitor";
+            public const string eventRegistrationSolicitor = "Event Registration Solicitor";
 
             /// <summary>
             /// Search 
             /// </summary>
-            public const string registrationSource = "Registration Source";
+            public const string eventRegistrationSource = "Event Registration Source";
 
             /// <summary>
-            /// Output 
+            /// Search  / Output 
             /// </summary>
             public const string salutation = "Salutation";
 
@@ -1122,19 +1132,19 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Output 
             /// </summary>
-            public const string shippingAddress1 = "Shipping Address1";
+            public const string shippingAddressLine1 = "Shipping Address Line 1";
             /// <summary>
             /// Output 
             /// </summary>
-            public const string shippingAddress2 = "Shipping Address2";
+            public const string shippingAddressLine2 = "Shipping Address Line 2";
             /// <summary>
             /// Output 
             /// </summary>
-            public const string shippingAddress3 = "Shipping Address3";
+            public const string shippingAddressLine3 = "Shipping Address Line 3";
             /// <summary>
             /// Output 
             /// </summary>
-            public const string shippingAddress4 = "Shipping Address4";
+            public const string shippingAddressLine4 = "Shipping Address Line 4";
             /// <summary>
             /// Output 
             /// </summary>
@@ -1155,7 +1165,7 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Output 
             /// </summary>
-            public const string shippingFaxArea = "Shipping Fax Area";
+            public const string shippingFaxAreaCode = "Shipping Fax Area Code";
 
             /// <summary>
             /// Output 
@@ -1170,64 +1180,64 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Output
             /// </summary>
-            public const string shippingPhone1Area = "Shipping Phone1 Area";
+            public const string shippingPhone1AreaCode = "Shipping Phone 1 Area Code";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string shippingPhone1FullNumber = "Shipping Phone1 Full Number (F)";
+            public const string shippingPhone1FullNumber = "Shipping Phone 1 Full Number (F)";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string shippingPhone1Number = "Shipping Phone1 Number";
+            public const string shippingPhone1Number = "Shipping Phone 1 Number";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string shippingPhone1Type = "Shipping Phone1 Type";
-
-
-            /// <summary>
-            /// Output
-            /// </summary>
-            public const string shippingPhone2Area = "Shipping Phone2 Area";
-
-            /// <summary>
-            /// Output
-            /// </summary>
-            public const string shippingPhone2FullNumber = "Shipping Phone2 Full Number (F)";
-
-            /// <summary>
-            /// Output
-            /// </summary>
-            public const string shippingPhone2Number = "Shipping Phone2 Number";
-
-            /// <summary>
-            /// Output
-            /// </summary>
-            public const string shippingPhone2Type = "Shipping Phone2 Type";
+            public const string shippingPhone1Type = "Shipping Phone 1 Type";
 
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string shippingPhone3Area = "Shipping Phone3 Area";
+            public const string shippingPhone2AreaCode = "Shipping Phone 2 Area Code";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string shippingPhone3FullNumber = "Shipping Phone3 Full Number (F)";
+            public const string shippingPhone2FullNumber = "Shipping Phone 2 Full Number (F)";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string shippingPhone3Number = "Shipping Phone3 Number";
+            public const string shippingPhone2Number = "Shipping Phone 2 Number";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string shippingPhone3Type = "Shipping Phone3 Type";
+            public const string shippingPhone2Type = "Shipping Phone 2 Type";
+
+
+            /// <summary>
+            /// Output
+            /// </summary>
+            public const string shippingPhone3AreaCode = "Shipping Phone 3 Area Code";
+
+            /// <summary>
+            /// Output
+            /// </summary>
+            public const string shippingPhone3FullNumber = "Shipping Phone 3 Full Number (F)";
+
+            /// <summary>
+            /// Output
+            /// </summary>
+            public const string shippingPhone3Number = "Shipping Phone 3 Number";
+
+            /// <summary>
+            /// Output
+            /// </summary>
+            public const string shippingPhone3Type = "Shipping Phone 3 Type";
 
             /// <summary>
             /// Output
@@ -1248,27 +1258,22 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Output
             /// </summary>
-            public const string shippingZipSuffix = "Shipping Zip Suffix";
+            public const string shippingZipCodeSuffix = "Shipping Zip Code Suffix";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string shippingZipCode = "Shipping ZipCode";
+            public const string shippingZipCode = "Shipping Zip Code";
 
             /// <summary>
             /// Search
             /// </summary>
-            public const string solicitationMethod = "Solicitation Method";
-
-            /// <summary>
-            /// Output
-            /// </summary>
-            public const string source = "Source";
+            public const string donationSolicitationMethod = "Donation Solicitation Method";
 
             /// <summary>
             /// Search
             /// </summary>
-            public const string staffDonationNote = "Staff Donation Note";
+            public const string systemUserDonationNote = "System User Donation Note";
 
             /// <summary>
             /// Search / Output
@@ -1292,28 +1297,22 @@ namespace Z2Systems.Neon
 
 
             /// <summary>
-            /// Output
+            /// Search / Output
             /// </summary>
-            public const string street1 = "Street 1";
+            public const string addressLine1 = "Address Line 1";
             /// <summary>
             /// Output
             /// </summary>
-            public const string street2 = "Street 2";
+            public const string addressLine2 = "Address Line 2";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string street3 = "Street 3";
+            public const string addressLine3 = "Address Line 3";
             /// <summary>
             /// Output
             /// </summary>
-            public const string street4 = "Street 4";
-
-            /// <summary>
-            /// Search
-            /// </summary>
-            public const string streetAddress1 = "Street Address 1";
-
+            public const string addressLine4 = "Address Line 4";
 
             /// <summary>
             /// Search
@@ -1326,59 +1325,44 @@ namespace Z2Systems.Neon
             public const string thisFiscalYearTotal = "This Fiscal Year Total";
 
             /// <summary>
-            /// Search
+            /// Output
             /// </summary>
-            public const string userDeceased = "User Deceased";
+            public const string email1 = "Email 1";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string userEmail1 = "User Email 1";
+            public const string email2 = "Email 2";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string userEmail2 = "User Email 2";
+            public const string email3 = "Email 3";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string userEmail3 = "User Email 3";
+            public const string fullName = "Full Name (F)";
+
+            /// <summary>
+            /// Search / Output
+            /// </summary>
+            public const string gender = "Gender";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string userFullName = "User Full Name (F)";
-
-            /// <summary>
-            /// Search
-            /// </summary>
-            public const string userGender = "User Gender";
+            public const string prefix = "Prefix";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string userPreferredName = "User Preferred Name";
+            public const string suffix = "Suffix";
 
             /// <summary>
             /// Output
             /// </summary>
-            public const string userPrefix = "User Prefix";
-
-            /// <summary>
-            /// Search
-            /// </summary>
-            public const string userSalutation = "User Salutation";
-
-            /// <summary>
-            /// Output
-            /// </summary>
-            public const string userSuffix = "User Suffix";
-
-            /// <summary>
-            /// Output
-            /// </summary>
-            public const string userUrl = "User URL";
+            public const string url = "URL";
 
             /// <summary>
             /// Search
@@ -1393,30 +1377,30 @@ namespace Z2Systems.Neon
             /// <summary>
             /// Output
             /// </summary>
-            public const string zipSuffix = "Zip Suffix";
+            public const string zipCodeSuffix = "Zip Code Suffix";
         }
 
         public class Donation
         {
-            public const string accountId = "Account Id";
-            public const string donationId = "Donation Id";
+            public const string accountId = "Account ID";
+            public const string donationId = "Donation ID";
             public const string donationDate = "Donation Date";
             public const string amount = "Amount";
             public const string donationStatus = "Donation Status";
             /// <summary>
             /// DO NOT USE - Exceeds WSDL contract width
             /// </summary>
-            public const string donationNote = "Donation Note";
+            public const string donationNote = "System User Donation Note";
             public const string campaignName = "Campaign Name";
 
         }
 
         public class Membership
         {
-            public const string accountId = "Account Id";
+            public const string accountId = "Account ID";
             //public const string membershipId = "Membership Id";
 
-            public const string lastEnrollmentDate = "Last Enrollment Date";
+            public const string lastMembershipEnrollmentDate = "Last Membership Enrollment Date";
             public const string membershipCost = "Membership Cost";
             public const string membershipStatus = "Membership Status";
         }
