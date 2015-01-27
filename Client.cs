@@ -334,7 +334,7 @@ namespace Z2Systems.Neon
                 {
                     throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Error Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
                 }
-            } while (!page.HasValue && response.page.totalPage != response.page.currentPage);
+            } while (!page.HasValue && response.page.totalPage > 0 && response.page.totalPage != response.page.currentPage);
             accountService.Close();
             return accounts.ToArray();
         }
@@ -401,7 +401,7 @@ namespace Z2Systems.Neon
                 {
                     throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Error Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
                 }
-            } while (!page.HasValue && response.page.totalPage != response.page.currentPage);
+            } while (!page.HasValue && response.page.totalPage > 0 && response.page.totalPage != response.page.currentPage);
             donationService.Close();
             return donations.ToArray();
         }
@@ -474,7 +474,7 @@ namespace Z2Systems.Neon
                 {
                     throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Error Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
                 }
-            } while (!page.HasValue && response.page.totalPage != response.page.currentPage);
+            } while (!page.HasValue && response.page.totalPage > 0 && response.page.totalPage != response.page.currentPage);
 
             storeService.Close();
             return orders.ToArray();
@@ -532,7 +532,7 @@ namespace Z2Systems.Neon
                 {
                     throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Error Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
                 }
-            } while (!page.HasValue && response.page.totalPage != response.page.currentPage);
+            } while (!page.HasValue && response.page.totalPage > 0 && response.page.totalPage != response.page.currentPage);
 
 
             membershipService.Close();

@@ -1385,7 +1385,7 @@ namespace Z2Systems.Neon
             public const string accountId = "Account ID";
             public const string donationId = "Donation ID";
             public const string donationDate = "Donation Date";
-            public const string amount = "Amount";
+            public const string donationAmount = "Donation Amount";
             public const string donationStatus = "Donation Status";
             /// <summary>
             /// DO NOT USE - Exceeds WSDL contract width

@@ -38,7 +38,7 @@ namespace Z2Systems.Neon
         {
             Donation donation = new Donation();
             double amount;
-            double.TryParse(data.GetValue(Fields.Donation.amount), out amount);
+            double.TryParse(data.GetValue(Fields.Donation.donationAmount), out amount);
             donation.amount = amount;
 
             DateTime date;
