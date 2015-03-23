@@ -457,7 +457,9 @@ namespace Z2Systems.Neon
             ListOrdersResponse response = null;
 
             StoreServiceClient storeService = new StoreServiceClient(binding, storeAddress);
-
+            bool atLeastOneSuccess = false;
+            totalPages = 0;
+            totalResults = 0;
             do
             {
                 request.page.currentPage++;
@@ -469,12 +471,13 @@ namespace Z2Systems.Neon
                     totalPages = response.page.totalPage;
                     totalResults = response.page.totalResults;
                     orders.AddRange(response.orders);
+                    atLeastOneSuccess = true;
                 }
-                else
+                else if(!atLeastOneSuccess)
                 {
                     throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Error Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
                 }
-            } while (!page.HasValue && response.page.totalPage > 0 && response.page.totalPage != response.page.currentPage);
+            } while (!page.HasValue && totalPages > 0 && totalPages != request.page.currentPage);
 
             storeService.Close();
             return orders.ToArray();
