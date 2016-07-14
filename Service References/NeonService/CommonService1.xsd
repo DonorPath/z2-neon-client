@@ -905,6 +905,56 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="ListFavoriteAccountsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="systemUserId" type="xs:long" />
+          <xs:element minOccurs="0" name="page" type="common:Page" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ListFavoriteAccountsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountIds" type="tns:AccountIdList" />
+          <xs:element minOccurs="0" name="page" type="common:Page" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddToFavoirteAccountsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="systemUserId" type="xs:long" />
+          <xs:element name="accountId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AddToFavoriteAccountsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveFromFavoriteAccountsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="systemUserId" type="xs:long" />
+          <xs:element name="accountId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemoveFromFavoriteAccountsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse" />
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="ListAccountsRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="common:AbstractSearchRequest" />

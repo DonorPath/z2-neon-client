@@ -279,6 +279,39 @@ namespace Z2Systems.Neon.NeonService {
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         System.Threading.Tasks.Task<Z2Systems.Neon.NeonService.syncAccountsResponse1> syncAccountsAsync(Z2Systems.Neon.NeonService.syncAccountsRequest1 request);
         
+        // CODEGEN: Generating message contract since the operation listFavoriteAccounts is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AbstractResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreationLog))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AbstractRequest))]
+        Z2Systems.Neon.NeonService.listFavoriteAccountsResponse1 listFavoriteAccounts(Z2Systems.Neon.NeonService.listFavoriteAccountsRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<Z2Systems.Neon.NeonService.listFavoriteAccountsResponse1> listFavoriteAccountsAsync(Z2Systems.Neon.NeonService.listFavoriteAccountsRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation addToFavoriteAccounts is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AbstractResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreationLog))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AbstractRequest))]
+        Z2Systems.Neon.NeonService.addToFavoriteAccountsResponse1 addToFavoriteAccounts(Z2Systems.Neon.NeonService.addToFavoriteAccountsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<Z2Systems.Neon.NeonService.addToFavoriteAccountsResponse1> addToFavoriteAccountsAsync(Z2Systems.Neon.NeonService.addToFavoriteAccountsRequest request);
+        
+        // CODEGEN: Generating message contract since the operation removeFromFavoriteAccounts is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AbstractResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(CreationLog))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AbstractRequest))]
+        Z2Systems.Neon.NeonService.removeFromFavoriteAccountsResponse1 removeFromFavoriteAccounts(Z2Systems.Neon.NeonService.removeFromFavoriteAccountsRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        System.Threading.Tasks.Task<Z2Systems.Neon.NeonService.removeFromFavoriteAccountsResponse1> removeFromFavoriteAccountsAsync(Z2Systems.Neon.NeonService.removeFromFavoriteAccountsRequest1 request);
+        
         // CODEGEN: Generating message contract since the operation listAccountsByKeywordSearch is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -562,6 +595,9 @@ namespace Z2Systems.Neon.NeonService {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListAccountsBySearchCriteriaRequest))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListAccountsByKeywordSearchRequest))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListAccountsByDefaultRequest))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RemoveFromFavoriteAccountsRequest))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AddToFavoirteAccountsRequest))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListFavoriteAccountsRequest))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SyncAccountsRequest))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeleteHouseHoldRequest))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(UpdateHouseHoldPrimaryRequest))]
@@ -8635,6 +8671,9 @@ namespace Z2Systems.Neon.NeonService {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SyncActivitiesResponse))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListAccountsBySearchCriteriaResponse))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListAccountsByKeywordSearchResponse))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RemoveFromFavoriteAccountsResponse))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AddToFavoriteAccountsResponse))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ListFavoriteAccountsResponse))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SyncAccountsResponse))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeleteHouseHoldResponse))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(UpdateHouseHoldPrimaryResponse))]
@@ -11412,6 +11451,62 @@ namespace Z2Systems.Neon.NeonService {
             set {
                 this.accountSearchResultsField = value;
                 this.RaisePropertyChanged("accountSearchResults");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public Page page {
+            get {
+                return this.pageField;
+            }
+            set {
+                this.pageField = value;
+                this.RaisePropertyChanged("page");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.z2systems.com/schemas/account/")]
+    public partial class RemoveFromFavoriteAccountsResponse : AbstractResponse {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.z2systems.com/schemas/account/")]
+    public partial class AddToFavoriteAccountsResponse : AbstractResponse {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.z2systems.com/schemas/account/")]
+    public partial class ListFavoriteAccountsResponse : AbstractResponse {
+        
+        private long[] accountIdsField;
+        
+        private Page pageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("accountId", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=false)]
+        public long[] accountIds {
+            get {
+                return this.accountIdsField;
+            }
+            set {
+                this.accountIdsField = value;
+                this.RaisePropertyChanged("accountIds");
             }
         }
         
@@ -15826,6 +15921,159 @@ namespace Z2Systems.Neon.NeonService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.z2systems.com/schemas/account/")]
+    public partial class RemoveFromFavoriteAccountsRequest : AbstractRequest {
+        
+        private long systemUserIdField;
+        
+        private bool systemUserIdFieldSpecified;
+        
+        private long accountIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public long systemUserId {
+            get {
+                return this.systemUserIdField;
+            }
+            set {
+                this.systemUserIdField = value;
+                this.RaisePropertyChanged("systemUserId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool systemUserIdSpecified {
+            get {
+                return this.systemUserIdFieldSpecified;
+            }
+            set {
+                this.systemUserIdFieldSpecified = value;
+                this.RaisePropertyChanged("systemUserIdSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public long accountId {
+            get {
+                return this.accountIdField;
+            }
+            set {
+                this.accountIdField = value;
+                this.RaisePropertyChanged("accountId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.z2systems.com/schemas/account/")]
+    public partial class AddToFavoirteAccountsRequest : AbstractRequest {
+        
+        private long systemUserIdField;
+        
+        private bool systemUserIdFieldSpecified;
+        
+        private long accountIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public long systemUserId {
+            get {
+                return this.systemUserIdField;
+            }
+            set {
+                this.systemUserIdField = value;
+                this.RaisePropertyChanged("systemUserId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool systemUserIdSpecified {
+            get {
+                return this.systemUserIdFieldSpecified;
+            }
+            set {
+                this.systemUserIdFieldSpecified = value;
+                this.RaisePropertyChanged("systemUserIdSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public long accountId {
+            get {
+                return this.accountIdField;
+            }
+            set {
+                this.accountIdField = value;
+                this.RaisePropertyChanged("accountId");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.z2systems.com/schemas/account/")]
+    public partial class ListFavoriteAccountsRequest : AbstractRequest {
+        
+        private long systemUserIdField;
+        
+        private bool systemUserIdFieldSpecified;
+        
+        private Page pageField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public long systemUserId {
+            get {
+                return this.systemUserIdField;
+            }
+            set {
+                this.systemUserIdField = value;
+                this.RaisePropertyChanged("systemUserId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool systemUserIdSpecified {
+            get {
+                return this.systemUserIdFieldSpecified;
+            }
+            set {
+                this.systemUserIdFieldSpecified = value;
+                this.RaisePropertyChanged("systemUserIdSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public Page page {
+            get {
+                return this.pageField;
+            }
+            set {
+                this.pageField = value;
+                this.RaisePropertyChanged("page");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.z2systems.com/schemas/account/")]
     public partial class SyncAccountsRequest : AbstractRequest {
         
         private long[] accountIdsField;
@@ -17761,6 +18009,108 @@ namespace Z2Systems.Neon.NeonService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listFavoriteAccountsRequest1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
+        public Z2Systems.Neon.NeonService.ListFavoriteAccountsRequest ListFavoriteAccountsRequest;
+        
+        public listFavoriteAccountsRequest1() {
+        }
+        
+        public listFavoriteAccountsRequest1(Z2Systems.Neon.NeonService.ListFavoriteAccountsRequest ListFavoriteAccountsRequest) {
+            this.ListFavoriteAccountsRequest = ListFavoriteAccountsRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listFavoriteAccountsResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
+        public Z2Systems.Neon.NeonService.ListFavoriteAccountsResponse ListFavoriteAccountsResponse;
+        
+        public listFavoriteAccountsResponse1() {
+        }
+        
+        public listFavoriteAccountsResponse1(Z2Systems.Neon.NeonService.ListFavoriteAccountsResponse ListFavoriteAccountsResponse) {
+            this.ListFavoriteAccountsResponse = ListFavoriteAccountsResponse;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class addToFavoriteAccountsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
+        public Z2Systems.Neon.NeonService.AddToFavoirteAccountsRequest AddToFavoirteAccountsRequest;
+        
+        public addToFavoriteAccountsRequest() {
+        }
+        
+        public addToFavoriteAccountsRequest(Z2Systems.Neon.NeonService.AddToFavoirteAccountsRequest AddToFavoirteAccountsRequest) {
+            this.AddToFavoirteAccountsRequest = AddToFavoirteAccountsRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class addToFavoriteAccountsResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
+        public Z2Systems.Neon.NeonService.AddToFavoriteAccountsResponse AddToFavoriteAccountsResponse;
+        
+        public addToFavoriteAccountsResponse1() {
+        }
+        
+        public addToFavoriteAccountsResponse1(Z2Systems.Neon.NeonService.AddToFavoriteAccountsResponse AddToFavoriteAccountsResponse) {
+            this.AddToFavoriteAccountsResponse = AddToFavoriteAccountsResponse;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class removeFromFavoriteAccountsRequest1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
+        public Z2Systems.Neon.NeonService.RemoveFromFavoriteAccountsRequest RemoveFromFavoriteAccountsRequest;
+        
+        public removeFromFavoriteAccountsRequest1() {
+        }
+        
+        public removeFromFavoriteAccountsRequest1(Z2Systems.Neon.NeonService.RemoveFromFavoriteAccountsRequest RemoveFromFavoriteAccountsRequest) {
+            this.RemoveFromFavoriteAccountsRequest = RemoveFromFavoriteAccountsRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class removeFromFavoriteAccountsResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
+        public Z2Systems.Neon.NeonService.RemoveFromFavoriteAccountsResponse RemoveFromFavoriteAccountsResponse;
+        
+        public removeFromFavoriteAccountsResponse1() {
+        }
+        
+        public removeFromFavoriteAccountsResponse1(Z2Systems.Neon.NeonService.RemoveFromFavoriteAccountsResponse RemoveFromFavoriteAccountsResponse) {
+            this.RemoveFromFavoriteAccountsResponse = RemoveFromFavoriteAccountsResponse;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class listAccountsByKeywordSearchRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.z2systems.com/schemas/neonws/", Order=0)]
@@ -18946,6 +19296,75 @@ namespace Z2Systems.Neon.NeonService {
             Z2Systems.Neon.NeonService.syncAccountsRequest1 inValue = new Z2Systems.Neon.NeonService.syncAccountsRequest1();
             inValue.syncAccountsRequest = syncAccountsRequest;
             return ((Z2Systems.Neon.NeonService.AccountService)(this)).syncAccountsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Z2Systems.Neon.NeonService.listFavoriteAccountsResponse1 Z2Systems.Neon.NeonService.AccountService.listFavoriteAccounts(Z2Systems.Neon.NeonService.listFavoriteAccountsRequest1 request) {
+            return base.Channel.listFavoriteAccounts(request);
+        }
+        
+        public Z2Systems.Neon.NeonService.ListFavoriteAccountsResponse listFavoriteAccounts(Z2Systems.Neon.NeonService.ListFavoriteAccountsRequest ListFavoriteAccountsRequest) {
+            Z2Systems.Neon.NeonService.listFavoriteAccountsRequest1 inValue = new Z2Systems.Neon.NeonService.listFavoriteAccountsRequest1();
+            inValue.ListFavoriteAccountsRequest = ListFavoriteAccountsRequest;
+            Z2Systems.Neon.NeonService.listFavoriteAccountsResponse1 retVal = ((Z2Systems.Neon.NeonService.AccountService)(this)).listFavoriteAccounts(inValue);
+            return retVal.ListFavoriteAccountsResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Z2Systems.Neon.NeonService.listFavoriteAccountsResponse1> Z2Systems.Neon.NeonService.AccountService.listFavoriteAccountsAsync(Z2Systems.Neon.NeonService.listFavoriteAccountsRequest1 request) {
+            return base.Channel.listFavoriteAccountsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Z2Systems.Neon.NeonService.listFavoriteAccountsResponse1> listFavoriteAccountsAsync(Z2Systems.Neon.NeonService.ListFavoriteAccountsRequest ListFavoriteAccountsRequest) {
+            Z2Systems.Neon.NeonService.listFavoriteAccountsRequest1 inValue = new Z2Systems.Neon.NeonService.listFavoriteAccountsRequest1();
+            inValue.ListFavoriteAccountsRequest = ListFavoriteAccountsRequest;
+            return ((Z2Systems.Neon.NeonService.AccountService)(this)).listFavoriteAccountsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Z2Systems.Neon.NeonService.addToFavoriteAccountsResponse1 Z2Systems.Neon.NeonService.AccountService.addToFavoriteAccounts(Z2Systems.Neon.NeonService.addToFavoriteAccountsRequest request) {
+            return base.Channel.addToFavoriteAccounts(request);
+        }
+        
+        public Z2Systems.Neon.NeonService.AddToFavoriteAccountsResponse addToFavoriteAccounts(Z2Systems.Neon.NeonService.AddToFavoirteAccountsRequest AddToFavoirteAccountsRequest) {
+            Z2Systems.Neon.NeonService.addToFavoriteAccountsRequest inValue = new Z2Systems.Neon.NeonService.addToFavoriteAccountsRequest();
+            inValue.AddToFavoirteAccountsRequest = AddToFavoirteAccountsRequest;
+            Z2Systems.Neon.NeonService.addToFavoriteAccountsResponse1 retVal = ((Z2Systems.Neon.NeonService.AccountService)(this)).addToFavoriteAccounts(inValue);
+            return retVal.AddToFavoriteAccountsResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Z2Systems.Neon.NeonService.addToFavoriteAccountsResponse1> Z2Systems.Neon.NeonService.AccountService.addToFavoriteAccountsAsync(Z2Systems.Neon.NeonService.addToFavoriteAccountsRequest request) {
+            return base.Channel.addToFavoriteAccountsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Z2Systems.Neon.NeonService.addToFavoriteAccountsResponse1> addToFavoriteAccountsAsync(Z2Systems.Neon.NeonService.AddToFavoirteAccountsRequest AddToFavoirteAccountsRequest) {
+            Z2Systems.Neon.NeonService.addToFavoriteAccountsRequest inValue = new Z2Systems.Neon.NeonService.addToFavoriteAccountsRequest();
+            inValue.AddToFavoirteAccountsRequest = AddToFavoirteAccountsRequest;
+            return ((Z2Systems.Neon.NeonService.AccountService)(this)).addToFavoriteAccountsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Z2Systems.Neon.NeonService.removeFromFavoriteAccountsResponse1 Z2Systems.Neon.NeonService.AccountService.removeFromFavoriteAccounts(Z2Systems.Neon.NeonService.removeFromFavoriteAccountsRequest1 request) {
+            return base.Channel.removeFromFavoriteAccounts(request);
+        }
+        
+        public Z2Systems.Neon.NeonService.RemoveFromFavoriteAccountsResponse removeFromFavoriteAccounts(Z2Systems.Neon.NeonService.RemoveFromFavoriteAccountsRequest RemoveFromFavoriteAccountsRequest) {
+            Z2Systems.Neon.NeonService.removeFromFavoriteAccountsRequest1 inValue = new Z2Systems.Neon.NeonService.removeFromFavoriteAccountsRequest1();
+            inValue.RemoveFromFavoriteAccountsRequest = RemoveFromFavoriteAccountsRequest;
+            Z2Systems.Neon.NeonService.removeFromFavoriteAccountsResponse1 retVal = ((Z2Systems.Neon.NeonService.AccountService)(this)).removeFromFavoriteAccounts(inValue);
+            return retVal.RemoveFromFavoriteAccountsResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Z2Systems.Neon.NeonService.removeFromFavoriteAccountsResponse1> Z2Systems.Neon.NeonService.AccountService.removeFromFavoriteAccountsAsync(Z2Systems.Neon.NeonService.removeFromFavoriteAccountsRequest1 request) {
+            return base.Channel.removeFromFavoriteAccountsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Z2Systems.Neon.NeonService.removeFromFavoriteAccountsResponse1> removeFromFavoriteAccountsAsync(Z2Systems.Neon.NeonService.RemoveFromFavoriteAccountsRequest RemoveFromFavoriteAccountsRequest) {
+            Z2Systems.Neon.NeonService.removeFromFavoriteAccountsRequest1 inValue = new Z2Systems.Neon.NeonService.removeFromFavoriteAccountsRequest1();
+            inValue.RemoveFromFavoriteAccountsRequest = RemoveFromFavoriteAccountsRequest;
+            return ((Z2Systems.Neon.NeonService.AccountService)(this)).removeFromFavoriteAccountsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

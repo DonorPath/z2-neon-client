@@ -342,7 +342,7 @@ namespace Z2Systems.Neon
 
 
         /// <summary>
-        /// Lists the accounts.
+        /// Lists the events.
         /// </summary>
         /// <param name="totalResults">The total results.</param>
         /// <param name="totalPages">The total pages.</param>

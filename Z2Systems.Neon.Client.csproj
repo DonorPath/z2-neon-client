@@ -66,7 +66,9 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NeonService\CommonService.wsdl" />
+    <None Include="Service References\NeonService\CommonService.wsdl">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\NeonService\CommonService.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -137,6 +139,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.addProductToCatalogResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.AddToFavoriteAccountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.addToFavoriteAccountsResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.AuthenticateUserResponse.datasource">
@@ -325,6 +333,12 @@
     <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listEventsResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListFavoriteAccountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.listFavoriteAccountsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.ListFundsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -497,6 +511,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.removeCategoryResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RemoveFromFavoriteAccountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.removeFromFavoriteAccountsResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RemoveIndividualFromHouseHoldResponse.datasource">
