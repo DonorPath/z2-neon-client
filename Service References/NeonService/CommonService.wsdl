@@ -117,6 +117,8 @@
       <xs:element name="listEventsResponse" type="event:ListEventsResponse" />
       <xs:element name="retrieveEventRegistrationStatsRequest" type="event:RetrieveEventRegistrationStatsRequest" />
       <xs:element name="retrieveEventRegistrationStatsResponse" type="event:RetrieveEventRegistrationStatsResponse" />
+      <xs:element name="retrieveEventAttendeesRequest" type="event:RetrieveEventAttendeesRequest" />
+      <xs:element name="retrieveEventAttendeesResponse" type="event:RetrieveEventAttendeesResponse" />
       <xs:element name="listFundsRequest" type="donation:ListFundsRequest" />
       <xs:element name="listFundsResponse" type="donation:ListFundsResponse" />
       <xs:element name="listSolicitationMethodsRequest" type="donation:ListSolicitationMethodsRequest" />
@@ -301,11 +303,11 @@
   <wsdl:message name="listGendersResponse">
     <wsdl:part name="response" element="tns:listGendersResponse" />
   </wsdl:message>
-  <wsdl:message name="retrieveMembershipStatsRequest">
-    <wsdl:part name="request" element="tns:retrieveMembershipStatsRequest" />
-  </wsdl:message>
   <wsdl:message name="addOrUpdateShippingAddressToShoppingCartRequest">
     <wsdl:part name="request" element="tns:addOrUpdateShippingAddressToShoppingCartRequest" />
+  </wsdl:message>
+  <wsdl:message name="retrieveMembershipStatsRequest">
+    <wsdl:part name="request" element="tns:retrieveMembershipStatsRequest" />
   </wsdl:message>
   <wsdl:message name="updateAddressResponse">
     <wsdl:part name="response" element="tns:updateAddressResponse" />
@@ -510,6 +512,9 @@
   </wsdl:message>
   <wsdl:message name="listAccountsByKeywordSearchRequest">
     <wsdl:part name="request" element="tns:listAccountsByKeywordSearchRequest" />
+  </wsdl:message>
+  <wsdl:message name="retrieveEventAttendeesResponse">
+    <wsdl:part name="response" element="tns:retrieveEventAttendeesResponse" />
   </wsdl:message>
   <wsdl:message name="listSystemUsersResponse">
     <wsdl:part name="response" element="tns:listSystemUsersResponse" />
@@ -777,6 +782,9 @@
   </wsdl:message>
   <wsdl:message name="listOrdersRequest">
     <wsdl:part name="request" element="tns:listOrdersRequest" />
+  </wsdl:message>
+  <wsdl:message name="retrieveEventAttendeesRequest">
+    <wsdl:part name="request" element="tns:retrieveEventAttendeesRequest" />
   </wsdl:message>
   <wsdl:message name="removeItemFromShoppingCartResponse">
     <wsdl:part name="response" element="tns:removeItemFromShoppingCartResponse" />
@@ -1103,6 +1111,10 @@
     <wsdl:operation name="retrieveEventRegistrationStats">
       <wsdl:input message="tns:retrieveEventRegistrationStatsRequest" />
       <wsdl:output message="tns:retrieveEventRegistrationStatsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveEventAttendees">
+      <wsdl:input message="tns:retrieveEventAttendeesRequest" />
+      <wsdl:output message="tns:retrieveEventAttendeesResponse" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="CommonService">
@@ -2088,6 +2100,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="retrieveEventAttendees">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="DonationBinding" type="tns:DonationService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -2256,7 +2277,7 @@
       <soap:address location="https://api.neoncrm.com/neonws/services/MembershipService" />
     </wsdl:port>
     <wsdl:port name="EventPort" binding="tns:EventBinding">
-      <soap:address location="https://api.neoncrm.com/neonws/services/EventService" />
+      <soap:address location="/EventService" />
     </wsdl:port>
     <wsdl:port name="AccountPort" binding="tns:AccountBinding">
       <soap:address location="https://api.neoncrm.com/neonws/services/AccountService" />

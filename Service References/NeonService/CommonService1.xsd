@@ -113,6 +113,8 @@
                             </xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element minOccurs="0" name="facebookPage" type="common:LongTextType" />
+          <xs:element minOccurs="0" name="twitterPage" type="common:LongTextType" />
           <xs:element minOccurs="0" name="individualTypes" type="tns:IndividualTypeList" />
         </xs:sequence>
       </xs:extension>
@@ -168,6 +170,7 @@
                             </xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element minOccurs="0" name="timeZoneOffset" type="xs:long" />
           <xs:element minOccurs="0" name="clientId" type="xs:long" />
           <xs:element minOccurs="0" name="systemUserId" type="xs:long" />
           <xs:element name="activityStatus" type="common:IdNamePair" />

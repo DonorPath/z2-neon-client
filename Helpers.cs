@@ -33,6 +33,18 @@ namespace Z2Systems.Neon
             return membership;
         }
 
+        public static EventData ToEventData(this NameValuePair[] data)
+        {
+            long fee;
+            DateTime date;
+            EventData eventData = new EventData
+            {
+                EventId = Int64.Parse(data.GetValue(Fields.Event.EventID)),
+                EventCost = Int64.TryParse(data.GetValue(Fields.Event.EventAdmissionFee), out fee) ? fee : data.GetValue(Fields.Event.EventAdmissionFee) != null && Int64.TryParse(data.GetValue(Fields.Event.EventAdmissionFee).Split('.')[0], out fee) ? fee : 0, // if the initial fails, try checking for a decimal before declairing it's zero
+                EventDate = DateTime.TryParse(data.GetValue(Fields.Event.EventStartDate), out date) ? date : DateTime.MinValue
+            };
+            return eventData;
+        }
 
         public static Donation ToDonation(this NameValuePair[] data)
         {

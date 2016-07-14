@@ -4,6 +4,37 @@
   <xs:annotation>
     <xs:appinfo>Neon Web Service, event type definitions. Version 1.0.0 </xs:appinfo>
   </xs:annotation>
+  <xs:complexType name="EventAttendeesResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="registrantAccountId" type="xs:long" />
+      <xs:element minOccurs="0" name="registrantName" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="registrationStatus" type="tns:RegistrationStatus" />
+      <xs:element minOccurs="0" name="registrationDate" type="xs:date" />
+      <xs:element minOccurs="0" name="attendeeId" type="xs:long" />
+      <xs:element minOccurs="0" name="attendeeAccountId" type="xs:long" />
+      <xs:element minOccurs="0" name="attendeeFirstName" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="attendeeLastName" type="common:MediumTextType" />
+      <xs:element minOccurs="0" name="markedAttended" type="xs:boolean" />
+      <xs:element minOccurs="0" name="customFieldDataList" type="common:CustomFieldDataList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EventAttendeesResults">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="eventAttendeesResult" type="tns:EventAttendeesResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="RegistrationStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PENDING" />
+      <xs:enumeration value="CANCELLED" />
+      <xs:enumeration value="SUCCEED" />
+      <xs:enumeration value="DECLINED" />
+      <xs:enumeration value="FAILED" />
+      <xs:enumeration value="WAITINGLIST" />
+      <xs:enumeration value="CANCEL_PENDING" />
+      <xs:enumeration value="DEFERRED" />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:complexType name="EventRegistrationStats">
     <xs:sequence>
       <xs:element minOccurs="0" name="totalAmountPaid" type="xs:double" />
@@ -36,6 +67,26 @@
       <xs:extension base="common:AbstractResponse">
         <xs:sequence>
           <xs:element minOccurs="0" name="eventRegistrationStats" type="tns:EventRegistrationStats" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveEventAttendeesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="eventId" type="xs:long" />
+          <xs:element minOccurs="0" name="page" type="common:Page" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RetrieveEventAttendeesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="common:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="eventAttendeesResults" type="tns:EventAttendeesResults" />
+          <xs:element minOccurs="0" name="page" type="common:Page" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

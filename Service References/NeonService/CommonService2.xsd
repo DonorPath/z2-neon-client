@@ -390,6 +390,7 @@
       <xs:element minOccurs="0" name="registrationAmount" type="xs:double" />
       <xs:element minOccurs="0" name="attendeeCount" type="xs:long" />
       <xs:element minOccurs="0" name="grandTotal" type="xs:double" />
+      <xs:element minOccurs="0" name="goal" type="xs:double" />
       <xs:element minOccurs="0" name="campaignPageLink" type="common:ExtraLongTextType" />
       <xs:element minOccurs="0" name="donationFormLink" type="common:ExtraLongTextType" />
       <xs:element minOccurs="0" name="socialFundraising" type="tns:SocialFundraising" />

@@ -46,6 +46,7 @@
     <Compile Include="AddressData.cs" />
     <Compile Include="AuthenticationData.cs" />
     <Compile Include="CompanyData.cs" />
+    <Compile Include="EventData.cs" />
     <Compile Include="Fields.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="MembershipData.cs" />
@@ -62,7 +63,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\NeonService\CommonService.wsdl" />
     <None Include="Service References\NeonService\CommonService.xsd">
       <SubType>Designer</SubType>
@@ -560,6 +563,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.retrieveDonationStatsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RetrieveEventAttendeesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.retrieveEventAttendeesResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\NeonService\Z2Systems.Neon.NeonService.RetrieveEventRegistrationStatsResponse.datasource">

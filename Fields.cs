@@ -1404,5 +1404,100 @@ namespace Z2Systems.Neon
             public const string membershipCost = "Membership Cost";
             public const string membershipStatus = "Membership Status";
         }
+
+        public class Event
+        {
+            public const string AddressCreatedBy = "Address Created By";
+            public const string AddressCreatedDateTime = "Address Created Date/Time";
+            public const string AddressLastModifiedBy = "Address Last Modified By";
+            public const string AddressLastModifiedDateTime = "Address Last Modified Date/Time";
+            public const string AddressLine1 = "Address Line 1";
+            public const string AddressLine2 = "Address Line 2";
+            public const string AddressLine3 = "Address Line 3";
+            public const string AddressLine4 = "Address Line 4";
+            public const string AddressType = "Address Type";
+            public const string AttendeeCapperRegistration = "Attendee cap per registration";
+            public const string CampaignCode = "Campaign Code";
+            public const string CampaignEndDate = "Campaign End Date";
+            public const string CampaignGoal = "Campaign Goal";
+            public const string CampaignID = "Campaign ID";
+            public const string CampaignName = "Campaign Name";
+            public const string CampaignStartDate = "Campaign Start Date";
+            public const string City = "City";
+            public const string Country = "Country";
+            public const string County = "County";
+            public const string EmailBroadcastDate = "Email Broadcast Date";
+            public const string EventAdmissionFee = "Event Admission Fee";
+            public const string EventArchive = "Event Archive";
+            public const string EventCapacity = "Event Capacity";
+            public const string EventCategoryName = "Event Category Name";
+            public const string EventCode = "Event Code";
+            public const string EventCreatedBy = "Event Created By";
+            public const string EventCreatedDateTime = "Event Created Date/Time";
+            public const string EventDescription = "Event Description";
+            public const string EventEndDate = "Event End Date";
+            public const string EventEndTime = "Event End Time";
+            public const string EventExternalURL = "Event External URL";
+            public const string EventID = "Event ID";
+            public const string EventLastModifiedBy = "Event Last Modified By";
+            public const string EventLastModifiedDateTime = "Event Last Modified Date/Time";
+            public const string EventLocationName = "Event Location Name";
+            public const string EventName = "Event Name";
+            public const string EventNote = "Event Note";
+            public const string EventRegistrationAttendeeCount = "Event Registration Attendee Count";
+            public const string EventRegistrationNote = "Event Registration Note";
+            public const string EventStartDate = "Event Start Date";
+            public const string EventStartTime = "Event Start Time";
+            public const string EventSummary = "Event Summary";
+            public const string EventTaxDeductiblePercentage = "Event Tax-Deductible Percentage (%)";
+            public const string EventTopic = "Event Topic";
+            public const string EventWebPublish = "Event Web Publish";
+            public const string EventWebRegister = "Event Web Register";
+            public const string FaxAreaCode = "Fax Area Code";
+            public const string FaxFullNumber = "Fax Full Number (F)";
+            public const string FaxNumber = "Fax Number";
+            public const string FaxType = "Fax Type";
+            public const string FullStreetAddress = "Full Street Address (F)";
+            public const string FullZipCode = "Full Zip Code (F)";
+            public const string Fund = "Fund";
+            public const string FundCode = "Fund Code";
+            public const string HoldToWaitingList = "Hold To Waiting List";
+            public const string IndividualType = "Individual Type";
+            public const string OrganizationType = "Organization Type";
+            public const string ParentCampaignID = "Parent Campaign ID";
+            public const string Phone1AreaCode = "Phone 1 Area Code";
+            public const string Phone1FullNumber = "Phone 1 Full Number (F)";
+            public const string Phone1Number = "Phone 1 Number";
+            public const string Phone1Type = "Phone 1 Type";
+            public const string Phone2AreaCode = "Phone 2 Area Code";
+            public const string Phone2FullNumber = "Phone 2 Full Number (F)";
+            public const string Phone2Number = "Phone 2 Number";
+            public const string Phone2Type = "Phone 2 Type";
+            public const string Phone3AreaCode = "Phone 3 Area Code";
+            public const string Phone3FullNumber = "Phone 3 Full Number (F)";
+            public const string Phone3Number = "Phone 3 Number";
+            public const string Phone3Type = "Phone 3 Type";
+            public const string Province = "Province";
+            public const string Purpose = "Purpose";
+            public const string PurposeCode = "Purpose Code";
+            public const string State = "State";
+            public const string TotalRevenue = "Total Revenue";
+            public const string WaitingListStatus = "Waiting List Status";
+            public const string ZipCode = "Zip Code";
+            public const string ZipCodeSuffix = "Zip Code Suffix";
+        }
+
+        public class EventAttendee
+        {
+            public const string eventId = "eventId";
+            public const string registrantAccountId = "registrantAccountId";
+            public const string registrantName = "registrantName";
+            public const string registrationStatus = "registrationStatus";
+            public const string registrationDate = "registrationDate";
+            public const string attendeeId = "attendeeId";
+            public const string attendeeAccountId = "attendeeAccountId";
+            public const string attendeeFirstName = "attendeeFirstName";
+            public const string attendeeLastName = "attendeeLastName";
+        }
     }
 }
