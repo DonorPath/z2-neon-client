@@ -342,6 +342,114 @@ namespace Z2Systems.Neon
 
 
         /// <summary>
+        /// Lists the events.
+        /// </summary>
+        /// <param name="totalResults">The total results.</param>
+        /// <param name="totalPages">The total pages.</param>
+        /// <param name="page">The page.</param>
+        /// <param name="pageSize">Size of the page.</param>
+        /// <param name="sortColumn">The sort column.</param>
+        /// <param name="sortDirection">The sort direction.</param>
+        /// <param name="searches">The searches.</param>
+        /// <param name="outputFields">The output fields.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ApplicationException">
+        /// Error Communicating With Neon
+        /// </exception>
+        public EventData[] ListEvents(out long totalResults, out long totalPages, int? page, int pageSize = 100, string sortColumn = null, SortDirection? sortDirection = null, IEnumerable<SearchObject> searches = null, params string[] outputFields)
+        {
+            List<EventData> events = new List<EventData>();
+
+            EnsureSession();
+
+            EventServiceClient eventService = new EventServiceClient(binding, eventAddress);
+
+            ListEventsResponse response = null;
+            ListEventsRequest request = new ListEventsRequest
+            {
+                userSessionId = SessionId,
+                page = new Page
+                {
+                    currentPage = page ?? 0,
+                    currentPageSpecified = true,
+                    pageSize = pageSize,
+                    pageSizeSpecified = true,
+                },
+                outputFields = outputFields.Select(x => new IdNamePair { name = x }).ToArray()
+            };
+            if (!string.IsNullOrEmpty(sortColumn))
+            {
+                request.page.sortColumn = sortColumn;
+                sortDirection = sortDirection ?? SortDirection.ASC;
+            }
+
+            if (searches != null)
+            {
+                request.searches = searches.ToArray();
+            }
+
+            do
+            {
+                request.page.currentPage++;
+
+                response = eventService.listEvents(request);
+
+                if (response.operationResult == OperationResult.SUCCESS)
+                {
+                    totalPages = response.page.totalPage;
+                    totalResults = response.page.totalResults;
+                    events.AddRange(response.searchResults.Select(x => x.ToEventData()));                    
+                }
+                else
+                {
+                    throw new ApplicationException("Error Communicating With Neon", new ApplicationException(string.Format("Error Code {0} : {1}", response.errors.First().errorCode, response.errors.First().errorMessage)));
+                }
+            } while (!page.HasValue && response.page.totalPage > 0 && response.page.totalPage != response.page.currentPage);
+            foreach(EventData eventData in events)
+            {
+                do { 
+                    List<EventAttendee> attendees = new List<EventAttendee>();
+                    RetrieveEventAttendeesResponse evtAttendeeResponse = eventService.retrieveEventAttendees(new RetrieveEventAttendeesRequest
+                    {
+                        eventId = eventData.EventId,
+                        eventIdSpecified = true,
+                        userSessionId = SessionId,
+                        page = new Page
+                        {
+                            currentPage = page ?? 0,
+                            currentPageSpecified = true,
+                            pageSize = pageSize,
+                            pageSizeSpecified = true,
+                        },
+                    });
+                    if(evtAttendeeResponse.operationResult == OperationResult.SUCCESS)
+                        attendees.AddRange(evtAttendeeResponse.eventAttendeesResults.Select(x => new EventAttendee
+                        {
+                            AttendeeAccountId = x.attendeeAccountId,
+                            AttendeeFirstName = x.attendeeFirstName,
+                            AttendeeId = x.attendeeId,
+                            AttendeeLastName = x.attendeeLastName,
+                            RegistrantAccountId = x.registrantAccountId,
+                            RegistrantName = x.registrantName,
+                            RegistrationDate = x.registrationDate,
+                            RegistrationStatus = x.registrationStatus,
+                            Event = new EventData
+                            {
+                                EventCost = eventData.EventCost,
+                                EventDate = eventData.EventDate,
+                                EventId = eventData.EventId
+                            }
+                        }));
+                    eventData.Attendees = attendees.ToArray();
+                } while (!page.HasValue && response.page.totalPage > 0 && response.page.totalPage != response.page.currentPage);
+            }
+            eventService.Close();
+            return events.ToArray();
+        }
+
+
+
+        /// <summary>
         /// Lists the donations.
         /// </summary>
         /// <param name="totalResults">The total results.</param>

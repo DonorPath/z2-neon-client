@@ -155,6 +155,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="paymentId" type="xs:long" />
       <xs:element name="amount" type="xs:double" />
+      <xs:element name="fairMarketValue" type="xs:double" />
       <xs:element minOccurs="0" name="paymentStatus" type="tns:TransactionStatus" />
       <xs:element minOccurs="0" name="note" type="tns:TextFieldType" />
       <xs:element name="tenderType" type="tns:IdNamePair">
