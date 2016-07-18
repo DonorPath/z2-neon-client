@@ -9,7 +9,7 @@
     <projectUrl>https://github.com/hello-consumer/z2-neon-client</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Created an initial version of this package.</releaseNotes>
+    <releaseNotes>Updated events API.</releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>z2systems neon crm api</tags>
   </metadata>
